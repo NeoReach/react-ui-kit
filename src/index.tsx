@@ -6,17 +6,20 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.scss';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
+import packageInfo from '../package.json';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
+  <div className={packageInfo?.name || 'qb-react-ui-kit'}>
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  </div>,
 );
 
 // If you want to start measuring performance in your app, pass a function

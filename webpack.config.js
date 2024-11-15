@@ -1,5 +1,5 @@
 const path = require('path');
-// const packageInfo = require('./package.json');
+const packageInfo = require('./package.json');
 
 module.exports = {
     mode: 'development',
@@ -24,23 +24,49 @@ module.exports = {
     module: {
         rules: [
             {
-                test: [/\.css$/i],
-                use: [
-                    // Creates style nodes from JS strings
-                    'style-loader',
-                    // Translates CSS into CommonJS
-                    'css-loader'
-                ],
-            },
-            {
-                test: [/\.s[ac]ss$/i],
+                test: [/\.(css|scss|sass)$/i],
                 use: [
                     // Creates style nodes from JS strings
                     'style-loader',
                     // Translates CSS into CommonJS
                     'css-loader',
-                    // Compiles Sass to CSS
-                    'sass-loader',
+                    // Prefix CSS selectors
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: {
+                                    "postcss-prefix-selector": {
+                                        prefix: packageInfo?.name || 'qb-react-ui-kit',
+                                        transform: (prefix, selector, prefixedSelector, filePath, rule) => {
+                                            if (selector.match(/^(html|body)/)) {
+                                                return selector.replace(/^([^\s]*)/, `$1 ${prefix}`);
+                                            }
+
+                                            if (filePath.match(/node_modules/)) {
+                                                return selector; // Do not prefix styles imported from node_modules
+                                            }
+
+                                            const annotation = rule.prev();
+                                            if (annotation?.type === 'comment' && annotation.text.trim() === 'no-prefix') {
+                                                return selector; // Do not prefix style rules that are preceded by: /* no-prefix */
+                                            }
+
+                                            return prefixedSelector;
+                                        }
+                                    },
+                                    autoprefixer: {}
+                                }
+                            }
+                        }
+                    },
+                    // Compiles Sass to CSS (only for .scss/.sass files)
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    }
                 ],
                 exclude: /node_modules/
             },
@@ -60,9 +86,9 @@ module.exports = {
                 exclude: ['/node_modules/', '/src/__tests__'],
             },
             {
-              test: /\.svg$/i,
-              issuer: /\.[jt]sx?$/,
-              use: ['@svgr/webpack', 'url-loader'],
+                test: /\.svg$/i,
+                issuer: /\.[jt]sx?$/,
+                use: ['@svgr/webpack', 'url-loader'],
             },
         ],
     }
