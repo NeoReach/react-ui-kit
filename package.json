@@ -1,6 +1,6 @@
 {
   "name": "quickblox-react-ui-kit",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "main": "dist/index-ui.js",
   "license": "MIT",
   "dependencies": {
@@ -86,7 +86,8 @@
     "lint": "eslint ./src",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "npm run build:lib"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": "eslint"
