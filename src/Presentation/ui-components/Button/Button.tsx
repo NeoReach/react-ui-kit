@@ -29,7 +29,7 @@ export default function Button({
     // eslint-disable-next-line react/button-has-type
     <button
       className={cn(
-        'button',
+        'qb-react-ui-kit button',
         `button--${variant}`,
         { 'button--disabled': disabled },
         className,

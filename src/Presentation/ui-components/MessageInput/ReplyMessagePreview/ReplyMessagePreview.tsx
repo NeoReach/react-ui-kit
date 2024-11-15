@@ -35,7 +35,7 @@ const ReplyMessagePreview: React.FC<ReplyMessagePreviewProps> = ({
   }, [messages[0]?.message]);
 
   return (
-    <div className="reply-message-preview-row">
+    <div className="qb-react-ui-kit reply-message-preview-row">
       <div className="reply-message-preview-row-card">
         {messages.length > 0 &&
         messages[0].attachments &&

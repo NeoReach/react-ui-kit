@@ -31,7 +31,7 @@ const DialogItemPreview: React.FC<DialogItemPreviewProps> = ({
   return (
     <div
       className={cn(
-        'dialog-item-preview',
+        'qb-react-ui-kit dialog-item-preview',
         { 'dialog-item-preview--active': active },
         className,
       )}

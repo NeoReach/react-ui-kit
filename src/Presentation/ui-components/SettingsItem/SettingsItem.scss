@@ -1,6 +1,6 @@
 @import '../../themes/styles/mixins';
 
-.settings-item {
+.qb-react-ui-kit.settings-item {
   @include applyBorderBox;
   background-color: var(--color-background);
 

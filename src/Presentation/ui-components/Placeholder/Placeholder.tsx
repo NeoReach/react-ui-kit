@@ -24,7 +24,7 @@ export default function Placeholder({
   );
 
   return (
-    <div className={cn('placeholder', className)}>
+    <div className={cn('qb-react-ui-kit placeholder', className)}>
       {icon && <div className="placeholder__icon">{icon}</div>}
       {Array.isArray(text) ? text.map(renderText) : renderText(text)}
       {onRetry && (

@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({
   className,
 }: HeaderProps) => {
   return (
-    <div className={cn('dialog-header', className)}>
+    <div className={cn('qb-react-ui-kit dialog-header', className)}>
       {onGoBack && (
         <BackSvg
           className="dialog-header__icon dialog-header__back"

@@ -24,7 +24,7 @@ export default function PreviewFileMessage({
   const Icon = iconDictionary[type];
 
   return (
-    <div className={cn('preview-file-message', className)}>
+    <div className={cn('qb-react-ui-kit preview-file-message', className)}>
       {src ? (
         <img src={src} alt="" className="preview-file-message__image" />
       ) : (

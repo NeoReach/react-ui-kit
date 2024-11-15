@@ -14,11 +14,11 @@ export default function ToastProvider({ children }: ToastProps) {
   return (
     <ToastContext.Provider value={undefined}>
       <ToastContainer
-        className="container"
+        className="qb-react-ui-kit container"
         position="top-center"
         autoClose={3000}
-        bodyClassName="toast__body"
-        toastClassName="toast"
+        bodyClassName="qb-react-ui-kit toast__body"
+        toastClassName="qb-react-ui-kit toast"
         pauseOnHover={false}
         closeButton={false}
         hideProgressBar

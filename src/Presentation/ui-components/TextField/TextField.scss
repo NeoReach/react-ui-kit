@@ -1,6 +1,6 @@
 @import '../../themes/styles/mixins';
 
-.text-field {
+.qb-react-ui-kit.text-field {
   @include applyBorderBox;
 
   &__label {

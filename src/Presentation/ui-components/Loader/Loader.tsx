@@ -10,6 +10,8 @@ interface LoaderProps {
 
 export default function Loader({ className, size = 'md' }: LoaderProps) {
   return (
-    <LoaderSvg className={cn('loader', size && `loader--${size}`, className)} />
+    <LoaderSvg
+      className={cn('qb-react-ui-kit loader', size && `loader--${size}`, className)}
+    />
   );
 }

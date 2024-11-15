@@ -13,7 +13,7 @@ export default function CheckBox({
 }: CheckBoxProps) {
   return (
     <input
-      className="checkbox"
+      className="qb-react-ui-kit checkbox"
       type="checkbox"
       checked={checked}
       disabled={disabled}

@@ -1,4 +1,4 @@
-.message-item {
+.qb-react-ui-kit.message-item {
   display: flex;
   flex-direction: row;
   gap: 0px;
@@ -41,8 +41,8 @@
       //padding-bottom: 10px;
 
       &__actions {
-        fill: var(--tertiary-elements, #636D78);
-        path: var(--tertiary-elements, #636D78);
+        fill: var(--tertiary-elements, #636d78);
+        path: var(--tertiary-elements, #636d78);
       }
     }
   }
@@ -69,7 +69,7 @@
       position: relative;
 
       &__bubble-background {
-        background: var(--outgoing-background, #E7EFFF);
+        background: var(--outgoing-background, #e7efff);
         border-radius: 22px 22px 0px 22px;
         padding: 8px 12px 8px 12px;
         display: flex;

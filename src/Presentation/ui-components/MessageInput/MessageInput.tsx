@@ -69,7 +69,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
   }
 
   return (
-    <div className={cn('chat-container', className)}>
+    <div className={cn('qb-react-ui-kit chat-container', className)}>
       {previewMessage}
       <div
         onBlur={() => {

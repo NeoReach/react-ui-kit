@@ -1,6 +1,6 @@
 @import '../../themes/styles/mixins';
 
-.avatar {
+.qb-react-ui-kit.avatar {
   @include applyBorderBox;
   display: flex;
   flex-shrink: 0;

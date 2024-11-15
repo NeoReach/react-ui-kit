@@ -18,7 +18,7 @@ const trimFileName = (fileName: string) => {
 
 export default function FileUrl({ title, href }: FileUrlProps) {
   return (
-    <div className="file-attachment">
+    <div className="qb-react-ui-kit file-attachment">
       <div className="file-attachment__placeholder">
         <div className="file-attachment__placeholder__bg" />
         {href ? (

@@ -27,8 +27,8 @@ export default function MessageSeparator({
   type = 'date',
 }: MessageSeparatorProps) {
   return type === 'date' ? (
-    <div className="system-date-banner-chat-banner">{parseDate(text)}</div>
+    <div className="qb-react-ui-kit system-date-banner-chat-banner">{parseDate(text)}</div>
   ) : (
-    <div className="system-message-chat-banner">{text}</div>
+    <div className="qb-react-ui-kit system-message-chat-banner">{text}</div>
   );
 }

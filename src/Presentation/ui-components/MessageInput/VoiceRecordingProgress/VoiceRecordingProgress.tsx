@@ -61,7 +61,7 @@ const VoiceRecordingProgress: React.FC<VoiceRecordingProgressProps> = ({
   }, [startStatus]);
 
   return (
-    <div className="chat-message-text-container">
+    <div className="qb-react-ui-kit chat-message-text-container">
       <div
         onClick={() => {
           stopTimer();

@@ -38,7 +38,7 @@ export default function Message({
   children,
 }: MessageProps) {
   return (
-    <div className="message-item">
+    <div className="qb-react-ui-kit message-item">
       {enableSelect && (
         <CheckBox disabled={disabled} checked={isSelect} onChange={onSelect} />
       )}

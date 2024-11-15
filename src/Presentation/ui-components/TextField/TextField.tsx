@@ -46,7 +46,7 @@ const TextField = forwardRef(
     return (
       <div
         className={cn(
-          'text-field',
+          'qb-react-ui-kit text-field',
           {
             'text-field--disabled': disabled,
           },

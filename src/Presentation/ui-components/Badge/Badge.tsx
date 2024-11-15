@@ -16,7 +16,7 @@ export default function Badge({
   classNames,
 }: BadgeProps) {
   return (
-    <div className={cn('badge', { 'badge--mute': mute }, classNames)}>
+    <div className={cn('qb-react-ui-kit badge', { 'badge--mute': mute }, classNames)}>
       {limit && count > limit ? `${limit}+` : count}
     </div>
   );

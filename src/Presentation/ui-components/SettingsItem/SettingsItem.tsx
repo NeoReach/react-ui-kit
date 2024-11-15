@@ -24,7 +24,7 @@ export default function SettingsItem({
   const [isShow, setIsShow] = useState(false);
 
   return (
-    <div onClick={onClick} className={cn('settings-item', className)}>
+    <div onClick={onClick} className={cn('qb-react-ui-kit settings-item', className)}>
       <div className="settings-item__body">
         <div className="settings-item__left-section">
           <span className="settings-item__icon">{icon}</span>

@@ -18,7 +18,7 @@ export default function Avatar({
 }: AvatarProps) {
   if (src) {
     return (
-      <div className={cn('avatar', `avatar--${size}`, className)}>
+      <div className={cn('qb-react-ui-kit avatar', `avatar--${size}`, className)}>
         <img src={src} className="avatar__image" alt="Avatar" />
       </div>
     );

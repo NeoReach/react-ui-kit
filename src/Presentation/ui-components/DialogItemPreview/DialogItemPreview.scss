@@ -1,6 +1,6 @@
 @import '../../themes/styles/mixins';
 
-.dialog-item-preview {
+.qb-react-ui-kit.dialog-item-preview {
   @include applyBorderBox;
   display: flex;
   align-items: center;

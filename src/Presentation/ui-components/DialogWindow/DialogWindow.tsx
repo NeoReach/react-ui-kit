@@ -26,7 +26,7 @@ export default function DialogWindow({
   if (!open) return null;
 
   return createPortal(
-    <div className={cn('dialog-window', className)}>
+    <div className={cn('qb-react-ui-kit dialog-window', className)}>
       <div className={cn('', { 'dialog-window--disable': disableActions })} />
       <div className="dialog-window__content">
         <Header

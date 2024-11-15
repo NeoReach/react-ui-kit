@@ -62,7 +62,7 @@ export default function Dropdown({
   }, [isOpen]);
 
   return (
-    <div ref={dropdownRef} className={cn('dropdown', className)}>
+    <div ref={dropdownRef} className={cn('qb-react-ui-kit dropdown', className)}>
       <button
         type="button"
         className="dropdown__toggle"
