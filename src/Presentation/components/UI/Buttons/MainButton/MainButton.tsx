@@ -34,11 +34,11 @@ const MainButton: React.FC<MainButtonProps> = ({
 }) => {
   const StyleButton: Record<string, string> = {};
 
-  StyleButton[TypeButton.default] = 'main-button';
-  StyleButton[TypeButton.defaultDisabled] = 'main-disabled-button';
-  StyleButton[TypeButton.danger] = 'danger-button';
-  StyleButton[TypeButton.outlined] = 'secondary-button';
-  StyleButton[TypeButton.text] = 'secondary-button';
+  StyleButton[TypeButton.default] = 'main-button quickblox-react-ui-kit';
+  StyleButton[TypeButton.defaultDisabled] = 'main-disabled-button quickblox-react-ui-kit';
+  StyleButton[TypeButton.danger] = 'danger-button quickblox-react-ui-kit';
+  StyleButton[TypeButton.outlined] = 'secondary-button quickblox-react-ui-kit';
+  StyleButton[TypeButton.text] = 'secondary-button quickblox-react-ui-kit';
 
   const mainClassName = [StyleButton[typeButton]].join(' ');
 

@@ -60,7 +60,7 @@ const RowCenterContainer: React.FC<RowCenterContainerProps> = ({
   const rightContainerStyles = RightContainerSize || {};
 
   return (
-    <div style={containerStyles} className="row-layout-main-container">
+    <div style={containerStyles} className="row-layout-main-container quickblox-react-ui-kit">
       <div
         style={leftContainerStyles}
         className="row-layout-main-container__item-left"

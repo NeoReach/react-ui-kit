@@ -60,7 +60,7 @@ const RowLeftContainer: React.FC<RowLeftContainerProps> = ({
   const rightContainerStyles = RightContainerSize || {};
 
   return (
-    <div style={containerStyles} className="row-left-layout-main-container">
+    <div style={containerStyles} className="row-left-layout-main-container quickblox-react-ui-kit">
       {LeftItem && (
         <div
           style={leftContainerStyles}

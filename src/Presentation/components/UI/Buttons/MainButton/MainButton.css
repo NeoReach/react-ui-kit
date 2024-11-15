@@ -1,103 +1,105 @@
-.main-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 16px 8px 16px;
+.quickblox-react-ui-kit {
+  &.main-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px 8px 16px;
 
-  height: 32px;
+    height: 32px;
 
-  background: var(--main-elements);
-  border-radius: 4px;
+    background: var(--main-elements);
+    border-radius: 4px;
 
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.4px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
 
-  color: var(--main-background);
+    color: var(--main-background);
 
-  border: none;
-  outline: none;
-}
+    border: none;
+    outline: none;
+  }
 
-.danger-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 16px 8px 16px;
+  &.danger-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px 8px 16px;
 
-  height: 32px;
+    height: 32px;
 
-  background: var(--error);
-  border-radius: 4px;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.4px;
-  color: var(--main-background);
+    background: var(--error);
+    border-radius: 4px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    color: var(--main-background);
 
-  border: none;
-  outline: none;
-}
+    border: none;
+    outline: none;
+  }
 
-.secondary-button{
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 16px 8px 16px;
-  height: 32px;
+  &.secondary-button {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px 8px 16px;
+    height: 32px;
 
-  background-color: var(--main-background);
-  border: 1px solid var(--secondary-elements);
-  border-radius: 4px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+    background-color: var(--main-background);
+    border: 1px solid var(--secondary-elements);
+    border-radius: 4px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.4px;
-  color: var(--secondary-elements);
-}
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    color: var(--secondary-elements);
+  }
 
-.main-disabled-button{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 16px 8px 16px;
-  height: 32px;
-  background: var(--disabled-elements);
-  border-radius: 4px;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.4px;
-  color: var(--secondary-text);
+  &.main-disabled-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px 8px 16px;
+    height: 32px;
+    background: var(--disabled-elements);
+    border-radius: 4px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    color: var(--secondary-text);
 
-  border: none;
-  outline: none;
+    border: none;
+    outline: none;
+  }
 }

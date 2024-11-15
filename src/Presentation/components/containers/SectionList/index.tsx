@@ -30,7 +30,7 @@ export default function SectionList<T>(props: SectionListProps<T>) {
   );
 
   return (
-    <div className={cn('section-list', className)}>
+    <div className={cn('section-list', 'quickblox-react-ui-kit', className)}>
       {refreshing && (
         <div className="section-list-loader">
           <LoaderComponent

@@ -74,7 +74,7 @@ export default function ScrollableContainer<T>(props: FlatListProps<T>) {
   console.log('data to scrolling: ', JSON.stringify(data));
 
   return (
-    <div style={rootStyles} className={cn('list', className)}>
+    <div style={rootStyles} className={cn('list', 'quickblox-react-ui-kit', className)}>
       {refreshing && (
         <div>
           <LoaderComponent

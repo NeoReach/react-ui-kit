@@ -4,14 +4,14 @@ $default-height-icon: 44;
 
 // #Loader{fill: $default-background-color};
 
-.loader {
-  animation: spin 2s linear infinite;
+.quickblox-react-ui-kit.loader {
+  animation: spinQbLoader 2s linear infinite;
   svg path {fill: $default-background-color};
   min-width: $default-width-icon;
   min-height: $default-height-icon;
 }
 
-@keyframes spin {
+@keyframes spinQbLoader {
   0% {
     transform: rotate(0deg);
   }

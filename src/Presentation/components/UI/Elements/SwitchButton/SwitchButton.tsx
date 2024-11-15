@@ -30,7 +30,7 @@ const SwitchButton: React.FC<SwitchButtonProps> = ({
         if (touchHandler) touchHandler();
       }}
     >
-      <label className="switch">
+      <label className="quickblox-react-ui-kit switch">
         <input type="checkbox" />
         <span className="slider round" />
       </label>

@@ -18,7 +18,7 @@ const ColumnContainer: React.FC<ContainerProps> = ({
     : containerStyles;
 
   return (
-    <div style={resumeStyles} className="column-container">
+    <div style={resumeStyles} className="column-container quickblox-react-ui-kit">
       {children}
     </div>
   );

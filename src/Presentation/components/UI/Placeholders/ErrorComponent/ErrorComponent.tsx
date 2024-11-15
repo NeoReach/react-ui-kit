@@ -23,7 +23,7 @@ const ErrorComponent: React.FC<ErrorComponentProps> = ({
   theme = undefined,
 }: ErrorComponentProps) => {
   return (
-    <div className="error-container-wrapper">
+    <div className="quickblox-react-ui-kit error-container-wrapper">
       <ColumnContainer>
         <div
           style={{ width: '52px', height: '52px' }}
