@@ -1,0 +1,24 @@
+import React from 'react';
+import { FunctionTypeBooleanToVoid, FunctionTypeMessageEntityToVoid, FunctionTypeStringToVoid } from '../../../../CommonTypes/BaseViewModel';
+import { MessageEntity } from '../../../../Domain/entity/MessageEntity';
+import UiKitTheme from '../../../themes/UiKitTheme';
+import { AIMessageWidget } from '../AIWidgets/AIMessageWidget';
+import { GetUserNameFct } from './IncomingMessage/IncomingMessage';
+type MessageProps = {
+    message: MessageEntity;
+    userId: number;
+    setWaitAIWidget: FunctionTypeBooleanToVoid;
+    setShowErrorToast: FunctionTypeBooleanToVoid;
+    setMessageErrorToast: FunctionTypeStringToVoid;
+    messagesToView: MessageEntity[];
+    AITranslateWidget: AIMessageWidget;
+    AIAssistWidget: AIMessageWidget;
+    onReply: FunctionTypeMessageEntityToVoid;
+    onForward: FunctionTypeMessageEntityToVoid;
+    defaultGetSenderName: GetUserNameFct;
+    theme?: UiKitTheme;
+    enableForwarding: boolean;
+    enableReplying: boolean;
+};
+declare const Message: React.FC<MessageProps>;
+export default Message;

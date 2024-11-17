@@ -1,0 +1,30 @@
+import React from 'react';
+import './IncomingMessage.scss';
+import UiKitTheme from '../../../../themes/UiKitTheme';
+import { MessageEntity } from '../../../../../Domain/entity/MessageEntity';
+import { AIMessageWidget } from '../../AIWidgets/AIMessageWidget';
+import { UserEntity } from '../../../../../Domain/entity/UserEntity';
+import { AvatarContentIncomingUserProps } from './AvatarContentIncomingUser/AvatarContentIncomingUser';
+import { FunctionTypeMessageEntityToVoid } from '../../../../../CommonTypes/BaseViewModel';
+export type GetUserNameFct = (props: {
+    userId?: number;
+    sender?: UserEntity;
+}) => Promise<string | undefined>;
+export declare function IncomingMessage(props: {
+    theme: UiKitTheme | undefined;
+    senderNameFct: GetUserNameFct;
+    message: MessageEntity;
+    date_sent: string;
+    onReply: FunctionTypeMessageEntityToVoid;
+    onForward: FunctionTypeMessageEntityToVoid;
+    onStartLoader: () => void;
+    onStopLoader: () => void;
+    onErrorToast: (messageError: string) => void;
+    currentUserId?: number;
+    messagesToView: MessageEntity[];
+    AITranslation?: AIMessageWidget;
+    AIAnswerToMessage?: AIMessageWidget;
+    userIconRenderer?: (props: AvatarContentIncomingUserProps) => React.ReactElement;
+    enableForwarding: boolean;
+    enableReplying: boolean;
+}): import("react/jsx-runtime").JSX.Element;

@@ -1,0 +1,27 @@
+import React from 'react';
+import './IncomingForwardedMessage.scss';
+import { AvatarContentIncomingUserProps } from '../IncomingMessage/AvatarContentIncomingUser/AvatarContentIncomingUser';
+import UiKitTheme from '../../../../themes/UiKitTheme';
+import { MessageEntity } from '../../../../../Domain/entity/MessageEntity';
+import { FunctionTypeMessageEntityToVoid } from '../../../../../CommonTypes/BaseViewModel';
+import { AIMessageWidget } from '../../AIWidgets/AIMessageWidget';
+declare function IncomingForwardedMessage(props: {
+    theme?: UiKitTheme;
+    messages: MessageEntity[];
+    date_sent: string;
+    userIconRenderer?: (props: AvatarContentIncomingUserProps) => React.ReactElement;
+    onReply: FunctionTypeMessageEntityToVoid;
+    onForward: FunctionTypeMessageEntityToVoid;
+    repliedUserName: string;
+    renderOringinalMessage: React.ReactNode;
+    AITranslation?: AIMessageWidget;
+    AIAnswerToMessage?: AIMessageWidget;
+    onStartLoader: () => void;
+    onStopLoader: () => void;
+    onErrorToast: (messageError: string) => void;
+    currentUserId?: number;
+    messagesToView: MessageEntity[];
+    enableForwarding: boolean;
+    enableReplying: boolean;
+}): import("react/jsx-runtime").JSX.Element;
+export default IncomingForwardedMessage;

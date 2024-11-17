@@ -1,0 +1,23 @@
+import React from 'react';
+import './AIRephraseWidget.scss';
+import { Tone } from 'qb-ai-rephrase/src/Tone';
+import { FunctionTypeBooleanToVoid, FunctionTypeStringToVoid } from '../../../../../CommonTypes/BaseViewModel';
+import { AIMessageWidget } from '../AIMessageWidget';
+import { MessageEntity } from '../../../../../Domain/entity/MessageEntity';
+import UiKitTheme from '../../../../themes/UiKitTheme';
+type AIRephraseWidgetProps = {
+    messageText: string;
+    waitAIWidget: boolean;
+    setWaitAIWidget: FunctionTypeBooleanToVoid;
+    setMessageErrorToast: FunctionTypeStringToVoid;
+    AIRephrase?: AIMessageWidget;
+    messagesToView: MessageEntity[];
+    currentUserId: number;
+    maxTokensForAIRephrase: number;
+    rephraseTones: Tone[];
+    theme?: UiKitTheme;
+    setPrevValueText: FunctionTypeStringToVoid;
+    disableActions?: boolean;
+};
+declare const AIRephraseWidget: React.FC<AIRephraseWidgetProps>;
+export default AIRephraseWidget;

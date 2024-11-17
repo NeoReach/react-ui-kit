@@ -1,0 +1,21 @@
+import React from 'react';
+import './DialogInfo.scss';
+import { DialogEntity } from '../../../Domain/entity/DialogEntity';
+import { FunctionTypeBooleanToVoid, FunctionTypeVoidToVoid } from '../../../CommonTypes/BaseViewModel';
+import { DialogListViewModel } from '../DialogList/DialogListViewModel';
+import UiKitTheme from '../../themes/UiKitTheme';
+import { UserEntity } from '../../../Domain/entity/UserEntity';
+type HeaderDialogsProps = {
+    dialog: DialogEntity;
+    dialogViewModel: DialogListViewModel;
+    onCloseDialogInformationHandler: FunctionTypeVoidToVoid;
+    onShowAllMemberClick: FunctionTypeBooleanToVoid;
+    users: UserEntity[];
+    theme?: UiKitTheme;
+    subHeaderContent?: React.ReactNode;
+    upHeaderContent?: React.ReactNode;
+    rootStyles?: React.CSSProperties;
+    disableAction?: boolean;
+};
+declare const DialogInfo: React.FC<HeaderDialogsProps>;
+export default DialogInfo;

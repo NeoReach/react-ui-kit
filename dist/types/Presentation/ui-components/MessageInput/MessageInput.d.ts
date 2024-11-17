@@ -1,0 +1,21 @@
+import React, { ReactElement } from 'react';
+import { FunctionTypeStringToVoid, FunctionTypeVoidToVoid } from '../../../CommonTypes/BaseViewModel';
+import './MessageInput.scss';
+export type MessageInputProps = {
+    value: string;
+    onChange?: FunctionTypeStringToVoid;
+    onChanging?: FunctionTypeStringToVoid;
+    onSend?: FunctionTypeStringToVoid;
+    enableVoice?: boolean;
+    onVoice?: FunctionTypeVoidToVoid;
+    disableAttachment?: boolean;
+    onAttachment: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    previewMessage?: ReactElement;
+    rephrase?: ReactElement;
+    loading?: boolean;
+    placeholder?: string;
+    disableActions?: boolean;
+    className?: string;
+};
+declare const MessageInput: React.FC<MessageInputProps>;
+export default MessageInput;
