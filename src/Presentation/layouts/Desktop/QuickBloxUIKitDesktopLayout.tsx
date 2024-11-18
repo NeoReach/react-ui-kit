@@ -319,11 +319,11 @@ const QuickBloxUIKitDesktopLayout: React.FC<
   const [audioChunks, setAudioChunks] = useState<Array<Blob>>([]);
   const newModal = useModal();
   const [dialogToLeave, setDialogToLeave] = useState<DialogEntity>();
-  const [showDialogList, setShowDialogList] = useState<boolean>(true);
+  const [showDialogList, setShowDialogList] = useState<boolean>(false);
   const [showDialogMessages, setShowDialogMessages] = useState<boolean>(true);
   const [showDialogInformation, setShowDialogInformation] =
-    useState<boolean>(false);
-  const [isAllMembersShow, setIsAllMembersShow] = React.useState(false);
+    useState<boolean>(true);
+  const [isAllMembersShow, setIsAllMembersShow] = React.useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
   // functions
@@ -777,11 +777,11 @@ const QuickBloxUIKitDesktopLayout: React.FC<
   }, [currentContext.InitParams]);
   useEffect(() => {
     if (isMobile) {
-      if (!selectedDialog) {
-        setShowDialogList(true);
-      } else {
-        setShowDialogList(false);
-      }
+      // if (!selectedDialog) {
+      //   setShowDialogList(true);
+      // } else {
+      //   setShowDialogList(false);
+      // }
       const canShowMessages =
         selectedDialog && !(showDialogInformation && needDialogInformation);
 
@@ -794,23 +794,24 @@ const QuickBloxUIKitDesktopLayout: React.FC<
         setShowDialogInformation(true);
       else setShowDialogInformation(false);
     } else {
-      setShowDialogList(true);
+      // setShowDialogList(true);
       setShowDialogMessages(true);
       setShowDialogInformation(true);
     }
-    //
-    // const sizeChangingLogString = `SIZE INFO: height: ${height.toString()} clientHeight: ${clientHeight}  width: ${width.toString()} breakpont: ${breakpoint.toString()} isMobile:
-    //    ${isMobile?.toString()} selectedDialog:
-    //   ${selectedDialog ? 'true' : 'false'} showDialogMessages:
-    //    ${showDialogMessages?.toString()} showDialogList:
-    //    ${showDialogList?.toString()} showDialogInformation:
-    //    ${showDialogInformation?.toString()}`;
-    //
-    // console.log(sizeChangingLogString);
+    
+    const sizeChangingLogString = `SIZE INFO: height: ${height.toString()} clientHeight: ${clientHeight}  width: ${width.toString()} breakpont: ${breakpoint.toString()} isMobile:
+       ${isMobile?.toString()} selectedDialog:
+      ${selectedDialog ? 'true' : 'false'} showDialogMessages:
+       ${showDialogMessages?.toString()} showDialogList:
+       ${showDialogList?.toString()} showDialogInformation:
+       ${showDialogInformation?.toString()}`;
+    
+    console.log(sizeChangingLogString);
   }, [isMobile]);
   useEffect(() => {
     if (browserOnline) {
       setIsOnline(true);
+      console.debug("hit test");
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/ban-ts-comment
       // @ts-ignore
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -871,19 +872,19 @@ const QuickBloxUIKitDesktopLayout: React.FC<
       userViewModel.getUsers();
     }
   }, [userViewModel.entity]);
-  useEffect(() => {
-    if (selectedDialog && selectedDialog) {
-      dialogsViewModel.entity = selectedDialog;
-      userViewModel.entity = selectedDialog;
+  // useEffect(() => {
+  //   if (selectedDialog && selectedDialog) {
+  //     dialogsViewModel.entity = selectedDialog;
+  //     userViewModel.entity = selectedDialog;
 
-      if (isMobile) {
-        setShowDialogList(false);
-        setShowDialogMessages(true);
-      }
-    } else {
-      setShowDialogList(true);
-    }
-  }, [selectedDialog]);
+  //     if (isMobile) {
+  //       setShowDialogList(false);
+  //       setShowDialogMessages(true);
+  //     }
+  //   } else {
+  //     setShowDialogList(true);
+  //   }
+  // }, [selectedDialog]);
   useEffect(() => {
     if (messagesViewModel.entity) {
       messagesViewModel.getMessages(new Pagination(0, messagePerPage));
@@ -1008,17 +1009,17 @@ const QuickBloxUIKitDesktopLayout: React.FC<
       setMessageText(defaultAIAssistWidget?.textToContent);
     }
   }, [defaultAIAssistWidget?.textToContent]);
-  useEffect(() => {
-    if (isMobile) {
-      if (needDialogInformation) {
-        setShowDialogMessages(false);
-        setShowDialogInformation(true);
-      } else {
-        setShowDialogMessages(true);
-        setShowDialogInformation(false);
-      }
-    }
-  }, [needDialogInformation]);
+  // useEffect(() => {
+  //   if (isMobile) {
+  //     if (needDialogInformation) {
+  //       setShowDialogMessages(false);
+  //       setShowDialogInformation(true);
+  //     } else {
+  //       setShowDialogMessages(true);
+  //       setShowDialogInformation(false);
+  //     }
+  //   }
+  // }, [needDialogInformation]);
   useEffect(() => {
     if (dialogToLeave) {
       handleDialogOnClick();
@@ -1050,28 +1051,30 @@ const QuickBloxUIKitDesktopLayout: React.FC<
           }}
           onHeightChange={handleHeightChange}
           theme={theme}
-          dialogsView={
-            showDialogList ? (
-              <DialogList
-                disableAction={!isOnline}
-                scrollableHeight={dialogListScrollableHeight}
-                // subHeaderContent={<CompanyLogo />}
-                // upHeaderContent={<CompanyLogo />}
-                dialogListViewModel={dialogsViewModel} // 1 Get 2 Update UseCase
-                selectedDialog={dialogsViewModel.entity}
-                onDialogSelected={selectDialogActions}
-                onCreateDialog={createDialogHandler}
-                onLeaveDialog={leaveDialogHandler}
-                additionalSettings={{
-                  withoutHeader: false,
-                  themeHeader: theme,
-                  themePreview: theme,
-                  useSubHeader: false,
-                  useUpHeader: false,
-                }}
-              />
-            ) : null
-          }
+          dialogsView={null}
+          // dialogsView={
+          //   showDialogList ? (
+          //     <DialogList
+          //       disableAction={!isOnline}
+          //       scrollableHeight={dialogListScrollableHeight}
+          //       // subHeaderContent={<CompanyLogo />}
+          //       // upHeaderContent={<CompanyLogo />}
+          //       dialogListViewModel={dialogsViewModel} // 1 Get 2 Update UseCase
+          //       selectedDialog={dialogsViewModel.entity}
+          //       onDialogSelected={selectDialogActions}
+          //       onCreateDialog={createDialogHandler}
+          //       onLeaveDialog={leaveDialogHandler}
+          //       additionalSettings={{
+          //         withoutHeader: false,
+          //         themeHeader: theme,
+          //         themePreview: theme,
+          //         useSubHeader: false,
+          //         useUpHeader: false,
+          //       }}
+          //     />
+          //   ) : null
+          // }
+
           dialogMessagesView={
             showDialogMessages &&
             selectedDialog &&
@@ -1158,8 +1161,8 @@ const QuickBloxUIKitDesktopLayout: React.FC<
                               }
                             }}
                             listRef={listRef}
-                            AIAssistWidget={defaultAIAssistWidget}
-                            AITranslateWidget={defaultAITranslateWidget}
+                            // AIAssistWidget={defaultAIAssistWidget}
+                            // AITranslateWidget={defaultAITranslateWidget}
                             languagesForAITranslate={DefaultConfigurations.getAdditionalLanguagesForAITranslate(
                               // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
                               currentContext.InitParams.qbConfig.configAIApi
@@ -1218,26 +1221,26 @@ const QuickBloxUIKitDesktopLayout: React.FC<
                       if (messagesViewModel?.loading || !isOnline) return;
                       setIsRecording(!isRecording);
                     }}
-                    rephrase={
-                      <AIRephraseWidget
-                        disableActions={!isOnline}
-                        waitAIWidget={waitAIWidget}
-                        messageText={messageText}
-                        theme={theme}
-                        AIRephrase={defaultAIRephraseWidget}
-                        setWaitAIWidget={setWaitAIWidget}
-                        setPrevValueText={(prevValue) => {
-                          setMessageText(prevValue);
-                        }}
-                        setMessageErrorToast={(e: string) => {
-                          toast(e);
-                        }}
-                        messagesToView={messagesViewModel.messages}
-                        currentUserId={currentUserId || -1}
-                        maxTokensForAIRephrase={maxTokensForAIRephrase}
-                        rephraseTones={rephraseTones}
-                      />
-                    }
+                    // rephrase={
+                    //   <AIRephraseWidget
+                    //     disableActions={!isOnline}
+                    //     waitAIWidget={waitAIWidget}
+                    //     messageText={messageText}
+                    //     theme={theme}
+                    //     AIRephrase={defaultAIRephraseWidget}
+                    //     setWaitAIWidget={setWaitAIWidget}
+                    //     setPrevValueText={(prevValue) => {
+                    //       setMessageText(prevValue);
+                    //     }}
+                    //     setMessageErrorToast={(e: string) => {
+                    //       toast(e);
+                    //     }}
+                    //     messagesToView={messagesViewModel.messages}
+                    //     currentUserId={currentUserId || -1}
+                    //     maxTokensForAIRephrase={maxTokensForAIRephrase}
+                    //     rephraseTones={rephraseTones}
+                    //   />
+                    // }
                   />
                 }
                 maxWidthToResize={maxWidthToResizing}
@@ -1296,7 +1299,7 @@ const QuickBloxUIKitDesktopLayout: React.FC<
             ))
           }
         />
-        <DialogWindow
+        {/* <DialogWindow
           open={isOpen}
           title="Leave dialog?"
           onClose={handleDialogOnClick}
@@ -1309,8 +1312,8 @@ const QuickBloxUIKitDesktopLayout: React.FC<
               Leave
             </Button>
           </div>
-        </DialogWindow>
-        <DialogWindow
+        </DialogWindow> */}
+        {/* <DialogWindow
           title="New dialog"
           onClose={newModal.toggleModal}
           open={newModal.isOpen}
@@ -1329,23 +1332,23 @@ const QuickBloxUIKitDesktopLayout: React.FC<
             }}
             isOnline={isOnline}
           />
-        </DialogWindow>
-        {selectedDialog && (
-          <DialogWindow
-            title="Forward"
-            open={forwardMessageModal.isOpen}
-            onClose={forwardMessageModal.toggleModal}
-          >
-            <ForwardMessageFlow
-              messages={[forwardMessage!]}
-              currentDialog={selectedDialog}
-              currentUserName={userName || ''}
-              dialogs={dialogsViewModel.dialogs}
-              onSendData={handleSendData}
-              disableActions={!isOnline}
-            />
-          </DialogWindow>
-        )}
+        </DialogWindow> */}
+        {/* {selectedDialog && ( 
+          // <DialogWindow
+          //   title="Forward"
+          //   open={forwardMessageModal.isOpen}
+          //   onClose={forwardMessageModal.toggleModal}
+          // >
+          //   <ForwardMessageFlow
+          //     messages={[forwardMessage!]}
+          //     currentDialog={selectedDialog}
+          //     currentUserName={userName || ''}
+          //     dialogs={dialogsViewModel.dialogs}
+          //     onSendData={handleSendData}
+          //     disableActions={!isOnline}
+          //   />
+          // </DialogWindow>
+        )}*/}
       </div>
     </ToastProvider>
   );

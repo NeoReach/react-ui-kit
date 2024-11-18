@@ -22,7 +22,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": false,
-    "declarationDir": "./dist/types",
+    "declarationDir": "./dist/",
     "jsx": "react-jsx",
   },
   "include": [

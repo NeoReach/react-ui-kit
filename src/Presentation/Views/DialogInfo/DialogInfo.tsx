@@ -374,7 +374,7 @@ const DialogInfo: React.FC<HeaderDialogsProps> = ({
           <div className="dialog-information-profile-dialog-name">
             {dialogViewModel?.entity?.name || dialog?.name}
           </div>
-          <div className="dialog-information-profile-edit">
+          {/* <div className="dialog-information-profile-edit">
             {dialog.type !== DialogType.private &&
             dialog.ownerId === currentUserId ? (
               <div
@@ -407,7 +407,7 @@ const DialogInfo: React.FC<HeaderDialogsProps> = ({
                 </DialogWindow>
               </div>
             ) : null}
-          </div>
+          </div> */}
         </div>
         {dialog.type !== DialogType.private ? (
           <SettingsItem
@@ -428,7 +428,7 @@ const DialogInfo: React.FC<HeaderDialogsProps> = ({
                 </div>
               )}
               <div className="dialog-info-action-wrapper-settings">
-                <DialogWindow
+                {/* <DialogWindow
                   disableActions={disableAction}
                   title="Edit dialog"
                   open={inviteMembersModal.isOpen}
@@ -444,15 +444,15 @@ const DialogInfo: React.FC<HeaderDialogsProps> = ({
                     typeDialog={dialog.type}
                     idOwnerDialog={dialog.ownerId}
                   />
-                </DialogWindow>
-                <Button
+                </DialogWindow> */}
+                {/* <Button
                   className="dialog-info-action-wrapper-button"
                   onClick={inviteMembersModal.toggleModal}
                   variant="outlined"
                   disabled={dialog.ownerId !== currentUserId || disableAction}
                 >
                   Invite members
-                </Button>
+                </Button> */}
                 <Button
                   className="dialog-info-action-wrapper-button"
                   onClick={() => onShowAllMemberClick(true)}
@@ -465,15 +465,15 @@ const DialogInfo: React.FC<HeaderDialogsProps> = ({
             </ColumnContainer>
           </SettingsItem>
         ) : null}
-        <SettingsItem
+        {/* <SettingsItem
           icon={<LeaveSvg />}
           title="Leave dialog"
           onClick={!disableAction ? leaveModal.toggleModal : undefined}
           className={cn('dialog-info-leave', {
             'dialog-info-leave--disable': disableAction,
           })}
-        />
-        <DialogWindow
+        /> */}
+        {/* <DialogWindow
           open={leaveModal.isOpen}
           title="Leave dialog?"
           onClose={leaveModal.toggleModal}
@@ -486,7 +486,7 @@ const DialogInfo: React.FC<HeaderDialogsProps> = ({
               Leave
             </Button>
           </div>
-        </DialogWindow>
+        </DialogWindow> */}
       </ColumnContainer>
     </div>
   );

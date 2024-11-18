@@ -575,34 +575,6 @@ const SvgDown = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createE
 
 /***/ }),
 
-/***/ "./src/Presentation/icons/navigation/leave.svg":
-/*!*****************************************************!*\
-  !*** ./src/Presentation/icons/navigation/leave.svg ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ReactComponent: () => (/* binding */ SvgLeave),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _path;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-
-const SvgLeave = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 44 44"
-}, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
-  d: "m31.167 14.667-2.585 2.585 2.896 2.915H16.5v3.666h14.978l-2.896 2.897 2.585 2.603L38.5 22zm-22-5.5H22V5.5H9.167A3.677 3.677 0 0 0 5.5 9.167v25.666A3.677 3.677 0 0 0 9.167 38.5H22v-3.667H9.167z"
-})));
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDQgNDQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8cGF0aCBkPSJNMzEuMTY2NyAxNC42NjY3TDI4LjU4MTcgMTcuMjUxN0wzMS40NzgzIDIwLjE2NjdIMTYuNVYyMy44MzMzSDMxLjQ3ODNMMjguNTgxNyAyNi43M0wzMS4xNjY3IDI5LjMzMzNMMzguNSAyMkwzMS4xNjY3IDE0LjY2NjdaTTkuMTY2NjcgOS4xNjY2N0gyMlY1LjVIOS4xNjY2N0M3LjE1IDUuNSA1LjUgNy4xNSA1LjUgOS4xNjY2N1YzNC44MzMzQzUuNSAzNi44NSA3LjE1IDM4LjUgOS4xNjY2NyAzOC41SDIyVjM0LjgzMzNIOS4xNjY2N1Y5LjE2NjY3WiIvPgo8L3N2Zz4K");
-
-/***/ }),
-
 /***/ "./src/Presentation/icons/navigation/more.svg":
 /*!****************************************************!*\
   !*** ./src/Presentation/icons/navigation/more.svg ***!
@@ -12447,7 +12419,7 @@ var CreateDialogUseCase = /** @class */ (function () {
                         remoteMessageDTO.message =
                             this.textInformationMessage && this.textInformationMessage.length > 0
                                 ? this.textInformationMessage
-                                : "User ".concat(this.newDialog.ownerId, " create new dialog ").concat(this.newDialog.name);
+                                : "New dialog ".concat(this.newDialog.name, " was created");
                         this.eventMessagesRepository.dispatchEvent(_entity_EventMessageType__WEBPACK_IMPORTED_MODULE_1__["default"].RegularMessage, remoteMessageDTO, __spreadArray([], this.newDialog.participantIds, true));
                         return [2 /*return*/, Promise.resolve(result)];
                 }
@@ -18030,29 +18002,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _DialogInfo_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DialogInfo.scss */ "./src/Presentation/Views/DialogInfo/DialogInfo.scss");
 /* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_containers_ColumnContainer_ColumnContainer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../components/containers/ColumnContainer/ColumnContainer */ "./src/Presentation/components/containers/ColumnContainer/ColumnContainer.tsx");
-/* harmony import */ var _components_UI_svgs_Icons_Contents_GroupChat__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/UI/svgs/Icons/Contents/GroupChat */ "./src/Presentation/components/UI/svgs/Icons/Contents/GroupChat/index.tsx");
-/* harmony import */ var _UsersList_UsersList__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./UsersList/UsersList */ "./src/Presentation/Views/DialogInfo/UsersList/UsersList.tsx");
-/* harmony import */ var _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../Domain/entity/DialogTypes */ "./src/Domain/entity/DialogTypes.ts");
-/* harmony import */ var _components_UI_svgs_Icons_Contents_PublicChannel__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../components/UI/svgs/Icons/Contents/PublicChannel */ "./src/Presentation/components/UI/svgs/Icons/Contents/PublicChannel/index.tsx");
-/* harmony import */ var _components_UI_svgs_Icons_Contents_User__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/UI/svgs/Icons/Contents/User */ "./src/Presentation/components/UI/svgs/Icons/Contents/User/index.tsx");
-/* harmony import */ var _EditDialog_EditDialog__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../EditDialog/EditDialog */ "./src/Presentation/Views/EditDialog/EditDialog.tsx");
-/* harmony import */ var _Domain_entity_PublicDialogEntity__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../Domain/entity/PublicDialogEntity */ "./src/Domain/entity/PublicDialogEntity.ts");
-/* harmony import */ var _EditDialog_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../EditDialog/UserAvatar/UserAvatar */ "./src/Presentation/Views/EditDialog/UserAvatar/UserAvatar.tsx");
-/* harmony import */ var _providers_QuickBloxUIKitProvider_useQbInitializedDataContext__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../providers/QuickBloxUIKitProvider/useQbInitializedDataContext */ "./src/Presentation/providers/QuickBloxUIKitProvider/useQbInitializedDataContext.ts");
-/* harmony import */ var _UsersList_useUsersListViewModel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./UsersList/useUsersListViewModel */ "./src/Presentation/Views/DialogInfo/UsersList/useUsersListViewModel.ts");
-/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../icons */ "./src/Presentation/icons/navigation/close.svg");
-/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../icons */ "./src/Presentation/icons/contents/group-chat.svg");
-/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../icons */ "./src/Presentation/icons/navigation/leave.svg");
-/* harmony import */ var _ui_components__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../ui-components */ "./src/Presentation/ui-components/Button/Button.tsx");
-/* harmony import */ var _ui_components__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../ui-components */ "./src/Presentation/ui-components/DialogWindow/DialogWindow.tsx");
-/* harmony import */ var _ui_components__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../ui-components */ "./src/Presentation/ui-components/SettingsItem/SettingsItem.tsx");
-/* harmony import */ var _ui_components__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../ui-components */ "./src/Presentation/ui-components/Badge/Badge.tsx");
-/* harmony import */ var _hooks_useModal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../hooks/useModal */ "./src/hooks/useModal.ts");
-/* harmony import */ var _ui_components_Header_Header__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../ui-components/Header/Header */ "./src/Presentation/ui-components/Header/Header.tsx");
-/* harmony import */ var _InviteMembers_InviteMembers__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../InviteMembers/InviteMembers */ "./src/Presentation/Views/InviteMembers/InviteMembers.tsx");
+/* harmony import */ var _components_containers_ColumnContainer_ColumnContainer__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../components/containers/ColumnContainer/ColumnContainer */ "./src/Presentation/components/containers/ColumnContainer/ColumnContainer.tsx");
+/* harmony import */ var _components_UI_svgs_Icons_Contents_GroupChat__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/UI/svgs/Icons/Contents/GroupChat */ "./src/Presentation/components/UI/svgs/Icons/Contents/GroupChat/index.tsx");
+/* harmony import */ var _UsersList_UsersList__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./UsersList/UsersList */ "./src/Presentation/Views/DialogInfo/UsersList/UsersList.tsx");
+/* harmony import */ var _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Domain/entity/DialogTypes */ "./src/Domain/entity/DialogTypes.ts");
+/* harmony import */ var _components_UI_svgs_Icons_Contents_PublicChannel__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/UI/svgs/Icons/Contents/PublicChannel */ "./src/Presentation/components/UI/svgs/Icons/Contents/PublicChannel/index.tsx");
+/* harmony import */ var _components_UI_svgs_Icons_Contents_User__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/UI/svgs/Icons/Contents/User */ "./src/Presentation/components/UI/svgs/Icons/Contents/User/index.tsx");
+/* harmony import */ var _Domain_entity_PublicDialogEntity__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../Domain/entity/PublicDialogEntity */ "./src/Domain/entity/PublicDialogEntity.ts");
+/* harmony import */ var _EditDialog_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../EditDialog/UserAvatar/UserAvatar */ "./src/Presentation/Views/EditDialog/UserAvatar/UserAvatar.tsx");
+/* harmony import */ var _providers_QuickBloxUIKitProvider_useQbInitializedDataContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../providers/QuickBloxUIKitProvider/useQbInitializedDataContext */ "./src/Presentation/providers/QuickBloxUIKitProvider/useQbInitializedDataContext.ts");
+/* harmony import */ var _UsersList_useUsersListViewModel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./UsersList/useUsersListViewModel */ "./src/Presentation/Views/DialogInfo/UsersList/useUsersListViewModel.ts");
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../icons */ "./src/Presentation/icons/navigation/close.svg");
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../icons */ "./src/Presentation/icons/contents/group-chat.svg");
+/* harmony import */ var _ui_components__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../ui-components */ "./src/Presentation/ui-components/SettingsItem/SettingsItem.tsx");
+/* harmony import */ var _ui_components__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../ui-components */ "./src/Presentation/ui-components/Badge/Badge.tsx");
+/* harmony import */ var _ui_components__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../ui-components */ "./src/Presentation/ui-components/Button/Button.tsx");
+/* harmony import */ var _hooks_useModal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../hooks/useModal */ "./src/hooks/useModal.ts");
+/* harmony import */ var _ui_components_Header_Header__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../ui-components/Header/Header */ "./src/Presentation/ui-components/Header/Header.tsx");
 var __assign = (undefined && undefined.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -18118,9 +18084,6 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
-
-
-
 // eslint-disable-next-line react/function-component-definition
 var DialogInfo = function (_a) {
     var _b, _c;
@@ -18132,11 +18095,11 @@ var DialogInfo = function (_a) {
     var _j = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''), dialogAvatarUrl = _j[0], setDialogAvatarUrl = _j[1];
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     var _k = react__WEBPACK_IMPORTED_MODULE_1___default().useState(document.documentElement.getAttribute('data-theme')), themeName = _k[0], setThemeName = _k[1];
-    var userViewModel = (0,_UsersList_useUsersListViewModel__WEBPACK_IMPORTED_MODULE_5__["default"])(dialog);
-    var editModal = (0,_hooks_useModal__WEBPACK_IMPORTED_MODULE_6__["default"])();
-    var inviteMembersModal = (0,_hooks_useModal__WEBPACK_IMPORTED_MODULE_6__["default"])();
-    var leaveModal = (0,_hooks_useModal__WEBPACK_IMPORTED_MODULE_6__["default"])();
-    var currentContext = (0,_providers_QuickBloxUIKitProvider_useQbInitializedDataContext__WEBPACK_IMPORTED_MODULE_7__["default"])();
+    var userViewModel = (0,_UsersList_useUsersListViewModel__WEBPACK_IMPORTED_MODULE_4__["default"])(dialog);
+    var editModal = (0,_hooks_useModal__WEBPACK_IMPORTED_MODULE_5__["default"])();
+    var inviteMembersModal = (0,_hooks_useModal__WEBPACK_IMPORTED_MODULE_5__["default"])();
+    var leaveModal = (0,_hooks_useModal__WEBPACK_IMPORTED_MODULE_5__["default"])();
+    var currentContext = (0,_providers_QuickBloxUIKitProvider_useQbInitializedDataContext__WEBPACK_IMPORTED_MODULE_6__["default"])();
     var currentUserId = 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     (_b = currentContext.storage.REMOTE_DATA_SOURCE.authInformation) === null || _b === void 0 ? void 0 : _b.userId.toString();
@@ -18182,7 +18145,7 @@ var DialogInfo = function (_a) {
                 case 0:
                     result = '';
                     participants = (dialogViewModel === null || dialogViewModel === void 0 ? void 0 : dialogViewModel.entity) &&
-                        (dialogViewModel === null || dialogViewModel === void 0 ? void 0 : dialogViewModel.entity.type) === _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_8__.DialogType.private
+                        (dialogViewModel === null || dialogViewModel === void 0 ? void 0 : dialogViewModel.entity.type) === _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_7__.DialogType.private
                         ? [
                             (dialogViewModel === null || dialogViewModel === void 0 ? void 0 : dialogViewModel.entity)
                                 .participantId,
@@ -18215,22 +18178,22 @@ var DialogInfo = function (_a) {
     // eslint-disable-next-line consistent-return
     var renderIconForTypeDialog = function (dialogEntity) {
         console.log(JSON.stringify(dialogEntity));
-        if (dialogEntity.type === _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_8__.DialogType.group) {
+        if (dialogEntity.type === _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_7__.DialogType.group) {
             var groupDialogEntity = dialogEntity;
             if (groupDialogEntity.photo) {
-                return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_EditDialog_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_9__["default"], { urlAvatar: groupDialogEntity.photo, iconTheme: { width: '81px', height: '81px' } }));
+                return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_EditDialog_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_8__["default"], { urlAvatar: groupDialogEntity.photo, iconTheme: { width: '81px', height: '81px' } }));
             }
-            return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-default-icon" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-ellipse" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-contents" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components_UI_svgs_Icons_Contents_GroupChat__WEBPACK_IMPORTED_MODULE_10__["default"], { width: "51", height: "51", color: "var(--secondary-text)" }) })) })) })));
+            return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-default-icon" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-ellipse" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-contents" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components_UI_svgs_Icons_Contents_GroupChat__WEBPACK_IMPORTED_MODULE_9__["default"], { width: "51", height: "51", color: "var(--secondary-text)" }) })) })) })));
         }
-        if (dialogEntity.type === _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_8__.DialogType.private) {
-            return dialogAvatarUrl ? ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_EditDialog_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_9__["default"], { urlAvatar: dialogAvatarUrl, iconTheme: { width: '81px', height: '81px' } })) : ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-default-icon" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-ellipse" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-contents" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components_UI_svgs_Icons_Contents_User__WEBPACK_IMPORTED_MODULE_11__["default"], { width: "51", height: "51", color: "var(--secondary-text)" }) })) })) })));
+        if (dialogEntity.type === _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_7__.DialogType.private) {
+            return dialogAvatarUrl ? ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_EditDialog_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_8__["default"], { urlAvatar: dialogAvatarUrl, iconTheme: { width: '81px', height: '81px' } })) : ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-default-icon" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-ellipse" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-contents" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components_UI_svgs_Icons_Contents_User__WEBPACK_IMPORTED_MODULE_10__["default"], { width: "51", height: "51", color: "var(--secondary-text)" }) })) })) })));
         }
-        if (dialogEntity.type === _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_8__.DialogType.public) {
+        if (dialogEntity.type === _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_7__.DialogType.public) {
             var publicDialogEntity = dialogEntity;
             if (publicDialogEntity.photo) {
-                return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_EditDialog_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_9__["default"], { urlAvatar: publicDialogEntity.photo, iconTheme: { width: '81px', height: '81px' } }));
+                return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_EditDialog_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_8__["default"], { urlAvatar: publicDialogEntity.photo, iconTheme: { width: '81px', height: '81px' } }));
             }
-            return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-default-icon" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-ellipse" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-contents" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components_UI_svgs_Icons_Contents_PublicChannel__WEBPACK_IMPORTED_MODULE_12__["default"], { width: "51", height: "51", color: "var(--secondary-text)" }) })) })) })));
+            return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-default-icon" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-ellipse" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-profile-avatar-contents" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components_UI_svgs_Icons_Contents_PublicChannel__WEBPACK_IMPORTED_MODULE_11__["default"], { width: "51", height: "51", color: "var(--secondary-text)" }) })) })) })));
         }
     };
     function executeUpdateActions(params) {
@@ -18286,18 +18249,18 @@ var DialogInfo = function (_a) {
     };
     var getUrlAvatar = function (dialogEntity) {
         switch (dialogEntity.type) {
-            case _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_8__.DialogType.group:
+            case _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_7__.DialogType.group:
                 return dialogEntity.photo || undefined;
-            case _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_8__.DialogType.public:
+            case _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_7__.DialogType.public:
                 return dialogEntity.photo || undefined;
-            case _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_8__.DialogType.private:
+            case _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_7__.DialogType.private:
                 return undefined;
             default:
                 return undefined;
         }
     };
     var applyInviteUsersHandler = function (usersForInvite, usersForRemove) {
-        var alreadyPresents = _Domain_entity_PublicDialogEntity__WEBPACK_IMPORTED_MODULE_13__.PublicDialogEntity.getParticipants((dialogViewModel === null || dialogViewModel === void 0 ? void 0 : dialogViewModel.entity) || dialog);
+        var alreadyPresents = _Domain_entity_PublicDialogEntity__WEBPACK_IMPORTED_MODULE_12__.PublicDialogEntity.getParticipants((dialogViewModel === null || dialogViewModel === void 0 ? void 0 : dialogViewModel.entity) || dialog);
         var newParticipants = usersForInvite.filter(function (item) { return alreadyPresents.indexOf(item) < 0; });
         if (newParticipants.length > 0) {
             var dialogForUpdate = __assign(__assign({}, ((dialogViewModel === null || dialogViewModel === void 0 ? void 0 : dialogViewModel.entity) || dialog)), { participantIds: ((dialogViewModel === null || dialogViewModel === void 0 ? void 0 : dialogViewModel.entity) || dialog).participantIds, newParticipantIds: newParticipants, photo: '', name: '' });
@@ -18347,12 +18310,7 @@ var DialogInfo = function (_a) {
                     backgroundColor: 'rgba(0, 0, 0, 0.5)',
                     zIndex: '100',
                     display: isLeaving ? 'block' : 'none',
-                } }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components_containers_ColumnContainer_ColumnContainer__WEBPACK_IMPORTED_MODULE_14__["default"], { children: [useUpContent && upHeaderContent, (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_Header_Header__WEBPACK_IMPORTED_MODULE_15__["default"], __assign({ title: "Dialog information", className: "header-dialog-info" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_16__.ReactComponent, { onClick: onCloseDialogInformationHandler, className: "header-dialog-info-icon" }) })), useSubContent && subHeaderContent, (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({ className: "dialog-information-profile" }, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-information-profile-avatar" }, { children: renderIconForTypeDialog((dialogViewModel === null || dialogViewModel === void 0 ? void 0 : dialogViewModel.entity) || dialog) })), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-information-profile-dialog-name" }, { children: ((_c = dialogViewModel === null || dialogViewModel === void 0 ? void 0 : dialogViewModel.entity) === null || _c === void 0 ? void 0 : _c.name) || (dialog === null || dialog === void 0 ? void 0 : dialog.name) })), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-information-profile-edit" }, { children: dialog.type !== _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_8__.DialogType.private &&
-                                    dialog.ownerId === currentUserId ? ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({ className: classnames__WEBPACK_IMPORTED_MODULE_4___default()('dialog-information-profile-edit-button', {
-                                        'dialog-information-profile-edit-button--disable': disableAction,
-                                    }) }, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_17__["default"], __assign({ variant: "text", onClick: editModal.toggleModal, disabled: disableAction }, { children: "Edit" })), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_18__["default"], __assign({ title: "Edit dialog", onClose: editModal.toggleModal, open: editModal.isOpen }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_EditDialog_EditDialog__WEBPACK_IMPORTED_MODULE_19__["default"], { disableActions: disableAction, nameDialog: (dialogViewModel === null || dialogViewModel === void 0 ? void 0 : dialogViewModel.entity.name) || (dialog === null || dialog === void 0 ? void 0 : dialog.name), typeDialog: (dialogViewModel === null || dialogViewModel === void 0 ? void 0 : dialogViewModel.entity.type) || (dialog === null || dialog === void 0 ? void 0 : dialog.type), ulrIcon: getUrlAvatar((dialogViewModel === null || dialogViewModel === void 0 ? void 0 : dialogViewModel.entity) || dialog), typeAddEditDialog: _EditDialog_EditDialog__WEBPACK_IMPORTED_MODULE_19__.TypeOpenDialog.edit, clickUpdatedHandler: getDialogUpdatedInfoHandler, clickCancelHandler: editModal.toggleModal }) }))] }))) : null }))] })), dialog.type !== _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_8__.DialogType.private ? ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_20__["default"], __assign({ icon: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_21__.ReactComponent, {}), title: "Members", rightSection: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_22__["default"], { mute: true, count: users.length, limit: 100 }), className: "dialog-info-members" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components_containers_ColumnContainer_ColumnContainer__WEBPACK_IMPORTED_MODULE_14__["default"], { children: [users && users.length > 0 && ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-action-wrapper-settings no-padding" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_UsersList_UsersList__WEBPACK_IMPORTED_MODULE_23__["default"], { maxHeight: 75, usersFirstPageToView: users, allUsers: users, usersInDialogCount: users.length }) }))), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({ className: "dialog-info-action-wrapper-settings" }, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_18__["default"], __assign({ disableActions: disableAction, title: "Edit dialog", open: inviteMembersModal.isOpen, onClose: inviteMembersModal.toggleModal }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_InviteMembers_InviteMembers__WEBPACK_IMPORTED_MODULE_24__["default"], { participants: _Domain_entity_PublicDialogEntity__WEBPACK_IMPORTED_MODULE_13__.PublicDialogEntity.getParticipants((dialogViewModel === null || dialogViewModel === void 0 ? void 0 : dialogViewModel.entity) || dialog), applyInviteUsersHandler: applyInviteUsersHandler, cancelInviteMembersHandler: inviteMembersModal.toggleModal, typeAddEditDialog: _EditDialog_EditDialog__WEBPACK_IMPORTED_MODULE_19__.TypeOpenDialog.edit, typeDialog: dialog.type, idOwnerDialog: dialog.ownerId }) })), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_17__["default"], __assign({ className: "dialog-info-action-wrapper-button", onClick: inviteMembersModal.toggleModal, variant: "outlined", disabled: dialog.ownerId !== currentUserId || disableAction }, { children: "Invite members" })), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_17__["default"], __assign({ className: "dialog-info-action-wrapper-button", onClick: function () { return onShowAllMemberClick(true); }, variant: "outlined", disabled: disableAction }, { children: "See all members" }))] }))] }) }))) : null, (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_20__["default"], { icon: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_25__.ReactComponent, {}), title: "Leave dialog", onClick: !disableAction ? leaveModal.toggleModal : undefined, className: classnames__WEBPACK_IMPORTED_MODULE_4___default()('dialog-info-leave', {
-                            'dialog-info-leave--disable': disableAction,
-                        }) }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_18__["default"], __assign({ open: leaveModal.isOpen, title: "Leave dialog?", onClose: leaveModal.toggleModal }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({ className: "dialog-leave-container" }, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_17__["default"], __assign({ variant: "outlined", onClick: leaveModal.toggleModal }, { children: "Cancel" })), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_17__["default"], __assign({ variant: "danger", onClick: leaveDialogHandler }, { children: "Leave" }))] })) }))] })] })));
+                } }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components_containers_ColumnContainer_ColumnContainer__WEBPACK_IMPORTED_MODULE_13__["default"], { children: [useUpContent && upHeaderContent, (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_Header_Header__WEBPACK_IMPORTED_MODULE_14__["default"], __assign({ title: "Dialog information", className: "header-dialog-info" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_15__.ReactComponent, { onClick: onCloseDialogInformationHandler, className: "header-dialog-info-icon" }) })), useSubContent && subHeaderContent, (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({ className: "dialog-information-profile" }, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-information-profile-avatar" }, { children: renderIconForTypeDialog((dialogViewModel === null || dialogViewModel === void 0 ? void 0 : dialogViewModel.entity) || dialog) })), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-information-profile-dialog-name" }, { children: ((_c = dialogViewModel === null || dialogViewModel === void 0 ? void 0 : dialogViewModel.entity) === null || _c === void 0 ? void 0 : _c.name) || (dialog === null || dialog === void 0 ? void 0 : dialog.name) }))] })), dialog.type !== _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_7__.DialogType.private ? ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_16__["default"], __assign({ icon: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_17__.ReactComponent, {}), title: "Members", rightSection: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_18__["default"], { mute: true, count: users.length, limit: 100 }), className: "dialog-info-members" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components_containers_ColumnContainer_ColumnContainer__WEBPACK_IMPORTED_MODULE_13__["default"], { children: [users && users.length > 0 && ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-action-wrapper-settings no-padding" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_UsersList_UsersList__WEBPACK_IMPORTED_MODULE_19__["default"], { maxHeight: 75, usersFirstPageToView: users, allUsers: users, usersInDialogCount: users.length }) }))), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-info-action-wrapper-settings" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_20__["default"], __assign({ className: "dialog-info-action-wrapper-button", onClick: function () { return onShowAllMemberClick(true); }, variant: "outlined", disabled: disableAction }, { children: "See all members" })) }))] }) }))) : null] })] })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DialogInfo);
 
@@ -22068,10 +22026,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Views_Dialog_DialogHeader_DialogInfoIcon_DialogInfoIcon_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Views/Dialog/DialogHeader/DialogInfoIcon/DialogInfoIcon.scss */ "./src/Presentation/Views/Dialog/DialogHeader/DialogInfoIcon/DialogInfoIcon.scss");
 /* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
 /* harmony import */ var _providers_QuickBloxUIKitProvider_useQbInitializedDataContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../providers/QuickBloxUIKitProvider/useQbInitializedDataContext */ "./src/Presentation/providers/QuickBloxUIKitProvider/useQbInitializedDataContext.ts");
-/* harmony import */ var _Views_DialogList_DialogList__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../../Views/DialogList/DialogList */ "./src/Presentation/Views/DialogList/DialogList.tsx");
-/* harmony import */ var _Views_DialogInfo_DialogInfo__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ../../Views/DialogInfo/DialogInfo */ "./src/Presentation/Views/DialogInfo/DialogInfo.tsx");
+/* harmony import */ var _Views_DialogInfo_DialogInfo__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ../../Views/DialogInfo/DialogInfo */ "./src/Presentation/Views/DialogInfo/DialogInfo.tsx");
 /* harmony import */ var _DesktopLayout__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./DesktopLayout */ "./src/Presentation/layouts/Desktop/DesktopLayout.tsx");
-/* harmony import */ var _Views_Dialog_Dialog__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../../Views/Dialog/Dialog */ "./src/Presentation/Views/Dialog/Dialog.tsx");
+/* harmony import */ var _Views_Dialog_Dialog__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../../Views/Dialog/Dialog */ "./src/Presentation/Views/Dialog/Dialog.tsx");
 /* harmony import */ var _Views_DialogList_useDialogListViewModel__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../Views/DialogList/useDialogListViewModel */ "./src/Presentation/Views/DialogList/useDialogListViewModel.ts");
 /* harmony import */ var _Domain_repository_Pagination__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../../../Domain/repository/Pagination */ "./src/Domain/repository/Pagination.ts");
 /* harmony import */ var _Views_Dialog_AIWidgets_UseDefaultAIAssistAnswerWidget__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../Views/Dialog/AIWidgets/UseDefaultAIAssistAnswerWidget */ "./src/Presentation/Views/Dialog/AIWidgets/UseDefaultAIAssistAnswerWidget.tsx");
@@ -22084,28 +22041,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../../Domain/entity/DialogTypes */ "./src/Domain/entity/DialogTypes.ts");
 /* harmony import */ var _Views_Dialog_useDialogViewModel__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../Views/Dialog/useDialogViewModel */ "./src/Presentation/Views/Dialog/useDialogViewModel.ts");
 /* harmony import */ var _utils_parse__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../../../utils/parse */ "./src/utils/parse.ts");
-/* harmony import */ var _ui_components_MessageInput_ReplyMessagePreview_ReplyMessagePreview__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ../../ui-components/MessageInput/ReplyMessagePreview/ReplyMessagePreview */ "./src/Presentation/ui-components/MessageInput/ReplyMessagePreview/ReplyMessagePreview.tsx");
-/* harmony import */ var _Views_Dialog_ForwardMessageFlow_ForwardMessageFlow__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ../../Views/Dialog/ForwardMessageFlow/ForwardMessageFlow */ "./src/Presentation/Views/Dialog/ForwardMessageFlow/ForwardMessageFlow.tsx");
-/* harmony import */ var _components_containers_SectionList__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ../../components/containers/SectionList */ "./src/Presentation/components/containers/SectionList/index.tsx");
+/* harmony import */ var _ui_components_MessageInput_ReplyMessagePreview_ReplyMessagePreview__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ../../ui-components/MessageInput/ReplyMessagePreview/ReplyMessagePreview */ "./src/Presentation/ui-components/MessageInput/ReplyMessagePreview/ReplyMessagePreview.tsx");
+/* harmony import */ var _Views_Dialog_ForwardMessageFlow_ForwardMessageFlow__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ../../Views/Dialog/ForwardMessageFlow/ForwardMessageFlow */ "./src/Presentation/Views/Dialog/ForwardMessageFlow/ForwardMessageFlow.tsx");
+/* harmony import */ var _components_containers_SectionList__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../../components/containers/SectionList */ "./src/Presentation/components/containers/SectionList/index.tsx");
 /* harmony import */ var _components_containers_SectionList_hooks__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../components/containers/SectionList/hooks */ "./src/Presentation/components/containers/SectionList/hooks/useMobileLayout.ts");
 /* harmony import */ var _Data_source_remote_Mapper_MessageDTOMapper__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../../../Data/source/remote/Mapper/MessageDTOMapper */ "./src/Data/source/remote/Mapper/MessageDTOMapper.ts");
-/* harmony import */ var _Views_DialogInfo_MembersList_MembersList__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ../../Views/DialogInfo/MembersList/MembersList */ "./src/Presentation/Views/DialogInfo/MembersList/MembersList.tsx");
+/* harmony import */ var _Views_DialogInfo_MembersList_MembersList__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ../../Views/DialogInfo/MembersList/MembersList */ "./src/Presentation/Views/DialogInfo/MembersList/MembersList.tsx");
 /* harmony import */ var _Views_DialogInfo_UsersList_useUsersListViewModel__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../Views/DialogInfo/UsersList/useUsersListViewModel */ "./src/Presentation/Views/DialogInfo/UsersList/useUsersListViewModel.ts");
-/* harmony import */ var _ui_components_Header_Header__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../../ui-components/Header/Header */ "./src/Presentation/ui-components/Header/Header.tsx");
+/* harmony import */ var _ui_components_Header_Header__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../../ui-components/Header/Header */ "./src/Presentation/ui-components/Header/Header.tsx");
 /* harmony import */ var _ui_components_Avatar_Avatar__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../ui-components/Avatar/Avatar */ "./src/Presentation/ui-components/Avatar/Avatar.tsx");
 /* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../../icons */ "./src/Presentation/icons/contents/group-chat.svg");
 /* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../icons */ "./src/Presentation/icons/contents/user.svg");
 /* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../../icons */ "./src/Presentation/icons/contents/public-channel.svg");
-/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../../icons */ "./src/Presentation/icons/status/information.svg");
-/* harmony import */ var _ui_components_Button_Button__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ../../ui-components/Button/Button */ "./src/Presentation/ui-components/Button/Button.tsx");
-/* harmony import */ var _ui_components_DialogWindow_DialogWindow__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ../../ui-components/DialogWindow/DialogWindow */ "./src/Presentation/ui-components/DialogWindow/DialogWindow.tsx");
-/* harmony import */ var _ui_components_MessageInput_MessageInput__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ../../ui-components/MessageInput/MessageInput */ "./src/Presentation/ui-components/MessageInput/MessageInput.tsx");
-/* harmony import */ var _Views_Dialog_AIWidgets_AIRephraseWidget_AIRephraseWidget__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ../../Views/Dialog/AIWidgets/AIRephraseWidget/AIRephraseWidget */ "./src/Presentation/Views/Dialog/AIWidgets/AIRephraseWidget/AIRephraseWidget.tsx");
-/* harmony import */ var _Views_Dialog_MessageItem_MessageItem__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ../../Views/Dialog/MessageItem/MessageItem */ "./src/Presentation/Views/Dialog/MessageItem/MessageItem.tsx");
-/* harmony import */ var _ui_components__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ../../ui-components */ "./src/Presentation/ui-components/MessageSeparator/MessageSeparator.tsx");
-/* harmony import */ var _ui_components__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ../../ui-components */ "./src/Presentation/ui-components/Placeholder/Placeholder.tsx");
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../../icons */ "./src/Presentation/icons/status/information.svg");
+/* harmony import */ var _ui_components_Button_Button__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ../../ui-components/Button/Button */ "./src/Presentation/ui-components/Button/Button.tsx");
+/* harmony import */ var _ui_components_DialogWindow_DialogWindow__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ../../ui-components/DialogWindow/DialogWindow */ "./src/Presentation/ui-components/DialogWindow/DialogWindow.tsx");
+/* harmony import */ var _ui_components_MessageInput_MessageInput__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ../../ui-components/MessageInput/MessageInput */ "./src/Presentation/ui-components/MessageInput/MessageInput.tsx");
+/* harmony import */ var _Views_Dialog_AIWidgets_AIRephraseWidget_AIRephraseWidget__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ../../Views/Dialog/AIWidgets/AIRephraseWidget/AIRephraseWidget */ "./src/Presentation/Views/Dialog/AIWidgets/AIRephraseWidget/AIRephraseWidget.tsx");
+/* harmony import */ var _Views_Dialog_MessageItem_MessageItem__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ../../Views/Dialog/MessageItem/MessageItem */ "./src/Presentation/Views/Dialog/MessageItem/MessageItem.tsx");
+/* harmony import */ var _ui_components__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ../../ui-components */ "./src/Presentation/ui-components/MessageSeparator/MessageSeparator.tsx");
+/* harmony import */ var _ui_components__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ../../ui-components */ "./src/Presentation/ui-components/Placeholder/Placeholder.tsx");
 /* harmony import */ var _ui_components_Toast_ToastProvider__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../../ui-components/Toast/ToastProvider */ "./src/Presentation/ui-components/Toast/ToastProvider.tsx");
-/* harmony import */ var _Views_Flow_CreateDialogFlow_CreateNewDialogFlow__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ../../Views/Flow/CreateDialogFlow/CreateNewDialogFlow */ "./src/Presentation/Views/Flow/CreateDialogFlow/CreateNewDialogFlow.tsx");
+/* harmony import */ var _Views_Flow_CreateDialogFlow_CreateNewDialogFlow__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ../../Views/Flow/CreateDialogFlow/CreateNewDialogFlow */ "./src/Presentation/Views/Flow/CreateDialogFlow/CreateNewDialogFlow.tsx");
 /* harmony import */ var _hooks_useModal__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../../hooks/useModal */ "./src/hooks/useModal.ts");
 /* harmony import */ var _providers_QuickBloxUIKitProvider_useQBConnection__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../providers/QuickBloxUIKitProvider/useQBConnection */ "./src/Presentation/providers/QuickBloxUIKitProvider/useQBConnection.ts");
 /* harmony import */ var _Domain_entity_EventMessageType__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../../Domain/entity/EventMessageType */ "./src/Domain/entity/EventMessageType.ts");
@@ -22168,7 +22125,6 @@ var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
-
 
 
 
@@ -22383,10 +22339,10 @@ var QuickBloxUIKitDesktopLayout = function (_a) {
     var _15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]), audioChunks = _15[0], setAudioChunks = _15[1];
     var newModal = (0,_hooks_useModal__WEBPACK_IMPORTED_MODULE_17__["default"])();
     var _16 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(), dialogToLeave = _16[0], setDialogToLeave = _16[1];
-    var _17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true), showDialogList = _17[0], setShowDialogList = _17[1];
+    var _17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), showDialogList = _17[0], setShowDialogList = _17[1];
     var _18 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true), showDialogMessages = _18[0], setShowDialogMessages = _18[1];
-    var _19 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), showDialogInformation = _19[0], setShowDialogInformation = _19[1];
-    var _20 = react__WEBPACK_IMPORTED_MODULE_1___default().useState(false), isAllMembersShow = _20[0], setIsAllMembersShow = _20[1];
+    var _19 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true), showDialogInformation = _19[0], setShowDialogInformation = _19[1];
+    var _20 = react__WEBPACK_IMPORTED_MODULE_1___default().useState(true), isAllMembersShow = _20[0], setIsAllMembersShow = _20[1];
     var _21 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), isOpen = _21[0], setIsOpen = _21[1];
     // functions
     var selectDialogActions = function (item) {
@@ -22794,12 +22750,11 @@ var QuickBloxUIKitDesktopLayout = function (_a) {
     }, [currentContext.InitParams]);
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
         if (isMobile) {
-            if (!selectedDialog) {
-                setShowDialogList(true);
-            }
-            else {
-                setShowDialogList(false);
-            }
+            // if (!selectedDialog) {
+            //   setShowDialogList(true);
+            // } else {
+            //   setShowDialogList(false);
+            // }
             var canShowMessages = selectedDialog && !(showDialogInformation && needDialogInformation);
             if (canShowMessages) {
                 setShowDialogMessages(true);
@@ -22813,19 +22768,12 @@ var QuickBloxUIKitDesktopLayout = function (_a) {
                 setShowDialogInformation(false);
         }
         else {
-            setShowDialogList(true);
+            // setShowDialogList(true);
             setShowDialogMessages(true);
             setShowDialogInformation(true);
         }
-        //
-        // const sizeChangingLogString = `SIZE INFO: height: ${height.toString()} clientHeight: ${clientHeight}  width: ${width.toString()} breakpont: ${breakpoint.toString()} isMobile:
-        //    ${isMobile?.toString()} selectedDialog:
-        //   ${selectedDialog ? 'true' : 'false'} showDialogMessages:
-        //    ${showDialogMessages?.toString()} showDialogList:
-        //    ${showDialogList?.toString()} showDialogInformation:
-        //    ${showDialogInformation?.toString()}`;
-        //
-        // console.log(sizeChangingLogString);
+        var sizeChangingLogString = "SIZE INFO: height: ".concat(height.toString(), " clientHeight: ").concat(clientHeight, "  width: ").concat(width.toString(), " breakpont: ").concat(breakpoint.toString(), " isMobile:\n       ").concat(isMobile === null || isMobile === void 0 ? void 0 : isMobile.toString(), " selectedDialog:\n      ").concat(selectedDialog ? 'true' : 'false', " showDialogMessages:\n       ").concat(showDialogMessages === null || showDialogMessages === void 0 ? void 0 : showDialogMessages.toString(), " showDialogList:\n       ").concat(showDialogList === null || showDialogList === void 0 ? void 0 : showDialogList.toString(), " showDialogInformation:\n       ").concat(showDialogInformation === null || showDialogInformation === void 0 ? void 0 : showDialogInformation.toString());
+        console.log(sizeChangingLogString);
     }, [isMobile]);
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
         if (browserOnline) {
@@ -22885,19 +22833,18 @@ var QuickBloxUIKitDesktopLayout = function (_a) {
             userViewModel.getUsers();
         }
     }, [userViewModel.entity]);
-    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-        if (selectedDialog && selectedDialog) {
-            dialogsViewModel.entity = selectedDialog;
-            userViewModel.entity = selectedDialog;
-            if (isMobile) {
-                setShowDialogList(false);
-                setShowDialogMessages(true);
-            }
-        }
-        else {
-            setShowDialogList(true);
-        }
-    }, [selectedDialog]);
+    // useEffect(() => {
+    //   if (selectedDialog && selectedDialog) {
+    //     dialogsViewModel.entity = selectedDialog;
+    //     userViewModel.entity = selectedDialog;
+    //     if (isMobile) {
+    //       setShowDialogList(false);
+    //       setShowDialogMessages(true);
+    //     }
+    //   } else {
+    //     setShowDialogList(true);
+    //   }
+    // }, [selectedDialog]);
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
         if (messagesViewModel.entity) {
             messagesViewModel.getMessages(new _Domain_repository_Pagination__WEBPACK_IMPORTED_MODULE_29__.Pagination(0, messagePerPage));
@@ -23008,18 +22955,17 @@ var QuickBloxUIKitDesktopLayout = function (_a) {
             setMessageText(defaultAIAssistWidget === null || defaultAIAssistWidget === void 0 ? void 0 : defaultAIAssistWidget.textToContent);
         }
     }, [defaultAIAssistWidget === null || defaultAIAssistWidget === void 0 ? void 0 : defaultAIAssistWidget.textToContent]);
-    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-        if (isMobile) {
-            if (needDialogInformation) {
-                setShowDialogMessages(false);
-                setShowDialogInformation(true);
-            }
-            else {
-                setShowDialogMessages(true);
-                setShowDialogInformation(false);
-            }
-        }
-    }, [needDialogInformation]);
+    // useEffect(() => {
+    //   if (isMobile) {
+    //     if (needDialogInformation) {
+    //       setShowDialogMessages(false);
+    //       setShowDialogInformation(true);
+    //     } else {
+    //       setShowDialogMessages(true);
+    //       setShowDialogInformation(false);
+    //     }
+    //   }
+    // }, [needDialogInformation]);
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
         if (dialogToLeave) {
             handleDialogOnClick();
@@ -23039,19 +22985,33 @@ var QuickBloxUIKitDesktopLayout = function (_a) {
                     } }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_DesktopLayout__WEBPACK_IMPORTED_MODULE_32__["default"], { mainContainerStyles: {
                         minHeight: workHeight,
                         maxHeight: workHeight,
-                    }, onHeightChange: handleHeightChange, theme: theme, dialogsView: showDialogList ? ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_DialogList_DialogList__WEBPACK_IMPORTED_MODULE_33__["default"], { disableAction: !isOnline, scrollableHeight: dialogListScrollableHeight, 
-                        // subHeaderContent={<CompanyLogo />}
-                        // upHeaderContent={<CompanyLogo />}
-                        dialogListViewModel: dialogsViewModel, selectedDialog: dialogsViewModel.entity, onDialogSelected: selectDialogActions, onCreateDialog: createDialogHandler, onLeaveDialog: leaveDialogHandler, additionalSettings: {
-                            withoutHeader: false,
-                            themeHeader: theme,
-                            themePreview: theme,
-                            useSubHeader: false,
-                            useUpHeader: false,
-                        } })) : null, dialogMessagesView: showDialogMessages &&
+                    }, onHeightChange: handleHeightChange, theme: theme, dialogsView: null, 
+                    // dialogsView={
+                    //   showDialogList ? (
+                    //     <DialogList
+                    //       disableAction={!isOnline}
+                    //       scrollableHeight={dialogListScrollableHeight}
+                    //       // subHeaderContent={<CompanyLogo />}
+                    //       // upHeaderContent={<CompanyLogo />}
+                    //       dialogListViewModel={dialogsViewModel} // 1 Get 2 Update UseCase
+                    //       selectedDialog={dialogsViewModel.entity}
+                    //       onDialogSelected={selectDialogActions}
+                    //       onCreateDialog={createDialogHandler}
+                    //       onLeaveDialog={leaveDialogHandler}
+                    //       additionalSettings={{
+                    //         withoutHeader: false,
+                    //         themeHeader: theme,
+                    //         themePreview: theme,
+                    //         useSubHeader: false,
+                    //         useUpHeader: false,
+                    //       }}
+                    //     />
+                    //   ) : null
+                    // }
+                    dialogMessagesView: showDialogMessages &&
                         selectedDialog &&
                         selectedDialog &&
-                        dialogsViewModel.entity ? ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_Dialog_Dialog__WEBPACK_IMPORTED_MODULE_34__["default"], { rootStyles: {
+                        dialogsViewModel.entity ? ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_Dialog_Dialog__WEBPACK_IMPORTED_MODULE_33__["default"], { rootStyles: {
                             minHeight: clientContainerHeight,
                             maxHeight: clientContainerHeight,
                         }, messagesContainerStyles: isMobile
@@ -23065,13 +23025,13 @@ var QuickBloxUIKitDesktopLayout = function (_a) {
                             }, messagesViewModel: messagesViewModel, warningErrorText: warningErrorText, 
                         // subHeaderContent={<CompanyLogo />}
                         // upHeaderContent={<CompanyLogo />}
-                        renderHeader: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_Header_Header__WEBPACK_IMPORTED_MODULE_35__["default"], __assign({ title: dialogsViewModel.entity.name, avatar: renderIconForTypeDialog(dialogsViewModel.entity), onGoBack: function () { return setSelectedDialog(undefined); }, className: "dialog-header__line" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-header-right" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_36__.ReactComponent, { className: "dialog-header-right__icon", onClick: informationOpenHandler }) })) })), renderMessageList: messagesViewModel &&
+                        renderHeader: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_Header_Header__WEBPACK_IMPORTED_MODULE_34__["default"], __assign({ title: dialogsViewModel.entity.name, avatar: renderIconForTypeDialog(dialogsViewModel.entity), onGoBack: function () { return setSelectedDialog(undefined); }, className: "dialog-header__line" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-header-right" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_35__.ReactComponent, { className: "dialog-header-right__icon", onClick: informationOpenHandler }) })) })), renderMessageList: messagesViewModel &&
                             messagesViewModel.messages &&
-                            messagesViewModel.messages.length > 0 && ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components_containers_SectionList__WEBPACK_IMPORTED_MODULE_37__["default"], { resetScroll: scrollUpToDown, className: "messages-container", onEndReached: fetchMoreData, onEndReachedThreshold: 0.95, refreshing: needRefresh || (messagesViewModel === null || messagesViewModel === void 0 ? void 0 : messagesViewModel.loading), renderSectionHeader: function (section) { return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "message-view-container--system-message-wrapper" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ style: theme
+                            messagesViewModel.messages.length > 0 && ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components_containers_SectionList__WEBPACK_IMPORTED_MODULE_36__["default"], { resetScroll: scrollUpToDown, className: "messages-container", onEndReached: fetchMoreData, onEndReachedThreshold: 0.95, refreshing: needRefresh || (messagesViewModel === null || messagesViewModel === void 0 ? void 0 : messagesViewModel.loading), renderSectionHeader: function (section) { return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "message-view-container--system-message-wrapper" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ style: theme
                                         ? { backgroundColor: theme.disabledElements() }
-                                        : {}, className: "message-view-container--system-message-wrapper__date_container" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_38__["default"], { text: section.title, type: "date" }) })) }))); }, renderItem: function (_a, listRef) {
+                                        : {}, className: "message-view-container--system-message-wrapper__date_container" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_37__["default"], { text: section.title, type: "date" }) })) }))); }, renderItem: function (_a, listRef) {
                                 var groupMessages = _a[1];
-                                return groupMessages.map(function (message) { return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_Dialog_MessageItem_MessageItem__WEBPACK_IMPORTED_MODULE_39__["default"], { disableAction: !isOnline, 
+                                return groupMessages.map(function (message) { return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_Dialog_MessageItem_MessageItem__WEBPACK_IMPORTED_MODULE_38__["default"], { disableAction: !isOnline, 
                                     // defaultGetSenderName={defaultGetSenderName}
                                     message: message, currentUserId: currentUserId || -1, enableForwarding: enableForwarding, enableReplying: enableReplying, onReply: function (m) {
                                         handleOnReply(m);
@@ -23089,7 +23049,7 @@ var QuickBloxUIKitDesktopLayout = function (_a) {
                                         .AITranslateWidgetConfig), onError: function (messageError) {
                                         (0,react_toastify__WEBPACK_IMPORTED_MODULE_4__.toast)(messageError);
                                     }, messagesToView: messagesViewModel.messages, maxTokens: maxTokensForAIRephrase })); });
-                            }, sections: getSectionData(messagesViewModel.messages) })), renderMessageInput: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_MessageInput_MessageInput__WEBPACK_IMPORTED_MODULE_40__["default"], { disableActions: !isOnline, previewMessage: showReplyMessage ? ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_MessageInput_ReplyMessagePreview_ReplyMessagePreview__WEBPACK_IMPORTED_MODULE_41__["default"], { messages: __spreadArray([], messagesToReply, true), userNameSentMessage: ((_g = (_f = messagesToReply[0]) === null || _f === void 0 ? void 0 : _f.sender) === null || _g === void 0 ? void 0 : _g.full_name) ||
+                            }, sections: getSectionData(messagesViewModel.messages) })), renderMessageInput: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_MessageInput_MessageInput__WEBPACK_IMPORTED_MODULE_39__["default"], { disableActions: !isOnline, previewMessage: showReplyMessage ? ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_MessageInput_ReplyMessagePreview_ReplyMessagePreview__WEBPACK_IMPORTED_MODULE_40__["default"], { messages: __spreadArray([], messagesToReply, true), userNameSentMessage: ((_g = (_f = messagesToReply[0]) === null || _f === void 0 ? void 0 : _f.sender) === null || _g === void 0 ? void 0 : _g.full_name) ||
                                     ((_j = (_h = messagesToReply[0]) === null || _h === void 0 ? void 0 : _h.sender) === null || _j === void 0 ? void 0 : _j.login) ||
                                     ((_l = (_k = messagesToReply[0]) === null || _k === void 0 ? void 0 : _k.sender) === null || _l === void 0 ? void 0 : _l.email) ||
                                     ((_o = (_m = messagesToReply[0]) === null || _m === void 0 ? void 0 : _m.sender) === null || _o === void 0 ? void 0 : _o.id.toString()) ||
@@ -23103,19 +23063,19 @@ var QuickBloxUIKitDesktopLayout = function (_a) {
                                 if ((messagesViewModel === null || messagesViewModel === void 0 ? void 0 : messagesViewModel.loading) || !isOnline)
                                     return;
                                 setIsRecording(!isRecording);
-                            }, rephrase: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_Dialog_AIWidgets_AIRephraseWidget_AIRephraseWidget__WEBPACK_IMPORTED_MODULE_42__["default"], { disableActions: !isOnline, waitAIWidget: waitAIWidget, messageText: messageText, theme: theme, AIRephrase: defaultAIRephraseWidget, setWaitAIWidget: setWaitAIWidget, setPrevValueText: function (prevValue) {
+                            }, rephrase: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_Dialog_AIWidgets_AIRephraseWidget_AIRephraseWidget__WEBPACK_IMPORTED_MODULE_41__["default"], { disableActions: !isOnline, waitAIWidget: waitAIWidget, messageText: messageText, theme: theme, AIRephrase: defaultAIRephraseWidget, setWaitAIWidget: setWaitAIWidget, setPrevValueText: function (prevValue) {
                                     setMessageText(prevValue);
                                 }, setMessageErrorToast: function (e) {
                                     (0,react_toastify__WEBPACK_IMPORTED_MODULE_4__.toast)(e);
                                 }, messagesToView: messagesViewModel.messages, currentUserId: currentUserId || -1, maxTokensForAIRephrase: maxTokensForAIRephrase, rephraseTones: rephraseTones }) }), maxWidthToResize: maxWidthToResizing, theme: theme })) : (!isMobile && ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "empty-chat-placeholder", style: {
                             minHeight: clientContainerHeight,
                             maxHeight: clientContainerHeight,
-                        } }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_43__["default"], { text: ['Select a chat to start messaging.'], className: "empty-chat-history-placeholder" }) })))), dialogInfoView: showDialogInformation &&
+                        } }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_42__["default"], { text: ['Select a chat to start messaging.'], className: "empty-chat-history-placeholder" }) })))), dialogInfoView: showDialogInformation &&
                         selectedDialog &&
                         needDialogInformation &&
-                        (isAllMembersShow ? ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_DialogInfo_MembersList_MembersList__WEBPACK_IMPORTED_MODULE_44__["default"], { closeInformationHandler: function () {
+                        (isAllMembersShow ? ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_DialogInfo_MembersList_MembersList__WEBPACK_IMPORTED_MODULE_43__["default"], { closeInformationHandler: function () {
                                 setIsAllMembersShow(false);
-                            }, members: userViewModel.users, maxHeight: dialogListScrollableHeight })) : ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_DialogInfo_DialogInfo__WEBPACK_IMPORTED_MODULE_45__["default"], { disableAction: !isOnline, onShowAllMemberClick: function (value) {
+                            }, members: userViewModel.users, maxHeight: dialogListScrollableHeight })) : ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_DialogInfo_DialogInfo__WEBPACK_IMPORTED_MODULE_44__["default"], { disableAction: !isOnline, onShowAllMemberClick: function (value) {
                                 setIsAllMembersShow(value);
                             }, users: userViewModel.users, rootStyles: {
                                 minHeight: clientContainerHeight,
@@ -23127,12 +23087,12 @@ var QuickBloxUIKitDesktopLayout = function (_a) {
                             //   </div>
                             // }
                             // upHeaderContent={<CompanyLogo />}
-                            dialog: selectedDialog, dialogViewModel: dialogsViewModel, onCloseDialogInformationHandler: informationCloseHandler }))) }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_DialogWindow_DialogWindow__WEBPACK_IMPORTED_MODULE_46__["default"], __assign({ open: isOpen, title: "Leave dialog?", onClose: handleDialogOnClick }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({ className: "dialog-leave-container" }, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_Button_Button__WEBPACK_IMPORTED_MODULE_47__["default"], __assign({ variant: "outlined", onClick: handleDialogOnClick }, { children: "Cancel" })), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_Button_Button__WEBPACK_IMPORTED_MODULE_47__["default"], __assign({ variant: "danger", onClick: handleLeaveDialog }, { children: "Leave" }))] })) })), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_DialogWindow_DialogWindow__WEBPACK_IMPORTED_MODULE_46__["default"], __assign({ title: "New dialog", onClose: newModal.toggleModal, open: newModal.isOpen, className: isMobile
+                            dialog: selectedDialog, dialogViewModel: dialogsViewModel, onCloseDialogInformationHandler: informationCloseHandler }))) }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_DialogWindow_DialogWindow__WEBPACK_IMPORTED_MODULE_45__["default"], __assign({ open: isOpen, title: "Leave dialog?", onClose: handleDialogOnClick }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({ className: "dialog-leave-container" }, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_Button_Button__WEBPACK_IMPORTED_MODULE_46__["default"], __assign({ variant: "outlined", onClick: handleDialogOnClick }, { children: "Cancel" })), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_Button_Button__WEBPACK_IMPORTED_MODULE_46__["default"], __assign({ variant: "danger", onClick: handleLeaveDialog }, { children: "Leave" }))] })) })), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_DialogWindow_DialogWindow__WEBPACK_IMPORTED_MODULE_45__["default"], __assign({ title: "New dialog", onClose: newModal.toggleModal, open: newModal.isOpen, className: isMobile
                         ? 'dialog-list-new-dialog-mobile-container'
-                        : 'dialog-list-new-dialog-desktop-container' }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_Flow_CreateDialogFlow_CreateNewDialogFlow__WEBPACK_IMPORTED_MODULE_48__["default"], { dialogsViewModel: dialogsViewModel, onCancel: newModal.toggleModal, onFinished: function (newDialog) {
+                        : 'dialog-list-new-dialog-desktop-container' }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_Flow_CreateDialogFlow_CreateNewDialogFlow__WEBPACK_IMPORTED_MODULE_47__["default"], { dialogsViewModel: dialogsViewModel, onCancel: newModal.toggleModal, onFinished: function (newDialog) {
                             newModal.toggleModal();
                             setSelectedDialog(newDialog);
-                        }, isOnline: isOnline }) })), selectedDialog && ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_DialogWindow_DialogWindow__WEBPACK_IMPORTED_MODULE_46__["default"], __assign({ title: "Forward", open: forwardMessageModal.isOpen, onClose: forwardMessageModal.toggleModal }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_Dialog_ForwardMessageFlow_ForwardMessageFlow__WEBPACK_IMPORTED_MODULE_49__["default"], { messages: [forwardMessage], currentDialog: selectedDialog, currentUserName: userName || '', dialogs: dialogsViewModel.dialogs, onSendData: handleSendData, disableActions: !isOnline }) })))] })) }));
+                        }, isOnline: isOnline }) })), selectedDialog && ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_DialogWindow_DialogWindow__WEBPACK_IMPORTED_MODULE_45__["default"], __assign({ title: "Forward", open: forwardMessageModal.isOpen, onClose: forwardMessageModal.toggleModal }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_Dialog_ForwardMessageFlow_ForwardMessageFlow__WEBPACK_IMPORTED_MODULE_48__["default"], { messages: [forwardMessage], currentDialog: selectedDialog, currentUserName: userName || '', dialogs: dialogsViewModel.dialogs, onSendData: handleSendData, disableActions: !isOnline }) })))] })) }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QuickBloxUIKitDesktopLayout);
 
