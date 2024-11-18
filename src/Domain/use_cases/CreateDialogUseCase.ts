@@ -66,7 +66,7 @@ export class CreateDialogUseCase implements IUseCase<void, DialogEntity> {
     remoteMessageDTO.message =
       this.textInformationMessage && this.textInformationMessage.length > 0
         ? this.textInformationMessage
-        : `User ${this.newDialog.ownerId} create new dialog ${this.newDialog.name}`;
+        : `New dialog ${this.newDialog.name} was created`;
 
     this.eventMessagesRepository.dispatchEvent<RemoteMessageDTO>(
       EventMessageType.RegularMessage,
