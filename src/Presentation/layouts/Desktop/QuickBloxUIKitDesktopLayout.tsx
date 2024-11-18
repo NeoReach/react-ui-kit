@@ -1149,16 +1149,16 @@ const QuickBloxUIKitDesktopLayout: React.FC<
                             // defaultGetSenderName={defaultGetSenderName}
                             message={message}
                             currentUserId={currentUserId || -1}
-                            enableForwarding={enableForwarding}
+                            enableForwarding={false}
                             enableReplying={enableReplying}
                             onReply={(m: MessageEntity) => {
                               handleOnReply(m);
                             }}
                             onForward={(m: MessageEntity) => {
-                              if (isOnline) {
-                                setForwardMessage(m);
-                                forwardMessageModal.toggleModal();
-                              }
+                              // if (isOnline) {
+                              //   setForwardMessage(m);
+                              //   forwardMessageModal.toggleModal();
+                              // }
                             }}
                             listRef={listRef}
                             // AIAssistWidget={defaultAIAssistWidget}

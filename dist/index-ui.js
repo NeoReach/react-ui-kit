@@ -20969,13 +20969,13 @@ var QuickBloxUIKitDesktopLayout = function (_a) {
                                 var groupMessages = _a[1];
                                 return groupMessages.map(function (message) { return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_Dialog_MessageItem_MessageItem__WEBPACK_IMPORTED_MODULE_38__["default"], { disableAction: !isOnline, 
                                     // defaultGetSenderName={defaultGetSenderName}
-                                    message: message, currentUserId: currentUserId || -1, enableForwarding: enableForwarding, enableReplying: enableReplying, onReply: function (m) {
+                                    message: message, currentUserId: currentUserId || -1, enableForwarding: false, enableReplying: enableReplying, onReply: function (m) {
                                         handleOnReply(m);
                                     }, onForward: function (m) {
-                                        if (isOnline) {
-                                            setForwardMessage(m);
-                                            forwardMessageModal.toggleModal();
-                                        }
+                                        // if (isOnline) {
+                                        //   setForwardMessage(m);
+                                        //   forwardMessageModal.toggleModal();
+                                        // }
                                     }, listRef: listRef, 
                                     // AIAssistWidget={defaultAIAssistWidget}
                                     // AITranslateWidget={defaultAITranslateWidget}

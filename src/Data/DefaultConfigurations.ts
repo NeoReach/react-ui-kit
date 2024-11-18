@@ -261,7 +261,7 @@ export class DefaultConfigurations {
           active: 2,
         },
         debug: true,
-        enableForwarding: true,
+        enableForwarding: false,
         enableReplying: true,
         regexUserName: '', // '/^(?=[a-zA-Z])[-a-zA-Z_ ]{3,49}(?<! )$/',
         endpoints: {

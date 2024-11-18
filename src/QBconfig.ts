@@ -128,7 +128,7 @@ export const QBConfig: QBUIKitConfig = {
       active: 2,
     },
     debug: true,
-    enableForwarding: true,
+    enableForwarding: false,
     enableReplying: true,
     regexUserName: '',
     endpoints: {
