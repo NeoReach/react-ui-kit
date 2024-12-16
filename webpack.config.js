@@ -1,5 +1,6 @@
 const path = require('path');
 // const packageInfo = require('./package.json');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     mode: 'development',
@@ -21,25 +22,36 @@ module.exports = {
         "react-dom": "react-dom",
         "quickblox/quickblox": "quickblox/quickblox",
     },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'styles/index.css',
+            chunkFilename: 'styles/[id].css',
+        }),
+    ],
     module: {
         rules: [
             {
                 test: [/\.css$/i],
                 use: [
-                    // Creates style nodes from JS strings
-                    'style-loader',
-                    // Translates CSS into CommonJS
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            esModule: true,
+                        },
+                    },
                     'css-loader'
                 ],
             },
             {
                 test: [/\.s[ac]ss$/i],
                 use: [
-                    // Creates style nodes from JS strings
-                    'style-loader',
-                    // Translates CSS into CommonJS
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            esModule: true,
+                        },
+                    },
                     'css-loader',
-                    // Compiles Sass to CSS
                     'sass-loader',
                 ],
                 exclude: /node_modules/
