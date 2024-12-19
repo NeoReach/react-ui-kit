@@ -6,15 +6,13 @@ import { toast } from 'react-toastify';
 import useQbInitializedDataContext from '../../providers/QuickBloxUIKitProvider/useQbInitializedDataContext';
 import { DialogEntity } from '../../../Domain/entity/DialogEntity';
 import { DialogListViewModel } from '../../Views/DialogList/DialogListViewModel';
-import DialogList from '../../Views/DialogList/DialogList';
 import DialogInfo from '../../Views/DialogInfo/DialogInfo';
 import DesktopLayout from './DesktopLayout';
 import Dialog from '../../Views/Dialog/Dialog';
 import useDialogListViewModel from '../../Views/DialogList/useDialogListViewModel';
 import { Pagination } from '../../../Domain/repository/Pagination';
 import UiKitTheme from '../../themes/UiKitTheme';
-import BaseViewModel, {
-  ForwardMessagesParams,
+import {
   ReplyMessagesParams,
 } from '../../../CommonTypes/BaseViewModel';
 import { AIMessageWidget } from '../../Views/Dialog/AIWidgets/AIMessageWidget';
@@ -34,7 +32,6 @@ import useDialogViewModel from '../../Views/Dialog/useDialogViewModel';
 import { MessageEntity } from '../../../Domain/entity/MessageEntity';
 import { stringifyError } from '../../../utils/parse';
 import ReplyMessagePreview from '../../ui-components/MessageInput/ReplyMessagePreview/ReplyMessagePreview';
-import ForwardMessageFlow from '../../Views/Dialog/ForwardMessageFlow/ForwardMessageFlow';
 import SectionList from '../../components/containers/SectionList';
 import { SectionItem } from '../../components/containers/SectionList/useComponent';
 import { useMobileLayout } from '../../components/containers/SectionList/hooks';
@@ -49,14 +46,11 @@ import {
   PublicChannelSvg,
   UserSvg,
 } from '../../icons';
-import Button from '../../ui-components/Button/Button';
-import DialogWindow from '../../ui-components/DialogWindow/DialogWindow';
 import MessageInput from '../../ui-components/MessageInput/MessageInput';
 import AIRephraseWidget from '../../Views/Dialog/AIWidgets/AIRephraseWidget/AIRephraseWidget';
 import MessageItem from '../../Views/Dialog/MessageItem/MessageItem';
 import { MessageSeparator, Placeholder } from '../../ui-components';
 import ToastProvider from '../../ui-components/Toast/ToastProvider';
-import CreateNewDialogFlow from '../../Views/Flow/CreateDialogFlow/CreateNewDialogFlow';
 import useModal from '../../../hooks/useModal';
 import useQBConnection from '../../providers/QuickBloxUIKitProvider/useQBConnection';
 import { ProxyConfig } from '../../../CommonTypes/CommonTypes';
@@ -71,7 +65,7 @@ type AIWidgetPlaceHolder = {
   AIWidget?: AIMessageWidget;
 };
 
-type QuickBloxUIKitDesktopLayoutProps = {
+type QuickBloxUIKitMessageLayoutProps = {
   theme?: UiKitTheme;
   AIRephrase?: AIWidgetPlaceHolder;
   AITranslate?: AIWidgetPlaceHolder;
@@ -79,8 +73,8 @@ type QuickBloxUIKitDesktopLayoutProps = {
   uikitHeightOffset?: string;
 };
 
-const QuickBloxUIKitDesktopLayout: React.FC<
-  QuickBloxUIKitDesktopLayoutProps
+const QuickBloxUIKitMessageLayout: React.FC<
+  QuickBloxUIKitMessageLayoutProps
   // eslint-disable-next-line @typescript-eslint/no-unused-vars,react/function-component-definition
 > = ({
   theme = undefined,
@@ -88,7 +82,7 @@ const QuickBloxUIKitDesktopLayout: React.FC<
   AIRephrase = undefined,
   AIAssist = undefined,
   uikitHeightOffset = '0px',
-}: QuickBloxUIKitDesktopLayoutProps) => {
+}: QuickBloxUIKitMessageLayoutProps) => {
   const mimeType = 'audio/webm;codecs=opus'; // audio/ogg audio/mpeg audio/webm audio/x-wav audio/mp4
   const messagePerPage = 47;
 
@@ -244,8 +238,6 @@ const QuickBloxUIKitDesktopLayout: React.FC<
     dialogsViewModel.entity,
   );
 
-  const [forwardMessage, setForwardMessage] = useState<null | MessageEntity>();
-  const forwardMessageModal = useModal();
   const [selectedDialog, setSelectedDialog] = React.useState<DialogEntity>();
   const userViewModel = useUsersListViewModel(selectedDialog);
   const [dialogAvatarUrl, setDialogAvatarUrl] = React.useState('');
@@ -317,33 +309,22 @@ const QuickBloxUIKitDesktopLayout: React.FC<
   const mediaRecorder = useRef<MediaRecorder>();
   const [resultAudioBlob, setResultAudioBlob] = useState<Blob>();
   const [audioChunks, setAudioChunks] = useState<Array<Blob>>([]);
-  const newModal = useModal();
-  const [dialogToLeave, setDialogToLeave] = useState<DialogEntity>();
-  const [showDialogList, setShowDialogList] = useState<boolean>(true);
+  // const [showDialogList, setShowDialogList] = useState<boolean>(true);
   const [showDialogMessages, setShowDialogMessages] = useState<boolean>(true);
   const [showDialogInformation, setShowDialogInformation] =
     useState<boolean>(false);
   const [isAllMembersShow, setIsAllMembersShow] = React.useState(false);
-  const [isOpen, setIsOpen] = useState(false);
 
   // functions
 
-  const selectDialogActions = (item: BaseViewModel<DialogEntity>): void => {
-    if (isOnline) {
-      if (!dialogsViewModel.loading) {
-        setSelectedDialog(item.entity);
-        // dialogsViewModel.entity = item.entity;
-      }
-    }
-  };
-
   const isAuthProcessed = (): boolean => {
     console.log('call isAuthProcessed');
-    const result =
-      currentContext.storage.REMOTE_DATA_SOURCE.needInit === false &&
-      currentContext.storage.REMOTE_DATA_SOURCE.authProcessed &&
-      currentContext.storage.CONNECTION_REPOSITORY.needInit === false;
-
+    const authState = {
+      needInit: currentContext.storage.REMOTE_DATA_SOURCE.needInit,
+      authProcessed: currentContext.storage.REMOTE_DATA_SOURCE.authProcessed,
+      connectionInit: currentContext.storage.CONNECTION_REPOSITORY.needInit
+    };
+    
     console.log(
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       `initialValue.REMOTE_DATA_SOURCE_MOCK.needInit: ${currentContext.storage.REMOTE_DATA_SOURCE.needInit}`,
@@ -352,13 +333,12 @@ const QuickBloxUIKitDesktopLayout: React.FC<
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       `initialValue.REMOTE_DATA_SOURCE_MOCK.authProcessed: ${currentContext.storage.REMOTE_DATA_SOURCE.authProcessed}`,
     );
-
     console.log(
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       `initialValue.CONNECTION_REPOSITORY.needInit: ${currentContext.storage.CONNECTION_REPOSITORY.needInit}`,
     );
 
-    return result;
+    return !authState.needInit && authState.authProcessed && !authState.connectionInit;
   };
 
   const fetchMoreData = () => {
@@ -394,15 +374,19 @@ const QuickBloxUIKitDesktopLayout: React.FC<
     return result;
   };
 
-  async function getDialogPhotoFileForPreview() {
-    const tmpFileUrl: string = await getUserAvatarByUid();
-
-    if (tmpFileUrl && tmpFileUrl.length > 0) {
-      setDialogAvatarUrl(tmpFileUrl);
-    } else {
+  const getDialogPhotoFileForPreview = async () => {
+    try {
+      const tmpFileUrl: string = await getUserAvatarByUid();
+      if (tmpFileUrl && tmpFileUrl.length > 0) {
+        setDialogAvatarUrl(tmpFileUrl);
+      } else {
+        setDialogAvatarUrl('');
+      }
+    } catch (error) {
+      console.error('Failed to load dialog photo:', error);
       setDialogAvatarUrl('');
     }
-  }
+  };
 
   // eslint-disable-next-line consistent-return
   const renderIconForTypeDialog = (dialogEntity: DialogEntity) => {
@@ -418,14 +402,14 @@ const QuickBloxUIKitDesktopLayout: React.FC<
       );
     }
     if (dialogEntity.type === DialogType.private) {
-      return <Avatar src={dialogAvatarUrl} icon={<UserSvg />} size="md" />;
+      return <Avatar src={dialogAvatarUrl || ""} icon={<UserSvg />} size="md" />;
     }
     if (dialogEntity.type === DialogType.public) {
       const publicDialogEntity = dialogEntity as PublicDialogEntity;
 
       return (
         <Avatar
-          src={publicDialogEntity.photo}
+          src={publicDialogEntity.photo || ""}
           icon={<PublicChannelSvg />}
           size="md"
         />
@@ -542,11 +526,6 @@ const QuickBloxUIKitDesktopLayout: React.FC<
 
     mediaRecorder.current.onstop = () => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const mimeContent = window.MediaRecorder.isTypeSupported(
-        'audio/mp4;codecs=mp4a',
-      )
-        ? 'audio/mp4;codecs=mp4a'
-        : 'audio/webm;codecs=opus';
       // const audioBlob = new Blob(audioChunks, { type: mimeContent }); // mimeType
       // const mp4Blob = new Blob(recordedChunks, { type: 'video/mp4' });
 
@@ -599,9 +578,7 @@ const QuickBloxUIKitDesktopLayout: React.FC<
         }
         setMessageText('');
       } else {
-        setWarningErrorText(
-          'length of text message must be less then 1000 chars.',
-        );
+        setWarningErrorText('Messages must be less then 1000 chars.');
         setTimeout(() => {
           setWarningErrorText('');
         }, 3000);
@@ -611,54 +588,26 @@ const QuickBloxUIKitDesktopLayout: React.FC<
 
   const ChangeFileHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (isOnline) {
-      const reader = new FileReader();
-      const file = event.currentTarget.files
-        ? event.currentTarget.files[0]
-        : null;
+      const file = event.currentTarget.files?.[0];
+      if (!file) return;
+      
+      const MAXSIZE = maxFileSize || 90 * 1000000;
+      if (file.size > MAXSIZE) {
+        toast(`File size must be less than ${MAXSIZE / (1024 * 1024)} MB`);
+        return;
+      }
 
+      const reader = new FileReader();
       reader.onloadend = () => {
         setFileToSend(file);
       };
-
-      if (file !== null) reader.readAsDataURL(file);
+      reader.readAsDataURL(file);
     }
   };
 
   const handleOnReply = (message: MessageEntity): void => {
     setMessagesToReply([message]);
     setShowReplyMessage(true);
-  };
-
-  const handleSendData = (
-    dialogsForForward: DialogEntity[],
-    messagesForForward: MessageEntity[],
-    relatedText: string,
-  ) => {
-    const forwardingData: ForwardMessagesParams = {
-      messagesToForward: messagesForForward,
-      targetDialogs: dialogsForForward,
-      relatedTextMessage:
-        relatedText || MessageDTOMapper.FORWARD_MESSAGE_PREFIX,
-    };
-
-    messagesViewModel
-      .sendForwardedMessages(forwardingData)
-      .then((opResult: boolean) => {
-        if (opResult) {
-          toast('Message have been forwarded');
-        } else {
-          toast('Message have not been forwarded');
-        }
-        forwardMessageModal.toggleModal();
-
-        return null;
-      })
-      .catch((reason) => {
-        const errorMessage = stringifyError(reason);
-
-        forwardMessageModal.toggleModal();
-        showErrorMessage(errorMessage);
-      });
   };
 
   function getSectionData(messages2View: MessageEntity[]) {
@@ -686,12 +635,6 @@ const QuickBloxUIKitDesktopLayout: React.FC<
         title: date,
         data: { [date]: groupMessages[date] },
       }));
-    // const sections: SectionItem<MessageEntity>[] = Object.keys(
-    //   groupMessages,
-    // ).map((date) => ({
-    //   title: date,
-    //   data: { [date]: groupMessages[date] },
-    // }));
 
     return sections;
   }
@@ -701,66 +644,12 @@ const QuickBloxUIKitDesktopLayout: React.FC<
     setClientHeight(newHeight);
   };
 
-  const leaveDialogHandler = (dialog: DialogEntity) => {
-    if (isOnline) {
-      setDialogToLeave(dialog);
-    }
-  };
-
-  const handleDialogOnClick = () => {
-    if (isOpen) {
-      setDialogToLeave(undefined);
-    }
-    setIsOpen((state) => !state);
-  };
-
-  const [isLeaving, setIsLeaving] = useState(false);
-  const toastLeavingId = React.useRef(null);
-  const handleLeaveDialog = () => {
-    if (dialogToLeave) {
-      setIsLeaving(true);
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      toastLeavingId.current = toast('leaving dialog', {
-        autoClose: false,
-        isLoading: true,
-      });
-      // eslint-disable-next-line promise/catch-or-return
-      dialogsViewModel
-        .deleteDialog(dialogToLeave as GroupDialogEntity)
-        .then((result) => {
-          // eslint-disable-next-line promise/always-return
-          if (!result) {
-            toast('Dialog have not been left');
-          }
-          handleDialogOnClick();
-        })
-        .catch((e) => {
-          console.log(e);
-          toast("Can't leave dialog");
-        })
-        .finally(() => {
-          setIsLeaving(false);
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          toast.dismiss(toastLeavingId.current);
-        });
-    }
-  };
-
-  const createDialogHandler = () => {
-    if (isOnline) {
-      newModal.toggleModal();
-    }
-  };
-
   useEffect(() => {
     const codeVersion = '0.3.1';
 
     console.log(`React UIKit CODE VERSION IS ${codeVersion}`);
     if (isAuthProcessed()) {
       const pagination: Pagination = new Pagination();
-
       dialogsViewModel?.getDialogs(pagination);
     }
 
@@ -768,19 +657,27 @@ const QuickBloxUIKitDesktopLayout: React.FC<
       dialogsViewModel.release();
     };
   }, []);
+  // TODO don't need to get all dialogs, just need to get the campaign dialog
+  // useEffect(() => {
+  //   if (isAuthProcessed()) {
+  //     const pagination: Pagination = new Pagination();
+  //     dialogsViewModel?.getDialogs(pagination);
+  //   }
+  // }, [currentContext.InitParams]);
   useEffect(() => {
-    if (isAuthProcessed()) {
-      const pagination: Pagination = new Pagination();
-
-      dialogsViewModel?.getDialogs(pagination);
+    // Automatically select the first dialog if available
+    if (dialogsViewModel.dialogs.length > 0 && !selectedDialog) {
+      // TODO: get dialog by id, not just the first one
+      setSelectedDialog(dialogsViewModel.dialogs[0]);
     }
-  }, [currentContext.InitParams]);
+  }, [dialogsViewModel.dialogs]);
+
   useEffect(() => {
     if (isMobile) {
       if (!selectedDialog) {
-        setShowDialogList(true);
+        // setShowDialogList(true);
       } else {
-        setShowDialogList(false);
+        // setShowDialogList(false);
       }
       const canShowMessages =
         selectedDialog && !(showDialogInformation && needDialogInformation);
@@ -794,7 +691,7 @@ const QuickBloxUIKitDesktopLayout: React.FC<
         setShowDialogInformation(true);
       else setShowDialogInformation(false);
     } else {
-      setShowDialogList(true);
+      // setShowDialogList(true);
       setShowDialogMessages(true);
       setShowDialogInformation(true);
     }
@@ -877,11 +774,11 @@ const QuickBloxUIKitDesktopLayout: React.FC<
       userViewModel.entity = selectedDialog;
 
       if (isMobile) {
-        setShowDialogList(false);
+        // setShowDialogList(false); don't show dialog list, maybe replace with some other action tho, like refresh
         setShowDialogMessages(true);
       }
     } else {
-      setShowDialogList(true);
+      // setShowDialogList(true);  don't show dialog list, maybe replace with some other action tho, like refresh
     }
   }, [selectedDialog]);
   useEffect(() => {
@@ -907,7 +804,6 @@ const QuickBloxUIKitDesktopLayout: React.FC<
     const MAXSIZE = maxFileSize || 90 * 1000000;
     const MAXSIZE_FOR_MESSAGE = MAXSIZE / (1024 * 1024);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const flag = fileToSend?.size && fileToSend?.size < MAXSIZE;
 
     if (fileToSend?.size && fileToSend?.size < MAXSIZE) {
       if (showReplyMessage && messagesToReply?.length > 0) {
@@ -964,12 +860,13 @@ const QuickBloxUIKitDesktopLayout: React.FC<
       if (!permission) {
         // eslint-disable-next-line promise/catch-or-return,promise/always-return
         getMicrophonePermission().catch(() => {
-          showErrorMessage(`Have no audio.`);
+          showErrorMessage(`Unable to access microphone.`);
         });
       } else {
         // eslint-disable-next-line promise/catch-or-return,promise/always-return
         startRecording().then(() => {
-          setWarningErrorText(`Your voice is recording during for 1 minutes`);
+          // TODO: fix english, not sure if this means it's been recording for 1 minute, or it will be recording for 1 minute
+          setWarningErrorText(`Your voice is recording for 1 minute`);
         });
       }
     } else {
@@ -983,7 +880,8 @@ const QuickBloxUIKitDesktopLayout: React.FC<
     if (isRecording && permission) {
       // eslint-disable-next-line promise/always-return,promise/catch-or-return
       startRecording().then(() => {
-        setWarningErrorText(`Your voice is recording during for 1 minutes`);
+        // TODO: fix english, not sure if this means it's been recording for 1 minute, or it will be recording for 1 minute
+        setWarningErrorText(`Your voice is recording for 1 minute`);
       });
     }
   }, [permission]);
@@ -1019,11 +917,14 @@ const QuickBloxUIKitDesktopLayout: React.FC<
       }
     }
   }, [needDialogInformation]);
+
   useEffect(() => {
-    if (dialogToLeave) {
-      handleDialogOnClick();
-    }
-  }, [dialogToLeave]);
+    return () => {
+      if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+      }
+    };
+  }, [stream]);
 
   return (
     <ToastProvider>
@@ -1038,9 +939,7 @@ const QuickBloxUIKitDesktopLayout: React.FC<
             backgroundColor: 'rgba(0, 0, 0, 0.05)',
             zIndex: '100',
             display:
-              isLeaving || (messagesViewModel && messagesViewModel.loading)
-                ? 'block'
-                : 'none',
+              messagesViewModel && (messagesViewModel.loading || !selectedDialog) ? 'block' : 'none',
           }}
         />
         <DesktopLayout
@@ -1051,30 +950,30 @@ const QuickBloxUIKitDesktopLayout: React.FC<
           onHeightChange={handleHeightChange}
           theme={theme}
           dialogsView={
-            showDialogList ? (
-              <DialogList
-                disableAction={!isOnline}
-                scrollableHeight={dialogListScrollableHeight}
-                // subHeaderContent={<CompanyLogo />}
-                // upHeaderContent={<CompanyLogo />}
-                dialogListViewModel={dialogsViewModel} // 1 Get 2 Update UseCase
-                selectedDialog={dialogsViewModel.entity}
-                onDialogSelected={selectDialogActions}
-                onCreateDialog={createDialogHandler}
-                onLeaveDialog={leaveDialogHandler}
-                additionalSettings={{
-                  withoutHeader: false,
-                  themeHeader: theme,
-                  themePreview: theme,
-                  useSubHeader: false,
-                  useUpHeader: false,
-                }}
-              />
-            ) : null
+            // showDialogList ? (
+            //   <DialogList
+            //     disableAction={!isOnline}
+            //     scrollableHeight={dialogListScrollableHeight}
+            //     // subHeaderContent={<CompanyLogo />}
+            //     // upHeaderContent={<CompanyLogo />}
+            //     dialogListViewModel={dialogsViewModel} // 1 Get 2 Update UseCase
+            //     selectedDialog={dialogsViewModel.entity}
+            //     onDialogSelected={selectDialogActions}
+            //     onCreateDialog={createDialogHandler}
+            //     onLeaveDialog={leaveDialogHandler}
+            //     additionalSettings={{
+            //       withoutHeader: false,
+            //       themeHeader: theme,
+            //       themePreview: theme,
+            //       useSubHeader: false,
+            //       useUpHeader: false,
+            //     }}
+            //   />
+            // ) : null
+            null
           }
           dialogMessagesView={
             showDialogMessages &&
-            selectedDialog &&
             selectedDialog &&
             dialogsViewModel.entity ? (
               <Dialog
@@ -1101,7 +1000,7 @@ const QuickBloxUIKitDesktopLayout: React.FC<
                   <Header
                     title={dialogsViewModel.entity.name}
                     avatar={renderIconForTypeDialog(dialogsViewModel.entity)}
-                    onGoBack={() => setSelectedDialog(undefined)}
+                    // onGoBack={() => setSelectedDialog(undefined)}
                     className="dialog-header__line"
                   >
                     <div className="dialog-header-right">
@@ -1151,12 +1050,7 @@ const QuickBloxUIKitDesktopLayout: React.FC<
                             onReply={(m: MessageEntity) => {
                               handleOnReply(m);
                             }}
-                            onForward={(m: MessageEntity) => {
-                              if (isOnline) {
-                                setForwardMessage(m);
-                                forwardMessageModal.toggleModal();
-                              }
-                            }}
+                            onForward={() => {}}
                             listRef={listRef}
                             AIAssistWidget={defaultAIAssistWidget}
                             AITranslateWidget={defaultAITranslateWidget}
@@ -1253,7 +1147,7 @@ const QuickBloxUIKitDesktopLayout: React.FC<
                   }}
                 >
                   <Placeholder
-                    text={['Select a chat to start messaging.']}
+                    text={['No chat history.']}
                     className="empty-chat-history-placeholder"
                   />
                 </div>
@@ -1296,59 +1190,9 @@ const QuickBloxUIKitDesktopLayout: React.FC<
             ))
           }
         />
-        <DialogWindow
-          open={isOpen}
-          title="Leave dialog?"
-          onClose={handleDialogOnClick}
-        >
-          <div className="dialog-leave-container">
-            <Button variant="outlined" onClick={handleDialogOnClick}>
-              Cancel
-            </Button>
-            <Button variant="danger" onClick={handleLeaveDialog}>
-              Leave
-            </Button>
-          </div>
-        </DialogWindow>
-        <DialogWindow
-          title="New dialog"
-          onClose={newModal.toggleModal}
-          open={newModal.isOpen}
-          className={
-            isMobile
-              ? 'dialog-list-new-dialog-mobile-container'
-              : 'dialog-list-new-dialog-desktop-container'
-          }
-        >
-          <CreateNewDialogFlow
-            dialogsViewModel={dialogsViewModel}
-            onCancel={newModal.toggleModal}
-            onFinished={(newDialog) => {
-              newModal.toggleModal();
-              setSelectedDialog(newDialog);
-            }}
-            isOnline={isOnline}
-          />
-        </DialogWindow>
-        {selectedDialog && (
-          <DialogWindow
-            title="Forward"
-            open={forwardMessageModal.isOpen}
-            onClose={forwardMessageModal.toggleModal}
-          >
-            <ForwardMessageFlow
-              messages={[forwardMessage!]}
-              currentDialog={selectedDialog}
-              currentUserName={userName || ''}
-              dialogs={dialogsViewModel.dialogs}
-              onSendData={handleSendData}
-              disableActions={!isOnline}
-            />
-          </DialogWindow>
-        )}
       </div>
     </ToastProvider>
   );
 };
 
-export default QuickBloxUIKitDesktopLayout;
+export default QuickBloxUIKitMessageLayout;

@@ -1,0 +1,32 @@
+import React from 'react';
+import { FunctionTypeDialogEntityToVoid, FunctionTypeViewModelToVoid, FunctionTypeVoidToVoid } from '../../../CommonTypes/BaseViewModel';
+import { ThemeNames } from '../PreviewDialog/PreviewDialog';
+import { DialogListViewModel } from './DialogListViewModel';
+import { DialogEntity } from '../../../Domain/entity/DialogEntity';
+import UiKitTheme from '../../themes/UiKitTheme';
+import './DialogList.scss';
+import '../DialogListHeader/DialogListHeader.scss';
+import '../../ui-components/Header/Header.scss';
+type DialogsComponentSettings = {
+    themeName?: ThemeNames;
+    withoutHeader?: boolean;
+    useSubHeader?: boolean;
+    useUpHeader?: boolean;
+    themeHeader?: UiKitTheme;
+    themePreview?: UiKitTheme;
+};
+type DialogsProps = {
+    header?: React.ReactNode;
+    subHeaderContent?: React.ReactNode;
+    upHeaderContent?: React.ReactNode;
+    selectedDialog?: DialogEntity;
+    onDialogSelected?: FunctionTypeViewModelToVoid<DialogEntity>;
+    onLeaveDialog: FunctionTypeDialogEntityToVoid;
+    onCreateDialog?: FunctionTypeVoidToVoid;
+    dialogListViewModel: DialogListViewModel;
+    additionalSettings?: DialogsComponentSettings;
+    disableAction?: boolean;
+    scrollableHeight?: number;
+};
+declare const DialogList: React.FC<DialogsProps>;
+export default DialogList;

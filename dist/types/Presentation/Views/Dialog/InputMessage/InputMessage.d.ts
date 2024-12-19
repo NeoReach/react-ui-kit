@@ -1,0 +1,21 @@
+import React from 'react';
+import UiKitTheme from '../../../themes/UiKitTheme';
+import { DialogViewModel } from '../DialogViewModel';
+import { FunctionTypeStringToVoid } from '../../../../CommonTypes/BaseViewModel';
+type MessageInputProps = {
+    messageText: string;
+    onChangeText: FunctionTypeStringToVoid;
+    sendText: FunctionTypeStringToVoid;
+    renderSendIcon: React.ReactNode;
+    renderAttachment: React.ReactNode;
+    isRecording: boolean;
+    renderVoiceRecorder: React.ReactNode;
+    renderVoiceRecordProgress: React.ReactNode;
+    renderAIWidget: React.ReactNode;
+    waitAIWidget: boolean;
+    messagesViewModel: DialogViewModel;
+    maxWidthToResizing: string;
+    theme?: UiKitTheme;
+};
+declare const InputMessage: React.FC<MessageInputProps>;
+export default InputMessage;

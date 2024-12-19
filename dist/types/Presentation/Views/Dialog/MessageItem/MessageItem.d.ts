@@ -1,0 +1,23 @@
+import { RefObject } from 'react';
+import { MessageEntity } from '../../../../Domain/entity/MessageEntity';
+import { FunctionTypeMessageEntityToVoid } from '../../../../CommonTypes/BaseViewModel';
+import { AIMessageWidget } from '../AIWidgets/AIMessageWidget';
+import './MessageItem.scss';
+export type MessageItemProps = {
+    message: MessageEntity;
+    currentUserId?: number;
+    AITranslateWidget?: AIMessageWidget;
+    AIAssistWidget?: AIMessageWidget;
+    maxTokens: number;
+    defaultTranslationLanguage: string;
+    languagesForAITranslate: string[];
+    enableForwarding: boolean;
+    enableReplying: boolean;
+    onReply: FunctionTypeMessageEntityToVoid;
+    onForward: FunctionTypeMessageEntityToVoid;
+    listRef?: RefObject<HTMLDivElement>;
+    messagesToView: MessageEntity[];
+    onError: (messageError: string) => void;
+    disableAction?: boolean;
+};
+export default function MessageItem({ message, currentUserId, enableForwarding, enableReplying, onReply, onForward, listRef, messagesToView, AITranslateWidget, AIAssistWidget, maxTokens, defaultTranslationLanguage, languagesForAITranslate, onError, disableAction, }: MessageItemProps): import("react/jsx-runtime").JSX.Element | null;
