@@ -21,6 +21,7 @@ import { DialogEntity } from './Domain/entity/DialogEntity';
 import BaseViewModel, { FunctionTypeViewModelToVoid } from './CommonTypes/BaseViewModel';
 import { LoginData, AuthorizationData, RemoteDataSource } from './Data/source/remote/RemoteDataSource';
 import QuickBloxUIKitDesktopLayout from './Presentation/layouts/Desktop/QuickBloxUIKitDesktopLayout';
+import QuickBloxUIKitMessageLayout from './Presentation/layouts/Desktop/QuickBloxUIKitMessageLayout';
 import DefaultTheme from './Presentation/themes/DefaultThemes/DefaultTheme';
 import UiKitTheme from './Presentation/themes/UiKitTheme';
 import useQbUIKitDataContext from './Presentation/providers/QuickBloxUIKitProvider/useQbUIKitDataContext';
@@ -31,4 +32,4 @@ import ErrorMessageIcon from './Presentation/Views/Dialog/AIWidgets/ErrorMessage
 import PreviewDialogViewModel from './Presentation/Views/PreviewDialog/PreviewDialogViewModel';
 import { AvatarContentIncomingUserProps } from './Presentation/Views/Dialog/Message/IncomingMessage/AvatarContentIncomingUser/AvatarContentIncomingUser';
 import { GetUserNameFct } from './Presentation/Views/Dialog/Message/IncomingMessage/IncomingMessage';
-export { MainButton, TypeButton, type LoginData, type AuthorizationData, QuickBloxUIKitProvider, qbDataContext, type QBDataContextType, RemoteDataSource, LocalDataSource, useQBConnection, useQbInitializedDataContext, useQbUIKitDataContext, useEventMessagesRepository, type DialogListViewModel, useDialogListViewModel, SubscribeToDialogEventsUseCase, Pagination, type DialogEventInfo, EventMessageType, NotificationTypes, stringifyError, DesktopLayout, DialogList, Dialog, DialogInfo, type DialogEntity, BaseViewModel, QuickBloxUIKitDesktopLayout, DefaultTheme, type UiKitTheme, type AIMessageWidget, AISource, type IChatMessage, AIWidgetIcon, ErrorMessageIcon, PreviewDialogViewModel, type FunctionTypeViewModelToVoid, type AvatarContentIncomingUserProps, type GetUserNameFct, };
+export { MainButton, TypeButton, type LoginData, type AuthorizationData, QuickBloxUIKitProvider, qbDataContext, type QBDataContextType, RemoteDataSource, LocalDataSource, useQBConnection, useQbInitializedDataContext, useQbUIKitDataContext, useEventMessagesRepository, type DialogListViewModel, useDialogListViewModel, SubscribeToDialogEventsUseCase, Pagination, type DialogEventInfo, EventMessageType, NotificationTypes, stringifyError, DesktopLayout, DialogList, Dialog, DialogInfo, type DialogEntity, BaseViewModel, QuickBloxUIKitDesktopLayout, QuickBloxUIKitMessageLayout, DefaultTheme, type UiKitTheme, type AIMessageWidget, AISource, type IChatMessage, AIWidgetIcon, ErrorMessageIcon, PreviewDialogViewModel, type FunctionTypeViewModelToVoid, type AvatarContentIncomingUserProps, type GetUserNameFct, };

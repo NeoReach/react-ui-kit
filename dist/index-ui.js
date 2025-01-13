@@ -23139,6 +23139,1014 @@ var QuickBloxUIKitDesktopLayout = function (_a) {
 
 /***/ }),
 
+/***/ "./src/Presentation/layouts/Desktop/QuickBloxUIKitMessageLayout.tsx":
+/*!**************************************************************************!*\
+  !*** ./src/Presentation/layouts/Desktop/QuickBloxUIKitMessageLayout.tsx ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Views_Dialog_Dialog_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Views/Dialog/Dialog.scss */ "./src/Presentation/Views/Dialog/Dialog.scss");
+/* harmony import */ var _Views_Dialog_DialogHeader_DialogInfoIcon_DialogInfoIcon_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Views/Dialog/DialogHeader/DialogInfoIcon/DialogInfoIcon.scss */ "./src/Presentation/Views/Dialog/DialogHeader/DialogInfoIcon/DialogInfoIcon.scss");
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
+/* harmony import */ var _providers_QuickBloxUIKitProvider_useQbInitializedDataContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../providers/QuickBloxUIKitProvider/useQbInitializedDataContext */ "./src/Presentation/providers/QuickBloxUIKitProvider/useQbInitializedDataContext.ts");
+/* harmony import */ var _Views_DialogInfo_DialogInfo__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ../../Views/DialogInfo/DialogInfo */ "./src/Presentation/Views/DialogInfo/DialogInfo.tsx");
+/* harmony import */ var _DesktopLayout__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./DesktopLayout */ "./src/Presentation/layouts/Desktop/DesktopLayout.tsx");
+/* harmony import */ var _Views_Dialog_Dialog__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../../Views/Dialog/Dialog */ "./src/Presentation/Views/Dialog/Dialog.tsx");
+/* harmony import */ var _Views_DialogList_useDialogListViewModel__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../Views/DialogList/useDialogListViewModel */ "./src/Presentation/Views/DialogList/useDialogListViewModel.ts");
+/* harmony import */ var _Domain_repository_Pagination__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../../../Domain/repository/Pagination */ "./src/Domain/repository/Pagination.ts");
+/* harmony import */ var _Views_Dialog_AIWidgets_UseDefaultAIAssistAnswerWidget__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../Views/Dialog/AIWidgets/UseDefaultAIAssistAnswerWidget */ "./src/Presentation/Views/Dialog/AIWidgets/UseDefaultAIAssistAnswerWidget.tsx");
+/* harmony import */ var _Views_Dialog_AIWidgets_UseDefaultAITranslateWidget__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../Views/Dialog/AIWidgets/UseDefaultAITranslateWidget */ "./src/Presentation/Views/Dialog/AIWidgets/UseDefaultAITranslateWidget.tsx");
+/* harmony import */ var _Views_Dialog_AIWidgets_UseDefaultAIRephraseMessageWidget__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../Views/Dialog/AIWidgets/UseDefaultAIRephraseMessageWidget */ "./src/Presentation/Views/Dialog/AIWidgets/UseDefaultAIRephraseMessageWidget.tsx");
+/* harmony import */ var _Data_DefaultConfigurations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Data/DefaultConfigurations */ "./src/Data/DefaultConfigurations.ts");
+/* harmony import */ var _Views_Dialog_AIWidgets_UseDefaultAIAssistAnswerWidgetWithProxy__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../Views/Dialog/AIWidgets/UseDefaultAIAssistAnswerWidgetWithProxy */ "./src/Presentation/Views/Dialog/AIWidgets/UseDefaultAIAssistAnswerWidgetWithProxy.tsx");
+/* harmony import */ var _Views_Dialog_AIWidgets_UseDefaultAITranslateWidgetWithProxy__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../Views/Dialog/AIWidgets/UseDefaultAITranslateWidgetWithProxy */ "./src/Presentation/Views/Dialog/AIWidgets/UseDefaultAITranslateWidgetWithProxy.tsx");
+/* harmony import */ var _Views_Dialog_AIWidgets_UseDefaultAIRephraseMessageWidgetWithProxy__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../Views/Dialog/AIWidgets/UseDefaultAIRephraseMessageWidgetWithProxy */ "./src/Presentation/Views/Dialog/AIWidgets/UseDefaultAIRephraseMessageWidgetWithProxy.tsx");
+/* harmony import */ var _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../../Domain/entity/DialogTypes */ "./src/Domain/entity/DialogTypes.ts");
+/* harmony import */ var _Views_Dialog_useDialogViewModel__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../Views/Dialog/useDialogViewModel */ "./src/Presentation/Views/Dialog/useDialogViewModel.ts");
+/* harmony import */ var _utils_parse__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../../../utils/parse */ "./src/utils/parse.ts");
+/* harmony import */ var _ui_components_MessageInput_ReplyMessagePreview_ReplyMessagePreview__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ../../ui-components/MessageInput/ReplyMessagePreview/ReplyMessagePreview */ "./src/Presentation/ui-components/MessageInput/ReplyMessagePreview/ReplyMessagePreview.tsx");
+/* harmony import */ var _components_containers_SectionList__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../../components/containers/SectionList */ "./src/Presentation/components/containers/SectionList/index.tsx");
+/* harmony import */ var _components_containers_SectionList_hooks__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../components/containers/SectionList/hooks */ "./src/Presentation/components/containers/SectionList/hooks/useMobileLayout.ts");
+/* harmony import */ var _Data_source_remote_Mapper_MessageDTOMapper__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../../../Data/source/remote/Mapper/MessageDTOMapper */ "./src/Data/source/remote/Mapper/MessageDTOMapper.ts");
+/* harmony import */ var _Views_DialogInfo_MembersList_MembersList__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ../../Views/DialogInfo/MembersList/MembersList */ "./src/Presentation/Views/DialogInfo/MembersList/MembersList.tsx");
+/* harmony import */ var _Views_DialogInfo_UsersList_useUsersListViewModel__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../Views/DialogInfo/UsersList/useUsersListViewModel */ "./src/Presentation/Views/DialogInfo/UsersList/useUsersListViewModel.ts");
+/* harmony import */ var _ui_components_Header_Header__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../../ui-components/Header/Header */ "./src/Presentation/ui-components/Header/Header.tsx");
+/* harmony import */ var _ui_components_Avatar_Avatar__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../ui-components/Avatar/Avatar */ "./src/Presentation/ui-components/Avatar/Avatar.tsx");
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../icons */ "./src/Presentation/icons/contents/group-chat.svg");
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../../icons */ "./src/Presentation/icons/contents/user.svg");
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../icons */ "./src/Presentation/icons/contents/public-channel.svg");
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../../icons */ "./src/Presentation/icons/status/information.svg");
+/* harmony import */ var _ui_components_MessageInput_MessageInput__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ../../ui-components/MessageInput/MessageInput */ "./src/Presentation/ui-components/MessageInput/MessageInput.tsx");
+/* harmony import */ var _Views_Dialog_AIWidgets_AIRephraseWidget_AIRephraseWidget__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ../../Views/Dialog/AIWidgets/AIRephraseWidget/AIRephraseWidget */ "./src/Presentation/Views/Dialog/AIWidgets/AIRephraseWidget/AIRephraseWidget.tsx");
+/* harmony import */ var _Views_Dialog_MessageItem_MessageItem__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ../../Views/Dialog/MessageItem/MessageItem */ "./src/Presentation/Views/Dialog/MessageItem/MessageItem.tsx");
+/* harmony import */ var _ui_components__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../../ui-components */ "./src/Presentation/ui-components/MessageSeparator/MessageSeparator.tsx");
+/* harmony import */ var _ui_components__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ../../ui-components */ "./src/Presentation/ui-components/Placeholder/Placeholder.tsx");
+/* harmony import */ var _ui_components_Toast_ToastProvider__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../../ui-components/Toast/ToastProvider */ "./src/Presentation/ui-components/Toast/ToastProvider.tsx");
+/* harmony import */ var _providers_QuickBloxUIKitProvider_useQBConnection__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../providers/QuickBloxUIKitProvider/useQBConnection */ "./src/Presentation/providers/QuickBloxUIKitProvider/useQBConnection.ts");
+/* harmony import */ var _Domain_entity_EventMessageType__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../../Domain/entity/EventMessageType */ "./src/Domain/entity/EventMessageType.ts");
+/* harmony import */ var _utils_formatFileSize__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../../../utils/formatFileSize */ "./src/utils/formatFileSize.ts");
+/* harmony import */ var _Views_Dialog_AIWidgets_UseDefaultAIAssistAnswerWidgetWithSDK__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Views/Dialog/AIWidgets/UseDefaultAIAssistAnswerWidgetWithSDK */ "./src/Presentation/Views/Dialog/AIWidgets/UseDefaultAIAssistAnswerWidgetWithSDK.tsx");
+/* harmony import */ var _Views_Dialog_AIWidgets_UseDefaultAITranslateWidgetWithSDK__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../Views/Dialog/AIWidgets/UseDefaultAITranslateWidgetWithSDK */ "./src/Presentation/Views/Dialog/AIWidgets/UseDefaultAITranslateWidgetWithSDK.tsx");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var QuickBloxUIKitMessageLayout = function (_a) {
+    var _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+    var _p = _a.theme, theme = _p === void 0 ? undefined : _p, _q = _a.AITranslate, AITranslate = _q === void 0 ? undefined : _q, _r = _a.AIRephrase, AIRephrase = _r === void 0 ? undefined : _r, _s = _a.AIAssist, AIAssist = _s === void 0 ? undefined : _s, _t = _a.uikitHeightOffset, uikitHeightOffset = _t === void 0 ? '0px' : _t;
+    var mimeType = 'audio/webm;codecs=opus'; // audio/ogg audio/mpeg audio/webm audio/x-wav audio/mp4
+    var messagePerPage = 47;
+    var currentContext = (0,_providers_QuickBloxUIKitProvider_useQbInitializedDataContext__WEBPACK_IMPORTED_MODULE_5__["default"])();
+    var QBConfig = currentContext.InitParams.qbConfig ||
+        _Data_DefaultConfigurations__WEBPACK_IMPORTED_MODULE_6__.DefaultConfigurations.getDefaultQBConfig();
+    var userName = (_b = currentContext.storage.REMOTE_DATA_SOURCE.authInformation) === null || _b === void 0 ? void 0 : _b.userName;
+    var currentUserId = (_c = currentContext.storage.REMOTE_DATA_SOURCE.authInformation) === null || _c === void 0 ? void 0 : _c.userId;
+    var sessionToken = (_d = currentContext.storage.REMOTE_DATA_SOURCE.authInformation) === null || _d === void 0 ? void 0 : _d.sessionToken;
+    var enableForwarding = QBConfig.appConfig.enableForwarding;
+    var enableReplying = QBConfig.appConfig.enableReplying;
+    var maxFileSize = currentContext.InitParams.maxFileSize;
+    var maxTokensForAIRephrase = currentContext.InitParams.qbConfig.configAIApi.AIRephraseWidgetConfig
+        .maxTokens;
+    var rephraseTones = currentContext.InitParams.qbConfig.configAIApi.AIRephraseWidgetConfig.Tones;
+    var defaultAIRephraseWidget = AIRephrase === null || AIRephrase === void 0 ? void 0 : AIRephrase.AIWidget;
+    var defaultAITranslateWidget = AITranslate === null || AITranslate === void 0 ? void 0 : AITranslate.AIWidget;
+    var defaultAIAssistWidget = AIAssist === null || AIAssist === void 0 ? void 0 : AIAssist.AIWidget;
+    var getAIAssistAnswer = function () {
+        if (QBConfig.configAIApi.AIAnswerAssistWidgetConfig.smartChatAssistantId) {
+            defaultAIAssistWidget = (0,_Views_Dialog_AIWidgets_UseDefaultAIAssistAnswerWidgetWithSDK__WEBPACK_IMPORTED_MODULE_7__["default"])(currentContext.storage.REMOTE_DATA_SOURCE, QBConfig.configAIApi.AIAnswerAssistWidgetConfig.smartChatAssistantId);
+        }
+        else if ((AIAssist === null || AIAssist === void 0 ? void 0 : AIAssist.enabled) && !(AIAssist === null || AIAssist === void 0 ? void 0 : AIAssist.default)) {
+            defaultAIAssistWidget = AIAssist.AIWidget;
+        }
+        else if ((AIAssist === null || AIAssist === void 0 ? void 0 : AIAssist.enabled) ||
+            QBConfig.configAIApi.AIAnswerAssistWidgetConfig.useDefault) {
+            if (!QBConfig.configAIApi.AIAnswerAssistWidgetConfig.useDefault ||
+                (AIAssist && !(AIAssist === null || AIAssist === void 0 ? void 0 : AIAssist.default))) {
+                defaultAIAssistWidget = undefined;
+            }
+            else {
+                var apiKey = QBConfig.configAIApi.AIAnswerAssistWidgetConfig.apiKey;
+                var token = '';
+                var proxyConfig = QBConfig.configAIApi.AIAnswerAssistWidgetConfig.proxyConfig ||
+                    _Data_DefaultConfigurations__WEBPACK_IMPORTED_MODULE_6__.DefaultConfigurations.getDefaultProxyConfig();
+                if (apiKey) {
+                    token = apiKey;
+                    defaultAIAssistWidget = (0,_Views_Dialog_AIWidgets_UseDefaultAIAssistAnswerWidget__WEBPACK_IMPORTED_MODULE_8__["default"])(__assign(__assign({}, proxyConfig), { apiKeyOrSessionToken: token }));
+                }
+                else {
+                    token = sessionToken || '';
+                    defaultAIAssistWidget = (0,_Views_Dialog_AIWidgets_UseDefaultAIAssistAnswerWidgetWithProxy__WEBPACK_IMPORTED_MODULE_9__["default"])(__assign(__assign({}, proxyConfig), { apiKeyOrSessionToken: token }));
+                }
+            }
+        }
+    };
+    var getAITranslate = function () {
+        if (QBConfig.configAIApi.AITranslateWidgetConfig.smartChatAssistantId) {
+            defaultAITranslateWidget = (0,_Views_Dialog_AIWidgets_UseDefaultAITranslateWidgetWithSDK__WEBPACK_IMPORTED_MODULE_10__["default"])(currentContext.storage.REMOTE_DATA_SOURCE, QBConfig.configAIApi.AITranslateWidgetConfig.smartChatAssistantId);
+        }
+        else if ((AITranslate === null || AITranslate === void 0 ? void 0 : AITranslate.enabled) && !(AITranslate === null || AITranslate === void 0 ? void 0 : AITranslate.default)) {
+            defaultAITranslateWidget = AITranslate.AIWidget;
+        }
+        else if ((AITranslate === null || AITranslate === void 0 ? void 0 : AITranslate.enabled) ||
+            QBConfig.configAIApi.AITranslateWidgetConfig.useDefault) {
+            if (!QBConfig.configAIApi.AITranslateWidgetConfig.useDefault ||
+                (AITranslate && !(AITranslate === null || AITranslate === void 0 ? void 0 : AITranslate.default))) {
+                defaultAITranslateWidget = undefined;
+            }
+            else {
+                var apiKey = QBConfig.configAIApi.AITranslateWidgetConfig.apiKey;
+                var token = '';
+                var proxyConfig = QBConfig.configAIApi.AITranslateWidgetConfig.proxyConfig ||
+                    _Data_DefaultConfigurations__WEBPACK_IMPORTED_MODULE_6__.DefaultConfigurations.getDefaultProxyConfig();
+                if (apiKey) {
+                    token = apiKey;
+                    defaultAITranslateWidget = (0,_Views_Dialog_AIWidgets_UseDefaultAITranslateWidget__WEBPACK_IMPORTED_MODULE_11__["default"])(__assign(__assign({}, proxyConfig), { apiKeyOrSessionToken: token }));
+                }
+                else {
+                    token = sessionToken || '';
+                    defaultAITranslateWidget = (0,_Views_Dialog_AIWidgets_UseDefaultAITranslateWidgetWithProxy__WEBPACK_IMPORTED_MODULE_12__["default"])(__assign(__assign({}, proxyConfig), { apiKeyOrSessionToken: token }));
+                }
+            }
+        }
+    };
+    var getAIRephrase = function () {
+        if ((AIRephrase === null || AIRephrase === void 0 ? void 0 : AIRephrase.enabled) && !(AIRephrase === null || AIRephrase === void 0 ? void 0 : AIRephrase.default)) {
+            defaultAIRephraseWidget = AIRephrase.AIWidget;
+        }
+        else if ((AIRephrase === null || AIRephrase === void 0 ? void 0 : AIRephrase.enabled) ||
+            QBConfig.configAIApi.AIRephraseWidgetConfig.useDefault) {
+            if (!QBConfig.configAIApi.AIRephraseWidgetConfig.useDefault ||
+                (AIRephrase && !(AIRephrase === null || AIRephrase === void 0 ? void 0 : AIRephrase.default))) {
+                defaultAIRephraseWidget = undefined;
+            }
+            else {
+                var apiKey = QBConfig.configAIApi.AIRephraseWidgetConfig.apiKey;
+                var token = '';
+                var proxyConfig = QBConfig.configAIApi.AIRephraseWidgetConfig.proxyConfig ||
+                    _Data_DefaultConfigurations__WEBPACK_IMPORTED_MODULE_6__.DefaultConfigurations.getDefaultProxyConfig();
+                if (apiKey) {
+                    token = apiKey;
+                    defaultAIRephraseWidget = (0,_Views_Dialog_AIWidgets_UseDefaultAIRephraseMessageWidget__WEBPACK_IMPORTED_MODULE_13__["default"])(__assign(__assign({}, proxyConfig), { apiKeyOrSessionToken: token }));
+                }
+                else {
+                    token = sessionToken || '';
+                    defaultAIRephraseWidget = (0,_Views_Dialog_AIWidgets_UseDefaultAIRephraseMessageWidgetWithProxy__WEBPACK_IMPORTED_MODULE_14__["default"])(__assign(__assign({}, proxyConfig), { apiKeyOrSessionToken: token }));
+                }
+            }
+        }
+    };
+    getAITranslate();
+    getAIRephrase();
+    getAIAssistAnswer();
+    var dialogsViewModel = (0,_Views_DialogList_useDialogListViewModel__WEBPACK_IMPORTED_MODULE_15__["default"])(currentContext);
+    var messagesViewModel = (0,_Views_Dialog_useDialogViewModel__WEBPACK_IMPORTED_MODULE_16__["default"])((_e = dialogsViewModel.entity) === null || _e === void 0 ? void 0 : _e.type, dialogsViewModel.entity);
+    var _u = react__WEBPACK_IMPORTED_MODULE_1___default().useState(), selectedDialog = _u[0], setSelectedDialog = _u[1];
+    var userViewModel = (0,_Views_DialogInfo_UsersList_useUsersListViewModel__WEBPACK_IMPORTED_MODULE_17__["default"])(selectedDialog);
+    var _v = react__WEBPACK_IMPORTED_MODULE_1___default().useState(''), dialogAvatarUrl = _v[0], setDialogAvatarUrl = _v[1];
+    var _w = (0,_providers_QuickBloxUIKitProvider_useQBConnection__WEBPACK_IMPORTED_MODULE_18__["default"])(), browserOnline = _w.browserOnline, connectionStatus = _w.connectionStatus, connectionRepository = _w.connectionRepository;
+    var _x = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(browserOnline && connectionStatus), isOnline = _x[0], setIsOnline = _x[1];
+    connectionRepository.subscribe(function (status) {
+        console.log("Connection status: ".concat(status ? 'CONNECTED' : 'DISCONNECTED'));
+        if (status)
+            setIsOnline(true);
+        else
+            setIsOnline(false);
+    }, _Domain_entity_EventMessageType__WEBPACK_IMPORTED_MODULE_19__["default"].LocalMessage, 'DESKTOP_LAYOUT');
+    var _y = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), needRefresh = _y[0], setNeedRefresh = _y[1];
+    var toastConnectionErrorId = react__WEBPACK_IMPORTED_MODULE_1___default().useRef(null);
+    //
+    var _z = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), waitAIWidget = _z[0], setWaitAIWidget = _z[1];
+    var _0 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''), messageText = _0[0], setMessageText = _0[1];
+    var _1 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), showReplyMessage = _1[0], setShowReplyMessage = _1[1];
+    var _2 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]), messagesToReply = _2[0], setMessagesToReply = _2[1];
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    var _3 = (0,_components_containers_SectionList_hooks__WEBPACK_IMPORTED_MODULE_20__["default"])(), isMobile = _3[0], width = _3[1], height = _3[2], breakpoint = _3[3];
+    var _4 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0), clientHeight = _4[0], setClientHeight = _4[1];
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    var _5 = react__WEBPACK_IMPORTED_MODULE_1___default().useState(false), scrollUpToDown = _5[0], setScrollUpToDown = _5[1];
+    var _6 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), needDialogInformation = _6[0], setNeedDialogInformation = _6[1];
+    var informationCloseHandler = function () {
+        setNeedDialogInformation(false);
+    };
+    var informationOpenHandler = function () {
+        setNeedDialogInformation(true);
+    };
+    //
+    var maxWidthToResizing = selectedDialog && needDialogInformation
+        ? '$message-view-container-wrapper-min-width'
+        : '1040px';
+    var workHeight = isMobile
+        ? "calc(".concat(height.toString(), "px - ").concat(uikitHeightOffset, " - 28px)")
+        : "calc(100vh - ".concat(uikitHeightOffset, " - 28px)");
+    var messagesContainerMobileHeight = showReplyMessage
+        ? "calc(".concat(clientHeight, "px - 128px - 64px - 16px)")
+        : "calc(".concat(clientHeight, "px - 128px - 16px)");
+    var messagesContainerHeight = showReplyMessage
+        ? "calc(".concat(clientHeight, "px - 128px - 64px)")
+        : "calc(".concat(clientHeight, "px - 128px - 1px)");
+    var clientContainerHeight = "".concat(clientHeight - 5, "px");
+    var headerHeight = 64;
+    var dialogListScrollableHeight = clientHeight - headerHeight - 6;
+    var _7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''), warningErrorText = _7[0], setWarningErrorText = _7[1];
+    var _8 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), useAudioWidget = _8[0], setUseAudioWidget = _8[1];
+    var _9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null), fileToSend = _9[0], setFileToSend = _9[1];
+    var _10 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), isRecording = _10[0], setIsRecording = _10[1];
+    var _11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), permission = _11[0], setPermission = _11[1];
+    var _12 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(), stream = _12[0], setStream = _12[1];
+    var mediaRecorder = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)();
+    var _13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(), resultAudioBlob = _13[0], setResultAudioBlob = _13[1];
+    var _14 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]), audioChunks = _14[0], setAudioChunks = _14[1];
+    // const [showDialogList, setShowDialogList] = useState<boolean>(true);
+    var _15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true), showDialogMessages = _15[0], setShowDialogMessages = _15[1];
+    var _16 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), showDialogInformation = _16[0], setShowDialogInformation = _16[1];
+    var _17 = react__WEBPACK_IMPORTED_MODULE_1___default().useState(false), isAllMembersShow = _17[0], setIsAllMembersShow = _17[1];
+    // functions
+    var isAuthProcessed = function () {
+        console.log('call isAuthProcessed');
+        var authState = {
+            needInit: currentContext.storage.REMOTE_DATA_SOURCE.needInit,
+            authProcessed: currentContext.storage.REMOTE_DATA_SOURCE.authProcessed,
+            connectionInit: currentContext.storage.CONNECTION_REPOSITORY.needInit
+        };
+        console.log(
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        "initialValue.REMOTE_DATA_SOURCE_MOCK.needInit: ".concat(currentContext.storage.REMOTE_DATA_SOURCE.needInit));
+        console.log(
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        "initialValue.REMOTE_DATA_SOURCE_MOCK.authProcessed: ".concat(currentContext.storage.REMOTE_DATA_SOURCE.authProcessed));
+        console.log(
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        "initialValue.CONNECTION_REPOSITORY.needInit: ".concat(currentContext.storage.CONNECTION_REPOSITORY.needInit));
+        return !authState.needInit && authState.authProcessed && !authState.connectionInit;
+    };
+    var fetchMoreData = function () {
+        if (messagesViewModel.pagination.hasNextPage()) {
+            var newPagination = messagesViewModel.pagination;
+            newPagination.perPage = messagePerPage;
+            newPagination.nextPage();
+            messagesViewModel.getMessages(newPagination);
+        }
+    };
+    var getUserAvatarByUid = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var result, participants, senderUser;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    result = '';
+                    participants = (dialogsViewModel === null || dialogsViewModel === void 0 ? void 0 : dialogsViewModel.entity) &&
+                        (dialogsViewModel === null || dialogsViewModel === void 0 ? void 0 : dialogsViewModel.entity.type) === _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_21__.DialogType.private
+                        ? [
+                            (dialogsViewModel === null || dialogsViewModel === void 0 ? void 0 : dialogsViewModel.entity)
+                                .participantId,
+                        ]
+                        : [];
+                    if (!(participants.length > 0)) return [3 /*break*/, 2];
+                    return [4 /*yield*/, userViewModel.getUserById(participants[0])];
+                case 1:
+                    senderUser = _a.sent();
+                    result = (senderUser === null || senderUser === void 0 ? void 0 : senderUser.photo) || '';
+                    return [3 /*break*/, 3];
+                case 2:
+                    result = '';
+                    _a.label = 3;
+                case 3: return [2 /*return*/, result];
+            }
+        });
+    }); };
+    var getDialogPhotoFileForPreview = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var tmpFileUrl, error_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 2, , 3]);
+                    return [4 /*yield*/, getUserAvatarByUid()];
+                case 1:
+                    tmpFileUrl = _a.sent();
+                    if (tmpFileUrl && tmpFileUrl.length > 0) {
+                        setDialogAvatarUrl(tmpFileUrl);
+                    }
+                    else {
+                        setDialogAvatarUrl('');
+                    }
+                    return [3 /*break*/, 3];
+                case 2:
+                    error_1 = _a.sent();
+                    console.error('Failed to load dialog photo:', error_1);
+                    setDialogAvatarUrl('');
+                    return [3 /*break*/, 3];
+                case 3: return [2 /*return*/];
+            }
+        });
+    }); };
+    // eslint-disable-next-line consistent-return
+    var renderIconForTypeDialog = function (dialogEntity) {
+        if (dialogEntity.type === _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_21__.DialogType.group) {
+            var groupDialogEntity = dialogEntity;
+            return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_Avatar_Avatar__WEBPACK_IMPORTED_MODULE_22__["default"], { src: groupDialogEntity.photo || '', icon: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_23__.ReactComponent, {}), size: "md" }));
+        }
+        if (dialogEntity.type === _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_21__.DialogType.private) {
+            return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_Avatar_Avatar__WEBPACK_IMPORTED_MODULE_22__["default"], { src: dialogAvatarUrl || "", icon: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_24__.ReactComponent, {}), size: "md" });
+        }
+        if (dialogEntity.type === _Domain_entity_DialogTypes__WEBPACK_IMPORTED_MODULE_21__.DialogType.public) {
+            var publicDialogEntity = dialogEntity;
+            return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_Avatar_Avatar__WEBPACK_IMPORTED_MODULE_22__["default"], { src: publicDialogEntity.photo || "", icon: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_25__.ReactComponent, {}), size: "md" }));
+        }
+    };
+    var showErrorMessage = function (errorMessage) {
+        setWarningErrorText(errorMessage);
+        setTimeout(function () {
+            setWarningErrorText('');
+        }, 3000);
+    };
+    var closeReplyMessageFlowHandler = function () {
+        setMessagesToReply([]);
+        setShowReplyMessage(false);
+    };
+    var repliedActions = function (replyData) {
+        // eslint-disable-next-line promise/catch-or-return
+        messagesViewModel
+            .sendReplyMessages(replyData)
+            .then(function (opResult) {
+            // eslint-disable-next-line promise/always-return
+            if (opResult) {
+                (0,react_toastify__WEBPACK_IMPORTED_MODULE_4__.toast)('Message have been replied');
+            }
+            else {
+                (0,react_toastify__WEBPACK_IMPORTED_MODULE_4__.toast)('Message have not been replied');
+            }
+        })
+            .catch(function (reason) {
+            var errorMessage = (0,_utils_parse__WEBPACK_IMPORTED_MODULE_26__.stringifyError)(reason);
+            (0,react_toastify__WEBPACK_IMPORTED_MODULE_4__.toast)(errorMessage);
+        })
+            .finally(function () {
+            setMessageText('');
+            closeReplyMessageFlowHandler();
+        });
+    };
+    var getMicrophonePermission = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var mediaStream, err_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (!window) return [3 /*break*/, 5];
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, navigator.mediaDevices.getUserMedia({
+                            audio: true,
+                            video: false,
+                        })];
+                case 2:
+                    mediaStream = _a.sent();
+                    setPermission(true);
+                    setStream(mediaStream);
+                    return [3 /*break*/, 4];
+                case 3:
+                    err_1 = _a.sent();
+                    showErrorMessage("The MediaRecorder API throws exception ".concat((0,_utils_parse__WEBPACK_IMPORTED_MODULE_26__.stringifyError)(err_1), " ."));
+                    return [3 /*break*/, 4];
+                case 4: return [3 /*break*/, 6];
+                case 5:
+                    showErrorMessage('The MediaRecorder API is not supported in your browser.');
+                    _a.label = 6;
+                case 6: return [2 /*return*/];
+            }
+        });
+    }); };
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars,@typescript-eslint/require-await
+    var startRecording = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var mimeTypes, mimeContent, media, localAudioChunks;
+        return __generator(this, function (_a) {
+            if (!stream)
+                return [2 /*return*/];
+            mimeTypes = [
+                'audio/aac',
+                'audio/mp4',
+                'audio/mpeg',
+                'audio/ogg',
+                'audio/wav',
+                'audio/webm',
+                'audio/3gpp',
+                'audio/flac',
+                'audio/x-aiff',
+                'audio/x-m4a',
+            ];
+            console.log('MIME TYPES: ');
+            mimeTypes.forEach(function (mType) {
+                if (MediaRecorder.isTypeSupported(mimeType)) {
+                    console.log("".concat(mType, " is supported"));
+                }
+                else {
+                    console.log("".concat(mType, " is not supported"));
+                }
+            });
+            mimeContent = window.MediaRecorder.isTypeSupported('audio/mp4')
+                ? 'audio/mp4;codecs=mp4a'
+                : 'audio/webm;codecs=opus';
+            media = new MediaRecorder(stream, { mimeType: mimeContent });
+            mediaRecorder.current = media;
+            mediaRecorder.current.start();
+            localAudioChunks = [];
+            mediaRecorder.current.ondataavailable = function (event) {
+                if (typeof event.data === 'undefined')
+                    return;
+                if (event.data.size === 0)
+                    return;
+                localAudioChunks.push(event.data);
+            };
+            setAudioChunks(localAudioChunks);
+            return [2 /*return*/];
+        });
+    }); };
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    var stopRecording = function () {
+        if (!mediaRecorder.current)
+            return;
+        mediaRecorder.current.stop();
+        mediaRecorder.current.onstop = function () {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            // const audioBlob = new Blob(audioChunks, { type: mimeContent }); // mimeType
+            // const mp4Blob = new Blob(recordedChunks, { type: 'video/mp4' });
+            // const audioBlob = new Blob(audioChunks, { type: 'video/mp4' }); // mimeType
+            // const audioBlob = new Blob(audioChunks, { type: 'audio/mp4' }); // mimeType
+            var audioBlob = new Blob(audioChunks, { type: 'audio/mp4' });
+            setResultAudioBlob(audioBlob);
+            setAudioChunks([]);
+            //
+            stream === null || stream === void 0 ? void 0 : stream.getAudioTracks().forEach(function (track) {
+                track.stop();
+            });
+            setPermission(false);
+            //
+        };
+    };
+    var blobToFile = function (theBlob, fileName) {
+        var b = theBlob;
+        // A Blob() is almost a File() - it's just missing the two properties below which we will add
+        b.lastModifiedDate = new Date();
+        b.name = fileName;
+        // Cast to a File() type
+        var resultFile = theBlob;
+        return resultFile;
+    };
+    function sendTextMessageActions(textToSend) {
+        if (isOnline) {
+            // closeReplyMessageFlowHandler
+            if (messagesViewModel === null || messagesViewModel === void 0 ? void 0 : messagesViewModel.loading)
+                return;
+            // setVoiceMessage(true);
+            if (textToSend.length > 0 && textToSend.length <= 1000) {
+                setMessageText('');
+                if (showReplyMessage && (messagesToReply === null || messagesToReply === void 0 ? void 0 : messagesToReply.length) > 0) {
+                    var replyData = {
+                        messagesToReply: messagesToReply,
+                        relatedTextMessage: textToSend,
+                    };
+                    repliedActions(replyData);
+                }
+                else {
+                    messagesViewModel.sendTextMessage(textToSend);
+                    setMessageText('');
+                }
+                setMessageText('');
+            }
+            else {
+                setWarningErrorText('Messages must be less then 1000 chars.');
+                setTimeout(function () {
+                    setWarningErrorText('');
+                }, 3000);
+            }
+        }
+    }
+    var ChangeFileHandler = function (event) {
+        var _a;
+        if (isOnline) {
+            var file_1 = (_a = event.currentTarget.files) === null || _a === void 0 ? void 0 : _a[0];
+            if (!file_1)
+                return;
+            var MAXSIZE = maxFileSize || 90 * 1000000;
+            if (file_1.size > MAXSIZE) {
+                (0,react_toastify__WEBPACK_IMPORTED_MODULE_4__.toast)("File size must be less than ".concat(MAXSIZE / (1024 * 1024), " MB"));
+                return;
+            }
+            var reader = new FileReader();
+            reader.onloadend = function () {
+                setFileToSend(file_1);
+            };
+            reader.readAsDataURL(file_1);
+        }
+    };
+    var handleOnReply = function (message) {
+        setMessagesToReply([message]);
+        setShowReplyMessage(true);
+    };
+    function getSectionData(messages2View) {
+        var groupMessages = {};
+        var reversedMessages = __spreadArray([], messages2View, true).reverse();
+        reversedMessages.forEach(function (message) {
+            var date = new Date(message.created_at);
+            date.setUTCHours(0, 0, 0, 0);
+            var dateString = date.toISOString();
+            groupMessages[dateString] = __spreadArray(__spreadArray([], (groupMessages[dateString] || []), true), [
+                message,
+            ], false);
+        });
+        Object.keys(groupMessages).forEach(function (date) {
+            groupMessages[date].sort(function (a, b) { return a.date_sent - b.date_sent; });
+        });
+        var sections = Object.keys(groupMessages)
+            .sort(function (a, b) { return a.localeCompare(b); })
+            .map(function (date) {
+            var _a;
+            return ({
+                title: date,
+                data: (_a = {}, _a[date] = groupMessages[date], _a),
+            });
+        });
+        return sections;
+    }
+    var handleHeightChange = function (newHeight) {
+        console.log('The new height is:', newHeight);
+        setClientHeight(newHeight);
+    };
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        var codeVersion = '0.3.1';
+        console.log("React UIKit CODE VERSION IS ".concat(codeVersion));
+        if (isAuthProcessed()) {
+            var pagination = new _Domain_repository_Pagination__WEBPACK_IMPORTED_MODULE_27__.Pagination();
+            dialogsViewModel === null || dialogsViewModel === void 0 ? void 0 : dialogsViewModel.getDialogs(pagination);
+        }
+        return function () {
+            dialogsViewModel.release();
+        };
+    }, []);
+    // TODO don't need to get all dialogs, just need to get the campaign dialog
+    // useEffect(() => {
+    //   if (isAuthProcessed()) {
+    //     const pagination: Pagination = new Pagination();
+    //     dialogsViewModel?.getDialogs(pagination);
+    //   }
+    // }, [currentContext.InitParams]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        // Automatically select the first dialog if available
+        if (dialogsViewModel.dialogs.length && !selectedDialog) {
+            // TODO: get dialog by id, not just the first one
+            console.debug({ dialog: dialogsViewModel.dialogs[0] });
+            setSelectedDialog(dialogsViewModel.dialogs[0]);
+        }
+    }, [dialogsViewModel.dialogs]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        if (isMobile) {
+            if (!selectedDialog) {
+                // setShowDialogList(true);
+            }
+            else {
+                // setShowDialogList(false);
+            }
+            var canShowMessages = selectedDialog && !(showDialogInformation && needDialogInformation);
+            if (canShowMessages) {
+                setShowDialogMessages(true);
+            }
+            else {
+                setShowDialogMessages(false);
+            }
+            if (selectedDialog && showDialogInformation)
+                setShowDialogInformation(true);
+            else
+                setShowDialogInformation(false);
+        }
+        else {
+            // setShowDialogList(true);
+            setShowDialogMessages(true);
+            setShowDialogInformation(true);
+        }
+        //
+        // const sizeChangingLogString = `SIZE INFO: height: ${height.toString()} clientHeight: ${clientHeight}  width: ${width.toString()} breakpont: ${breakpoint.toString()} isMobile:
+        //    ${isMobile?.toString()} selectedDialog:
+        //   ${selectedDialog ? 'true' : 'false'} showDialogMessages:
+        //    ${showDialogMessages?.toString()} showDialogList:
+        //    ${showDialogList?.toString()} showDialogInformation:
+        //    ${showDialogInformation?.toString()}`;
+        //
+        // console.log(sizeChangingLogString);
+    }, [isMobile]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        if (browserOnline) {
+            setIsOnline(true);
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+            react_toastify__WEBPACK_IMPORTED_MODULE_4__.toast.dismiss(toastConnectionErrorId.current);
+        }
+        else {
+            setIsOnline(false);
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            toastConnectionErrorId.current = (0,react_toastify__WEBPACK_IMPORTED_MODULE_4__.toast)('Connection ...', {
+                autoClose: false,
+                isLoading: true,
+            });
+        }
+    }, [browserOnline && connectionStatus]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        if (!isOnline) {
+            setNeedRefresh(true);
+        }
+    }, [isOnline]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        if (isOnline && needRefresh) {
+            if (messagesViewModel.entity) {
+                messagesViewModel.getMessages(new _Domain_repository_Pagination__WEBPACK_IMPORTED_MODULE_27__.Pagination(0, messagePerPage));
+                setNeedRefresh(false);
+            }
+        }
+    }, [isOnline]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        if (dialogsViewModel.entity) {
+            getDialogPhotoFileForPreview().catch();
+            userViewModel.entity = dialogsViewModel.entity;
+        }
+        return function () {
+            if (dialogAvatarUrl) {
+                URL.revokeObjectURL(dialogAvatarUrl);
+            }
+        };
+    }, [dialogsViewModel.entity]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        console.log("Clear selected dialog: ".concat((selectedDialog === null || selectedDialog === void 0 ? void 0 : selectedDialog.name) || 'Dialog Name is empty'));
+        if (!dialogsViewModel.entity) {
+            setSelectedDialog(undefined);
+        }
+    }, [dialogsViewModel.entity]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        messagesViewModel.entity = dialogsViewModel.entity;
+        // setMessagesToView([]);
+        setMessageText('');
+    }, [dialogsViewModel.entity]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        if (userViewModel.entity) {
+            userViewModel.getUsers();
+        }
+    }, [userViewModel.entity]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        if (selectedDialog && selectedDialog) {
+            dialogsViewModel.entity = selectedDialog;
+            userViewModel.entity = selectedDialog;
+            if (isMobile) {
+                // setShowDialogList(false); don't show dialog list, maybe replace with some other action tho, like refresh
+                setShowDialogMessages(true);
+            }
+        }
+        else {
+            // setShowDialogList(true);  don't show dialog list, maybe replace with some other action tho, like refresh
+        }
+    }, [selectedDialog]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        if (messagesViewModel.entity) {
+            messagesViewModel.getMessages(new _Domain_repository_Pagination__WEBPACK_IMPORTED_MODULE_27__.Pagination(0, messagePerPage));
+        }
+    }, [messagesViewModel.entity]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        if (!isMobile && messagesViewModel.entity) {
+            dialogsViewModel.setWaitLoadingStatus(messagesViewModel === null || messagesViewModel === void 0 ? void 0 : messagesViewModel.loading);
+            var timeoutId_1 = setTimeout(function () {
+                dialogsViewModel.setWaitLoadingStatus(false); // wait only for 3 sec
+            }, 3000);
+            return function () { return clearTimeout(timeoutId_1); };
+        }
+        return function () {
+            // Placeholder: Cleanup handler is not required
+        };
+    }, [messagesViewModel === null || messagesViewModel === void 0 ? void 0 : messagesViewModel.loading]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        var MAXSIZE = maxFileSize || 90 * 1000000;
+        var MAXSIZE_FOR_MESSAGE = MAXSIZE / (1024 * 1024);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        if ((fileToSend === null || fileToSend === void 0 ? void 0 : fileToSend.size) && (fileToSend === null || fileToSend === void 0 ? void 0 : fileToSend.size) < MAXSIZE) {
+            if (showReplyMessage && (messagesToReply === null || messagesToReply === void 0 ? void 0 : messagesToReply.length) > 0) {
+                var replyData = {
+                    messagesToReply: messagesToReply,
+                    relatedFileMessage: fileToSend,
+                    relatedTextMessage: messageText || _Data_source_remote_Mapper_MessageDTOMapper__WEBPACK_IMPORTED_MODULE_28__.MessageDTOMapper.REPLY_MESSAGE_PREFIX,
+                };
+                repliedActions(replyData);
+            }
+            else if (isOnline) {
+                // eslint-disable-next-line promise/catch-or-return
+                messagesViewModel
+                    .sendAttachmentMessage(fileToSend)
+                    .then(function (resultOperation) {
+                    // eslint-disable-next-line promise/always-return
+                    if (!resultOperation) {
+                        (0,react_toastify__WEBPACK_IMPORTED_MODULE_4__.toast)("Incorrect data");
+                    }
+                })
+                    .finally(function () {
+                    setFileToSend(null);
+                });
+            }
+        }
+        else if (fileToSend) {
+            (0,react_toastify__WEBPACK_IMPORTED_MODULE_4__.toast)("file size ".concat((0,_utils_formatFileSize__WEBPACK_IMPORTED_MODULE_29__.formatFileSize)(fileToSend === null || fileToSend === void 0 ? void 0 : fileToSend.size), " must be less then ").concat(MAXSIZE_FOR_MESSAGE, " mb."));
+            setFileToSend(null);
+        }
+    }, [fileToSend]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        var fileExt = 'mp4';
+        if (resultAudioBlob) {
+            var voiceMessage = blobToFile(resultAudioBlob, "".concat(userName || '', "_voice_message.").concat(fileExt));
+            setFileToSend(voiceMessage);
+            if (useAudioWidget) {
+                setUseAudioWidget(false);
+            }
+            //
+        }
+    }, [resultAudioBlob]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        // setFileToSend(null);
+        if (isRecording) {
+            if (!permission) {
+                // eslint-disable-next-line promise/catch-or-return,promise/always-return
+                getMicrophonePermission().catch(function () {
+                    showErrorMessage("Unable to access microphone.");
+                });
+            }
+            else {
+                // eslint-disable-next-line promise/catch-or-return,promise/always-return
+                startRecording().then(function () {
+                    // TODO: fix english, not sure if this means it's been recording for 1 minute, or it will be recording for 1 minute
+                    setWarningErrorText("Your voice is recording for 1 minute");
+                });
+            }
+        }
+        else {
+            if (permission && mediaRecorder.current) {
+                stopRecording();
+            }
+            setWarningErrorText('');
+        }
+    }, [isRecording]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        if (isRecording && permission) {
+            // eslint-disable-next-line promise/always-return,promise/catch-or-return
+            startRecording().then(function () {
+                // TODO: fix english, not sure if this means it's been recording for 1 minute, or it will be recording for 1 minute
+                setWarningErrorText("Your voice is recording for 1 minute");
+            });
+        }
+    }, [permission]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        setWaitAIWidget(false);
+        if ((defaultAIRephraseWidget === null || defaultAIRephraseWidget === void 0 ? void 0 : defaultAIRephraseWidget.textToContent) &&
+            (defaultAIRephraseWidget === null || defaultAIRephraseWidget === void 0 ? void 0 : defaultAIRephraseWidget.textToContent.length) > 0) {
+            setMessageText(defaultAIRephraseWidget === null || defaultAIRephraseWidget === void 0 ? void 0 : defaultAIRephraseWidget.textToContent);
+        }
+    }, [defaultAIRephraseWidget === null || defaultAIRephraseWidget === void 0 ? void 0 : defaultAIRephraseWidget.textToContent]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        setWaitAIWidget(false);
+    }, [defaultAITranslateWidget === null || defaultAITranslateWidget === void 0 ? void 0 : defaultAITranslateWidget.textToContent]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        setWaitAIWidget(false);
+        if ((defaultAIAssistWidget === null || defaultAIAssistWidget === void 0 ? void 0 : defaultAIAssistWidget.textToContent) &&
+            (defaultAIAssistWidget === null || defaultAIAssistWidget === void 0 ? void 0 : defaultAIAssistWidget.textToContent.length) > 0) {
+            setMessageText(defaultAIAssistWidget === null || defaultAIAssistWidget === void 0 ? void 0 : defaultAIAssistWidget.textToContent);
+        }
+    }, [defaultAIAssistWidget === null || defaultAIAssistWidget === void 0 ? void 0 : defaultAIAssistWidget.textToContent]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        if (isMobile) {
+            if (needDialogInformation) {
+                setShowDialogMessages(false);
+                setShowDialogInformation(true);
+            }
+            else {
+                setShowDialogMessages(true);
+                setShowDialogInformation(false);
+            }
+        }
+    }, [needDialogInformation]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        return function () {
+            if (stream) {
+                stream.getTracks().forEach(function (track) { return track.stop(); });
+            }
+        };
+    }, [stream]);
+    return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_Toast_ToastProvider__WEBPACK_IMPORTED_MODULE_30__["default"], { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({ className: "qb-uikit-layout" }, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", { style: {
+                        position: 'absolute',
+                        top: '0',
+                        left: '0',
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(0, 0, 0, 0.05)',
+                        zIndex: '100',
+                        display: messagesViewModel && (messagesViewModel.loading || !selectedDialog) ? 'block' : 'none',
+                    } }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_DesktopLayout__WEBPACK_IMPORTED_MODULE_31__["default"], { mainContainerStyles: {
+                        minHeight: workHeight,
+                        maxHeight: workHeight,
+                    }, onHeightChange: handleHeightChange, theme: theme, dialogsView: 
+                    // showDialogList ? (
+                    //   <DialogList
+                    //     disableAction={!isOnline}
+                    //     scrollableHeight={dialogListScrollableHeight}
+                    //     // subHeaderContent={<CompanyLogo />}
+                    //     // upHeaderContent={<CompanyLogo />}
+                    //     dialogListViewModel={dialogsViewModel} // 1 Get 2 Update UseCase
+                    //     selectedDialog={dialogsViewModel.entity}
+                    //     onDialogSelected={selectDialogActions}
+                    //     onCreateDialog={createDialogHandler}
+                    //     onLeaveDialog={leaveDialogHandler}
+                    //     additionalSettings={{
+                    //       withoutHeader: false,
+                    //       themeHeader: theme,
+                    //       themePreview: theme,
+                    //       useSubHeader: false,
+                    //       useUpHeader: false,
+                    //     }}
+                    //   />
+                    // ) : null
+                    null, dialogMessagesView: showDialogMessages &&
+                        selectedDialog &&
+                        dialogsViewModel.entity ? ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_Dialog_Dialog__WEBPACK_IMPORTED_MODULE_32__["default"], { rootStyles: {
+                            minHeight: clientContainerHeight,
+                            maxHeight: clientContainerHeight,
+                        }, messagesContainerStyles: isMobile
+                            ? {
+                                minHeight: messagesContainerMobileHeight,
+                                maxHeight: messagesContainerMobileHeight,
+                            }
+                            : {
+                                minHeight: messagesContainerHeight,
+                                maxHeight: messagesContainerHeight,
+                            }, messagesViewModel: messagesViewModel, warningErrorText: warningErrorText, 
+                        // subHeaderContent={<CompanyLogo />}
+                        // upHeaderContent={<CompanyLogo />}
+                        renderHeader: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_Header_Header__WEBPACK_IMPORTED_MODULE_33__["default"], __assign({ title: dialogsViewModel.entity.name, avatar: renderIconForTypeDialog(dialogsViewModel.entity), 
+                            // onGoBack={() => setSelectedDialog(undefined)}
+                            className: "dialog-header__line" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "dialog-header-right" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_34__.ReactComponent, { className: "dialog-header-right__icon", onClick: informationOpenHandler }) })) })), renderMessageList: messagesViewModel &&
+                            messagesViewModel.messages &&
+                            messagesViewModel.messages.length > 0 && ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components_containers_SectionList__WEBPACK_IMPORTED_MODULE_35__["default"], { resetScroll: scrollUpToDown, className: "messages-container", onEndReached: fetchMoreData, onEndReachedThreshold: 0.95, refreshing: needRefresh || (messagesViewModel === null || messagesViewModel === void 0 ? void 0 : messagesViewModel.loading), renderSectionHeader: function (section) { return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "message-view-container--system-message-wrapper" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ style: theme
+                                        ? { backgroundColor: theme.disabledElements() }
+                                        : {}, className: "message-view-container--system-message-wrapper__date_container" }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_36__["default"], { text: section.title, type: "date" }) })) }))); }, renderItem: function (_a, listRef) {
+                                var groupMessages = _a[1];
+                                return groupMessages.map(function (message) { return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_Dialog_MessageItem_MessageItem__WEBPACK_IMPORTED_MODULE_37__["default"], { disableAction: !isOnline, 
+                                    // defaultGetSenderName={defaultGetSenderName}
+                                    message: message, currentUserId: currentUserId || -1, enableForwarding: enableForwarding, enableReplying: enableReplying, onReply: function (m) {
+                                        handleOnReply(m);
+                                    }, onForward: function () { }, listRef: listRef, AIAssistWidget: defaultAIAssistWidget, AITranslateWidget: defaultAITranslateWidget, languagesForAITranslate: _Data_DefaultConfigurations__WEBPACK_IMPORTED_MODULE_6__.DefaultConfigurations.getAdditionalLanguagesForAITranslate(
+                                    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+                                    currentContext.InitParams.qbConfig.configAIApi
+                                        .AITranslateWidgetConfig), defaultTranslationLanguage: _Data_DefaultConfigurations__WEBPACK_IMPORTED_MODULE_6__.DefaultConfigurations.getDefaultLanguageForAITranslate(
+                                    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+                                    currentContext.InitParams.qbConfig.configAIApi
+                                        .AITranslateWidgetConfig), onError: function (messageError) {
+                                        (0,react_toastify__WEBPACK_IMPORTED_MODULE_4__.toast)(messageError);
+                                    }, messagesToView: messagesViewModel.messages, maxTokens: maxTokensForAIRephrase })); });
+                            }, sections: getSectionData(messagesViewModel.messages) })), renderMessageInput: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_MessageInput_MessageInput__WEBPACK_IMPORTED_MODULE_38__["default"], { disableActions: !isOnline, previewMessage: showReplyMessage ? ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components_MessageInput_ReplyMessagePreview_ReplyMessagePreview__WEBPACK_IMPORTED_MODULE_39__["default"], { messages: __spreadArray([], messagesToReply, true), userNameSentMessage: ((_g = (_f = messagesToReply[0]) === null || _f === void 0 ? void 0 : _f.sender) === null || _g === void 0 ? void 0 : _g.full_name) ||
+                                    ((_j = (_h = messagesToReply[0]) === null || _h === void 0 ? void 0 : _h.sender) === null || _j === void 0 ? void 0 : _j.login) ||
+                                    ((_l = (_k = messagesToReply[0]) === null || _k === void 0 ? void 0 : _k.sender) === null || _l === void 0 ? void 0 : _l.email) ||
+                                    ((_o = (_m = messagesToReply[0]) === null || _m === void 0 ? void 0 : _m.sender) === null || _o === void 0 ? void 0 : _o.id.toString()) ||
+                                    '', onClose: closeReplyMessageFlowHandler })) : undefined, value: messageText, placeholder: "Type message", loading: waitAIWidget || (messagesViewModel === null || messagesViewModel === void 0 ? void 0 : messagesViewModel.loading), onChange: function (text) {
+                                setMessageText(text);
+                            }, onChanging: function () {
+                                messagesViewModel.sendTypingTextMessage();
+                            }, onSend: function (textToSend) {
+                                sendTextMessageActions(textToSend);
+                            }, onAttachment: ChangeFileHandler, enableVoice: isRecording, onVoice: function () {
+                                if ((messagesViewModel === null || messagesViewModel === void 0 ? void 0 : messagesViewModel.loading) || !isOnline)
+                                    return;
+                                setIsRecording(!isRecording);
+                            }, rephrase: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_Dialog_AIWidgets_AIRephraseWidget_AIRephraseWidget__WEBPACK_IMPORTED_MODULE_40__["default"], { disableActions: !isOnline, waitAIWidget: waitAIWidget, messageText: messageText, theme: theme, AIRephrase: defaultAIRephraseWidget, setWaitAIWidget: setWaitAIWidget, setPrevValueText: function (prevValue) {
+                                    setMessageText(prevValue);
+                                }, setMessageErrorToast: function (e) {
+                                    (0,react_toastify__WEBPACK_IMPORTED_MODULE_4__.toast)(e);
+                                }, messagesToView: messagesViewModel.messages, currentUserId: currentUserId || -1, maxTokensForAIRephrase: maxTokensForAIRephrase, rephraseTones: rephraseTones }) }), maxWidthToResize: maxWidthToResizing, theme: theme })) : (!isMobile && ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ className: "empty-chat-placeholder", style: {
+                            minHeight: clientContainerHeight,
+                            maxHeight: clientContainerHeight,
+                        } }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ui_components__WEBPACK_IMPORTED_MODULE_41__["default"], { text: ['No chat history.'], className: "empty-chat-history-placeholder" }) })))), dialogInfoView: showDialogInformation &&
+                        selectedDialog &&
+                        needDialogInformation &&
+                        (isAllMembersShow ? ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_DialogInfo_MembersList_MembersList__WEBPACK_IMPORTED_MODULE_42__["default"], { closeInformationHandler: function () {
+                                setIsAllMembersShow(false);
+                            }, members: userViewModel.users, maxHeight: dialogListScrollableHeight })) : ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Views_DialogInfo_DialogInfo__WEBPACK_IMPORTED_MODULE_43__["default"], { disableAction: !isOnline, onShowAllMemberClick: function (value) {
+                                setIsAllMembersShow(value);
+                            }, users: userViewModel.users, rootStyles: {
+                                minHeight: clientContainerHeight,
+                                maxHeight: clientContainerHeight,
+                            }, 
+                            // subHeaderContent={
+                            //   <div>
+                            //     <p>v0.3.1-beta.5</p>
+                            //   </div>
+                            // }
+                            // upHeaderContent={<CompanyLogo />}
+                            dialog: selectedDialog, dialogViewModel: dialogsViewModel, onCloseDialogInformationHandler: informationCloseHandler }))) })] })) }));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QuickBloxUIKitMessageLayout);
+
+
+/***/ }),
+
 /***/ "./src/Presentation/providers/QuickBloxUIKitProvider/QuickBloxUIKitProvider.tsx":
 /*!**************************************************************************************!*\
   !*** ./src/Presentation/providers/QuickBloxUIKitProvider/QuickBloxUIKitProvider.tsx ***!
@@ -26666,22 +27674,23 @@ var __webpack_exports__ = {};
   \*************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   AISource: () => (/* reexport safe */ _Data_source_AISource__WEBPACK_IMPORTED_MODULE_22__.AISource),
-/* harmony export */   AIWidgetIcon: () => (/* reexport safe */ _Presentation_components_UI_svgs_Icons_AIWidgets_AIWidget__WEBPACK_IMPORTED_MODULE_23__["default"]),
+/* harmony export */   AISource: () => (/* reexport safe */ _Data_source_AISource__WEBPACK_IMPORTED_MODULE_23__.AISource),
+/* harmony export */   AIWidgetIcon: () => (/* reexport safe */ _Presentation_components_UI_svgs_Icons_AIWidgets_AIWidget__WEBPACK_IMPORTED_MODULE_24__["default"]),
 /* harmony export */   BaseViewModel: () => (/* reexport safe */ _CommonTypes_BaseViewModel__WEBPACK_IMPORTED_MODULE_19__["default"]),
-/* harmony export */   DefaultTheme: () => (/* reexport safe */ _Presentation_themes_DefaultThemes_DefaultTheme__WEBPACK_IMPORTED_MODULE_21__["default"]),
+/* harmony export */   DefaultTheme: () => (/* reexport safe */ _Presentation_themes_DefaultThemes_DefaultTheme__WEBPACK_IMPORTED_MODULE_22__["default"]),
 /* harmony export */   DesktopLayout: () => (/* reexport safe */ _Presentation_layouts_Desktop_DesktopLayout__WEBPACK_IMPORTED_MODULE_15__["default"]),
 /* harmony export */   Dialog: () => (/* reexport safe */ _Presentation_Views_Dialog_Dialog__WEBPACK_IMPORTED_MODULE_17__["default"]),
 /* harmony export */   DialogInfo: () => (/* reexport safe */ _Presentation_Views_DialogInfo_DialogInfo__WEBPACK_IMPORTED_MODULE_18__["default"]),
 /* harmony export */   DialogList: () => (/* reexport safe */ _Presentation_Views_DialogList_DialogList__WEBPACK_IMPORTED_MODULE_16__["default"]),
-/* harmony export */   ErrorMessageIcon: () => (/* reexport safe */ _Presentation_Views_Dialog_AIWidgets_ErrorMessageIcon__WEBPACK_IMPORTED_MODULE_24__["default"]),
+/* harmony export */   ErrorMessageIcon: () => (/* reexport safe */ _Presentation_Views_Dialog_AIWidgets_ErrorMessageIcon__WEBPACK_IMPORTED_MODULE_25__["default"]),
 /* harmony export */   EventMessageType: () => (/* reexport safe */ _Domain_entity_EventMessageType__WEBPACK_IMPORTED_MODULE_12__["default"]),
 /* harmony export */   LocalDataSource: () => (/* reexport safe */ _Data_source_local_LocalDataSource__WEBPACK_IMPORTED_MODULE_4__.LocalDataSource),
 /* harmony export */   MainButton: () => (/* reexport safe */ _Presentation_components_UI_Buttons_MainButton_MainButton__WEBPACK_IMPORTED_MODULE_1__["default"]),
 /* harmony export */   NotificationTypes: () => (/* reexport safe */ _Domain_entity_NotificationTypes__WEBPACK_IMPORTED_MODULE_13__.NotificationTypes),
 /* harmony export */   Pagination: () => (/* reexport safe */ _Domain_repository_Pagination__WEBPACK_IMPORTED_MODULE_11__.Pagination),
-/* harmony export */   PreviewDialogViewModel: () => (/* reexport safe */ _Presentation_Views_PreviewDialog_PreviewDialogViewModel__WEBPACK_IMPORTED_MODULE_25__["default"]),
+/* harmony export */   PreviewDialogViewModel: () => (/* reexport safe */ _Presentation_Views_PreviewDialog_PreviewDialogViewModel__WEBPACK_IMPORTED_MODULE_26__["default"]),
 /* harmony export */   QuickBloxUIKitDesktopLayout: () => (/* reexport safe */ _Presentation_layouts_Desktop_QuickBloxUIKitDesktopLayout__WEBPACK_IMPORTED_MODULE_20__["default"]),
+/* harmony export */   QuickBloxUIKitMessageLayout: () => (/* reexport safe */ _Presentation_layouts_Desktop_QuickBloxUIKitMessageLayout__WEBPACK_IMPORTED_MODULE_21__["default"]),
 /* harmony export */   QuickBloxUIKitProvider: () => (/* reexport safe */ _Presentation_providers_QuickBloxUIKitProvider_QuickBloxUIKitProvider__WEBPACK_IMPORTED_MODULE_2__["default"]),
 /* harmony export */   RemoteDataSource: () => (/* reexport safe */ _Data_source_remote_RemoteDataSource__WEBPACK_IMPORTED_MODULE_3__.RemoteDataSource),
 /* harmony export */   SubscribeToDialogEventsUseCase: () => (/* reexport safe */ _Domain_use_cases_SubscribeToDialogEventsUseCase__WEBPACK_IMPORTED_MODULE_10__.SubscribeToDialogEventsUseCase),
@@ -26714,12 +27723,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CommonTypes_BaseViewModel__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./CommonTypes/BaseViewModel */ "./src/CommonTypes/BaseViewModel.ts");
 /* harmony import */ var _Data_source_remote_RemoteDataSource__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Data/source/remote/RemoteDataSource */ "./src/Data/source/remote/RemoteDataSource.ts");
 /* harmony import */ var _Presentation_layouts_Desktop_QuickBloxUIKitDesktopLayout__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./Presentation/layouts/Desktop/QuickBloxUIKitDesktopLayout */ "./src/Presentation/layouts/Desktop/QuickBloxUIKitDesktopLayout.tsx");
-/* harmony import */ var _Presentation_themes_DefaultThemes_DefaultTheme__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./Presentation/themes/DefaultThemes/DefaultTheme */ "./src/Presentation/themes/DefaultThemes/DefaultTheme.ts");
+/* harmony import */ var _Presentation_layouts_Desktop_QuickBloxUIKitMessageLayout__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./Presentation/layouts/Desktop/QuickBloxUIKitMessageLayout */ "./src/Presentation/layouts/Desktop/QuickBloxUIKitMessageLayout.tsx");
+/* harmony import */ var _Presentation_themes_DefaultThemes_DefaultTheme__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./Presentation/themes/DefaultThemes/DefaultTheme */ "./src/Presentation/themes/DefaultThemes/DefaultTheme.ts");
 /* harmony import */ var _Presentation_providers_QuickBloxUIKitProvider_useQbUIKitDataContext__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Presentation/providers/QuickBloxUIKitProvider/useQbUIKitDataContext */ "./src/Presentation/providers/QuickBloxUIKitProvider/useQbUIKitDataContext.ts");
-/* harmony import */ var _Data_source_AISource__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./Data/source/AISource */ "./src/Data/source/AISource.ts");
-/* harmony import */ var _Presentation_components_UI_svgs_Icons_AIWidgets_AIWidget__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./Presentation/components/UI/svgs/Icons/AIWidgets/AIWidget */ "./src/Presentation/components/UI/svgs/Icons/AIWidgets/AIWidget/index.tsx");
-/* harmony import */ var _Presentation_Views_Dialog_AIWidgets_ErrorMessageIcon__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./Presentation/Views/Dialog/AIWidgets/ErrorMessageIcon */ "./src/Presentation/Views/Dialog/AIWidgets/ErrorMessageIcon.tsx");
-/* harmony import */ var _Presentation_Views_PreviewDialog_PreviewDialogViewModel__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./Presentation/Views/PreviewDialog/PreviewDialogViewModel */ "./src/Presentation/Views/PreviewDialog/PreviewDialogViewModel.ts");
+/* harmony import */ var _Data_source_AISource__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./Data/source/AISource */ "./src/Data/source/AISource.ts");
+/* harmony import */ var _Presentation_components_UI_svgs_Icons_AIWidgets_AIWidget__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./Presentation/components/UI/svgs/Icons/AIWidgets/AIWidget */ "./src/Presentation/components/UI/svgs/Icons/AIWidgets/AIWidget/index.tsx");
+/* harmony import */ var _Presentation_Views_Dialog_AIWidgets_ErrorMessageIcon__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./Presentation/Views/Dialog/AIWidgets/ErrorMessageIcon */ "./src/Presentation/Views/Dialog/AIWidgets/ErrorMessageIcon.tsx");
+/* harmony import */ var _Presentation_Views_PreviewDialog_PreviewDialogViewModel__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./Presentation/Views/PreviewDialog/PreviewDialogViewModel */ "./src/Presentation/Views/PreviewDialog/PreviewDialogViewModel.ts");
+
 
 
 

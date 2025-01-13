@@ -32,6 +32,7 @@ import {
   RemoteDataSource,
 } from './Data/source/remote/RemoteDataSource';
 import QuickBloxUIKitDesktopLayout from './Presentation/layouts/Desktop/QuickBloxUIKitDesktopLayout';
+import QuickBloxUIKitMessageLayout from './Presentation/layouts/Desktop/QuickBloxUIKitMessageLayout';
 import DefaultTheme from './Presentation/themes/DefaultThemes/DefaultTheme';
 import UiKitTheme from './Presentation/themes/UiKitTheme';
 import useQbUIKitDataContext from './Presentation/providers/QuickBloxUIKitProvider/useQbUIKitDataContext';
@@ -73,6 +74,7 @@ export {
   type DialogEntity,
   BaseViewModel,
   QuickBloxUIKitDesktopLayout,
+  QuickBloxUIKitMessageLayout,
   DefaultTheme,
   type UiKitTheme,
   type AIMessageWidget,
