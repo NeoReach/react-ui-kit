@@ -3581,6 +3581,532 @@ html[data-theme=dark] {
 .reply-message-icon svg path {
   fill: var(--secondary-elements);
 }
+/*!*******************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/Presentation/Views/Dialog/ForwardMessageFlow/ForwardMessageFlow.scss ***!
+  \*******************************************************************************************************************************************************************/
+.forward-message-flow,
+.forward-message-flow * {
+  box-sizing: border-box;
+}
+
+.forward-message-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.forward-message-flow-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 32px;
+  position: relative;
+}
+
+.forward-message-flow-tabs-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+
+.active-tab-button {
+  border-style: solid;
+  border-color: var(--light-theme-mainelements, #3978fc);
+  border-width: 0px 0px 3px 0px;
+  padding: 8px 16px 8px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+
+.active-tab-button-content {
+  color: var(--light-theme-mainelements, #3978fc);
+  text-align: left;
+  font: var(--button-default, 700 14px/16px "Roboto", sans-serif);
+  position: relative;
+}
+
+.no-active-tab-button {
+  padding: 8px 16px 8px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+}
+
+.no-active-tab-button-content {
+  color: var(--light-theme-tertiaryelements, #636d78);
+  text-align: left;
+  font: var(--button-default, 700 14px/16px "Roboto", sans-serif);
+  position: relative;
+}
+
+.forward-message-flow-tabs-buttons-divider {
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.forward-message-flow-message-input {
+  background: var(--light-theme-mainbackground, #ffffff);
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.forward-message-flow-message-input-row {
+  padding: 10px 12px 10px 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.forward2 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+}
+
+.caption {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.forward3 {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.icon2 {
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  position: relative;
+}
+
+.actions-forward-filled {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: visible;
+}
+
+.forwarded-from-name {
+  color: var(--light-theme-tertiaryelements, #636d78);
+  text-align: left;
+  font: var(--label-label-medium, 500 12px/16px "Roboto", sans-serif);
+  position: relative;
+}
+
+.i-like-you-new-presentation-style-it-s-very {
+  color: var(--light-theme-maintext, #0b1b0f);
+  text-align: center;
+  font: var(--body-body-large, 400 16px/24px "Roboto", sans-serif);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/Presentation/Views/Dialog/ForwardMessageFlow/ForwardMessagePreview/ForwardMessagePreview.scss ***!
+  \********************************************************************************************************************************************************************************************/
+.forward-message-preview,
+.forward-message-preview * {
+  box-sizing: border-box;
+}
+
+.forward-message-preview {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+
+.forward-message-preview-photo {
+  border-radius: 8px;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  position: relative;
+}
+
+.forward-message-preview-message {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.forward-message-preview-message-caption {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.forward-message-preview-caption-info {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.forward-message-preview-caption-info-icon {
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  position: relative;
+}
+
+.actions-forward-filled {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: visible;
+}
+
+.forwarded-message-from-name {
+  color: var(--tertiary-elements, #636d78);
+  text-align: left;
+  font: var(--label-label-medium, 500 12px/16px "Roboto", sans-serif);
+  position: relative;
+}
+
+.forwarded-message-text {
+  color: var(--main-text, #90979f);
+  text-align: center;
+  font: var(--body-body-small, 400 12px/16px "Roboto", sans-serif);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.forward-message-preview-message-caption-info-text {
+  color: var(--main-text, #0b1b0f);
+  text-align: center;
+  font: var(--body-body-large, 400 16px/24px "Roboto", sans-serif);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.forward-message-preview-message-caption-info-file {
+  color: var(--caption, #90979f);
+  text-align: center;
+  font: var(--body-body-small, 400 12px/16px "Roboto", sans-serif);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*!************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/Presentation/Views/Dialog/ForwardMessageFlow/DialogsWithSearch/DialogsWithSearch.scss ***!
+  \************************************************************************************************************************************************************************************/
+.dialogs-with-search-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.dialogs-with-search-icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--tertiary-elements);
+}
+
+.dialogs-with-search-text-field {
+  width: 100%;
+}
+
+.dialogs-with-search-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 332px;
+  max-height: 260px;
+  height: 260px;
+  min-height: 260px;
+  position: relative;
+}
+
+.dialogs-with-search-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.dialogs-with-search-list-divider {
+  flex-shrink: 0;
+  position: relative;
+  overflow: visible;
+}
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/Presentation/Views/Dialog/ForwardMessageFlow/DialogsWithSearch/DialogListItem/DialogListItem.scss ***!
+  \************************************************************************************************************************************************************************************************/
+.dialog-item-element,
+.dialog-item-element * {
+  box-sizing: border-box;
+}
+
+.dialog-item-element {
+  background: var(--main-background, #ffffff);
+  padding: 8px 19px 8px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 270px;
+  position: relative;
+}
+
+.dialog-item-element-avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.dialog-item-element-avatar-rectangle {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.dialog-item-element-avatar-ellipse {
+  background: var(--disabled-elements, #bcc1c5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.contents-user {
+  position: absolute;
+  left: 7.14px;
+  top: 7.14px;
+  overflow: visible;
+}
+
+.dialog-item-element-subtitle {
+  color: var(--main-text, #0b1b0f);
+  text-align: left;
+  font: var(--body-body-large, 400 16px/24px "Roboto", sans-serif);
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.dialog-item-element-checkbox {
+  border-radius: 4px;
+  padding: 4px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+
+.toggle-check-on {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: visible;
+}
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/Presentation/Views/Dialog/ForwardMessageFlow/InputForForwarding/InputForForwarding.scss ***!
+  \**************************************************************************************************************************************************************************************/
+.forwarding-message-input,
+.forwarding-message-input * {
+  box-sizing: border-box;
+}
+
+.forwarding-message-input {
+  background: var(--main-background, #ffffff);
+  padding: 10px 12px 10px 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: flex-end;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.forwarding-message-input-input {
+  background: var(--incoming-background, #e4e6e8);
+  border-radius: 4px;
+  padding: 10px 8px 10px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+
+.forwarding-message-input-input-type-message {
+  color: var(--main-text, #636d78);
+  background: var(--incoming-background, #e4e6e8);
+  text-align: left;
+  font: var(--body-body-large, 400 16px/24px "Roboto", sans-serif);
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  resize: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 26px;
+  min-height: 26px;
+  max-height: 26px;
+}
+
+.forwarding-message-input-icon-send {
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 44px;
+  position: relative;
+}
+.forwarding-message-input-icon-send__icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  fill: var(--secondary-elements);
+}
+.forwarding-message-input-icon-send__icon__send {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  fill: var(--main-elements);
+}
+.forwarding-message-input-icon-send__icon svg path {
+  width: 24px;
+  height: 24px;
+  fill: var(--main-elements);
+}
+.forwarding-message-input-icon-send__icon--disable {
+  fill: var(--disabled-elements);
+  cursor: default;
+  width: 24px;
+  height: 24px;
+}
+.forwarding-message-input-icon-send__icon--disable svg path {
+  width: 24px;
+  height: 24px;
+  fill: var(--disabled-elements);
+}
+
+.actions-send {
+  flex-shrink: 0;
+  position: relative;
+  overflow: visible;
+}
 /*!*****************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/Presentation/components/containers/SectionList/styles.css ***!
   \*****************************************************************************************************************/
@@ -4746,6 +5272,60 @@ html[data-theme=dark] {
   letter-spacing: 0.5px;
   color: var(--main-background);
   text-align: center;
+}
+/*!*****************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/Presentation/Views/Flow/CreateDialog/CreateDialog.scss ***!
+  \*****************************************************************************************************************************************************/
+.create-dialog-container {
+  min-height: 312px;
+  max-height: 312px;
+  height: 312px;
+}
+
+.item-type-dialog,
+.item-type-dialog * {
+  box-sizing: border-box;
+}
+
+.item-type-dialog {
+  border-radius: 4px;
+  border-style: solid;
+  border-color: var(--light-theme-tertiaryelements, #636d78);
+  border-width: 1px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.item-type-dialog-icon {
+  border-radius: 4px;
+  padding: 4px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+
+.item-type-dialog-name {
+  color: var(--light-theme-maintext, #0b1b0f);
+  text-align: left;
+  font-family: var(--body-body-medium-font-family, "Roboto-Regular", sans-serif);
+  font-size: var(--body-body-medium-font-size, 14px);
+  line-height: var(--body-body-medium-line-height, 20px);
+  font-weight: var(--body-body-medium-font-weight, 400);
+  position: relative;
+  flex: 1;
 }
 
 /*# sourceMappingURL=index.css.map*/

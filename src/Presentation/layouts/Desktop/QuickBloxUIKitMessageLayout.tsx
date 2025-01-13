@@ -51,7 +51,6 @@ import AIRephraseWidget from '../../Views/Dialog/AIWidgets/AIRephraseWidget/AIRe
 import MessageItem from '../../Views/Dialog/MessageItem/MessageItem';
 import { MessageSeparator, Placeholder } from '../../ui-components';
 import ToastProvider from '../../ui-components/Toast/ToastProvider';
-import useModal from '../../../hooks/useModal';
 import useQBConnection from '../../providers/QuickBloxUIKitProvider/useQBConnection';
 import { ProxyConfig } from '../../../CommonTypes/CommonTypes';
 import EventMessageType from '../../../Domain/entity/EventMessageType';
@@ -666,8 +665,9 @@ const QuickBloxUIKitMessageLayout: React.FC<
   // }, [currentContext.InitParams]);
   useEffect(() => {
     // Automatically select the first dialog if available
-    if (dialogsViewModel.dialogs.length > 0 && !selectedDialog) {
+    if (dialogsViewModel.dialogs.length && !selectedDialog) {
       // TODO: get dialog by id, not just the first one
+      console.debug({dialog: dialogsViewModel.dialogs[0]});
       setSelectedDialog(dialogsViewModel.dialogs[0]);
     }
   }, [dialogsViewModel.dialogs]);

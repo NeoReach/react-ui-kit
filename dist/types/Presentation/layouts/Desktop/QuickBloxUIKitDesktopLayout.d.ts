@@ -8,12 +8,12 @@ type AIWidgetPlaceHolder = {
     default: boolean;
     AIWidget?: AIMessageWidget;
 };
-type QuickBloxUIKitMessageLayoutProps = {
+type QuickBloxUIKitDesktopLayoutProps = {
     theme?: UiKitTheme;
     AIRephrase?: AIWidgetPlaceHolder;
     AITranslate?: AIWidgetPlaceHolder;
     AIAssist?: AIWidgetPlaceHolder;
     uikitHeightOffset?: string;
 };
-declare const QuickBloxUIKitMessageLayout: React.FC<QuickBloxUIKitMessageLayoutProps>;
-export default QuickBloxUIKitMessageLayout;
+declare const QuickBloxUIKitDesktopLayout: React.FC<QuickBloxUIKitDesktopLayoutProps>;
+export default QuickBloxUIKitDesktopLayout;
