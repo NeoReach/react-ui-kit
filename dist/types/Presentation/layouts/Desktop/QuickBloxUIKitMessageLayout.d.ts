@@ -14,6 +14,7 @@ type QuickBloxUIKitMessageLayoutProps = {
     AITranslate?: AIWidgetPlaceHolder;
     AIAssist?: AIWidgetPlaceHolder;
     uikitHeightOffset?: string;
+    dialogId?: string;
 };
 declare const QuickBloxUIKitMessageLayout: React.FC<QuickBloxUIKitMessageLayoutProps>;
 export default QuickBloxUIKitMessageLayout;

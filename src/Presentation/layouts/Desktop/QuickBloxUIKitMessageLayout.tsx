@@ -70,6 +70,7 @@ type QuickBloxUIKitMessageLayoutProps = {
   AITranslate?: AIWidgetPlaceHolder;
   AIAssist?: AIWidgetPlaceHolder;
   uikitHeightOffset?: string;
+  dialogId?: string;
 };
 
 const QuickBloxUIKitMessageLayout: React.FC<
@@ -81,6 +82,7 @@ const QuickBloxUIKitMessageLayout: React.FC<
   AIRephrase = undefined,
   AIAssist = undefined,
   uikitHeightOffset = '0px',
+  dialogId = undefined,
 }: QuickBloxUIKitMessageLayoutProps) => {
   const mimeType = 'audio/webm;codecs=opus'; // audio/ogg audio/mpeg audio/webm audio/x-wav audio/mp4
   const messagePerPage = 47;
@@ -317,7 +319,6 @@ const QuickBloxUIKitMessageLayout: React.FC<
   // functions
 
   const isAuthProcessed = (): boolean => {
-    console.log('call isAuthProcessed');
     const authState = {
       needInit: currentContext.storage.REMOTE_DATA_SOURCE.needInit,
       authProcessed: currentContext.storage.REMOTE_DATA_SOURCE.authProcessed,
@@ -639,7 +640,6 @@ const QuickBloxUIKitMessageLayout: React.FC<
   }
 
   const handleHeightChange = (newHeight: number) => {
-    console.log('The new height is:', newHeight);
     setClientHeight(newHeight);
   };
 
@@ -656,7 +656,6 @@ const QuickBloxUIKitMessageLayout: React.FC<
       dialogsViewModel.release();
     };
   }, []);
-  // TODO don't need to get all dialogs, just need to get the campaign dialog
   // useEffect(() => {
   //   if (isAuthProcessed()) {
   //     const pagination: Pagination = new Pagination();
@@ -664,13 +663,15 @@ const QuickBloxUIKitMessageLayout: React.FC<
   //   }
   // }, [currentContext.InitParams]);
   useEffect(() => {
-    // Automatically select the first dialog if available
-    if (dialogsViewModel.dialogs.length && !selectedDialog) {
-      // TODO: get dialog by id, not just the first one
-      console.debug({dialog: dialogsViewModel.dialogs[0]});
-      setSelectedDialog(dialogsViewModel.dialogs[0]);
+    if (dialogId && dialogsViewModel.dialogs.length && !selectedDialog) {
+      const matchingDialog = dialogsViewModel.dialogs.find(dialog => dialog.id === dialogId);
+      if (matchingDialog) {
+        setSelectedDialog(matchingDialog);
+      }
+      console.debug({"selected dialog by ID": matchingDialog});
+      setSelectedDialog(matchingDialog);
     }
-  }, [dialogsViewModel.dialogs]);
+  }, [dialogsViewModel.dialogs, dialogId]);
 
   useEffect(() => {
     if (isMobile) {

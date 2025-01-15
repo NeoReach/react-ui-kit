@@ -23293,7 +23293,7 @@ var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from
 
 var QuickBloxUIKitMessageLayout = function (_a) {
     var _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-    var _p = _a.theme, theme = _p === void 0 ? undefined : _p, _q = _a.AITranslate, AITranslate = _q === void 0 ? undefined : _q, _r = _a.AIRephrase, AIRephrase = _r === void 0 ? undefined : _r, _s = _a.AIAssist, AIAssist = _s === void 0 ? undefined : _s, _t = _a.uikitHeightOffset, uikitHeightOffset = _t === void 0 ? '0px' : _t;
+    var _p = _a.theme, theme = _p === void 0 ? undefined : _p, _q = _a.AITranslate, AITranslate = _q === void 0 ? undefined : _q, _r = _a.AIRephrase, AIRephrase = _r === void 0 ? undefined : _r, _s = _a.AIAssist, AIAssist = _s === void 0 ? undefined : _s, _t = _a.uikitHeightOffset, uikitHeightOffset = _t === void 0 ? '0px' : _t, _u = _a.dialogId, dialogId = _u === void 0 ? undefined : _u;
     var mimeType = 'audio/webm;codecs=opus'; // audio/ogg audio/mpeg audio/webm audio/x-wav audio/mp4
     var messagePerPage = 47;
     var currentContext = (0,_providers_QuickBloxUIKitProvider_useQbInitializedDataContext__WEBPACK_IMPORTED_MODULE_5__["default"])();
@@ -23400,11 +23400,11 @@ var QuickBloxUIKitMessageLayout = function (_a) {
     getAIAssistAnswer();
     var dialogsViewModel = (0,_Views_DialogList_useDialogListViewModel__WEBPACK_IMPORTED_MODULE_15__["default"])(currentContext);
     var messagesViewModel = (0,_Views_Dialog_useDialogViewModel__WEBPACK_IMPORTED_MODULE_16__["default"])((_e = dialogsViewModel.entity) === null || _e === void 0 ? void 0 : _e.type, dialogsViewModel.entity);
-    var _u = react__WEBPACK_IMPORTED_MODULE_1___default().useState(), selectedDialog = _u[0], setSelectedDialog = _u[1];
+    var _v = react__WEBPACK_IMPORTED_MODULE_1___default().useState(), selectedDialog = _v[0], setSelectedDialog = _v[1];
     var userViewModel = (0,_Views_DialogInfo_UsersList_useUsersListViewModel__WEBPACK_IMPORTED_MODULE_17__["default"])(selectedDialog);
-    var _v = react__WEBPACK_IMPORTED_MODULE_1___default().useState(''), dialogAvatarUrl = _v[0], setDialogAvatarUrl = _v[1];
-    var _w = (0,_providers_QuickBloxUIKitProvider_useQBConnection__WEBPACK_IMPORTED_MODULE_18__["default"])(), browserOnline = _w.browserOnline, connectionStatus = _w.connectionStatus, connectionRepository = _w.connectionRepository;
-    var _x = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(browserOnline && connectionStatus), isOnline = _x[0], setIsOnline = _x[1];
+    var _w = react__WEBPACK_IMPORTED_MODULE_1___default().useState(''), dialogAvatarUrl = _w[0], setDialogAvatarUrl = _w[1];
+    var _x = (0,_providers_QuickBloxUIKitProvider_useQBConnection__WEBPACK_IMPORTED_MODULE_18__["default"])(), browserOnline = _x.browserOnline, connectionStatus = _x.connectionStatus, connectionRepository = _x.connectionRepository;
+    var _y = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(browserOnline && connectionStatus), isOnline = _y[0], setIsOnline = _y[1];
     connectionRepository.subscribe(function (status) {
         console.log("Connection status: ".concat(status ? 'CONNECTED' : 'DISCONNECTED'));
         if (status)
@@ -23412,19 +23412,19 @@ var QuickBloxUIKitMessageLayout = function (_a) {
         else
             setIsOnline(false);
     }, _Domain_entity_EventMessageType__WEBPACK_IMPORTED_MODULE_19__["default"].LocalMessage, 'DESKTOP_LAYOUT');
-    var _y = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), needRefresh = _y[0], setNeedRefresh = _y[1];
+    var _z = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), needRefresh = _z[0], setNeedRefresh = _z[1];
     var toastConnectionErrorId = react__WEBPACK_IMPORTED_MODULE_1___default().useRef(null);
     //
-    var _z = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), waitAIWidget = _z[0], setWaitAIWidget = _z[1];
-    var _0 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''), messageText = _0[0], setMessageText = _0[1];
-    var _1 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), showReplyMessage = _1[0], setShowReplyMessage = _1[1];
-    var _2 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]), messagesToReply = _2[0], setMessagesToReply = _2[1];
+    var _0 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), waitAIWidget = _0[0], setWaitAIWidget = _0[1];
+    var _1 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''), messageText = _1[0], setMessageText = _1[1];
+    var _2 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), showReplyMessage = _2[0], setShowReplyMessage = _2[1];
+    var _3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]), messagesToReply = _3[0], setMessagesToReply = _3[1];
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    var _3 = (0,_components_containers_SectionList_hooks__WEBPACK_IMPORTED_MODULE_20__["default"])(), isMobile = _3[0], width = _3[1], height = _3[2], breakpoint = _3[3];
-    var _4 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0), clientHeight = _4[0], setClientHeight = _4[1];
+    var _4 = (0,_components_containers_SectionList_hooks__WEBPACK_IMPORTED_MODULE_20__["default"])(), isMobile = _4[0], width = _4[1], height = _4[2], breakpoint = _4[3];
+    var _5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0), clientHeight = _5[0], setClientHeight = _5[1];
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    var _5 = react__WEBPACK_IMPORTED_MODULE_1___default().useState(false), scrollUpToDown = _5[0], setScrollUpToDown = _5[1];
-    var _6 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), needDialogInformation = _6[0], setNeedDialogInformation = _6[1];
+    var _6 = react__WEBPACK_IMPORTED_MODULE_1___default().useState(false), scrollUpToDown = _6[0], setScrollUpToDown = _6[1];
+    var _7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), needDialogInformation = _7[0], setNeedDialogInformation = _7[1];
     var informationCloseHandler = function () {
         setNeedDialogInformation(false);
     };
@@ -23447,22 +23447,21 @@ var QuickBloxUIKitMessageLayout = function (_a) {
     var clientContainerHeight = "".concat(clientHeight - 5, "px");
     var headerHeight = 64;
     var dialogListScrollableHeight = clientHeight - headerHeight - 6;
-    var _7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''), warningErrorText = _7[0], setWarningErrorText = _7[1];
-    var _8 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), useAudioWidget = _8[0], setUseAudioWidget = _8[1];
-    var _9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null), fileToSend = _9[0], setFileToSend = _9[1];
-    var _10 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), isRecording = _10[0], setIsRecording = _10[1];
-    var _11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), permission = _11[0], setPermission = _11[1];
-    var _12 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(), stream = _12[0], setStream = _12[1];
+    var _8 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''), warningErrorText = _8[0], setWarningErrorText = _8[1];
+    var _9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), useAudioWidget = _9[0], setUseAudioWidget = _9[1];
+    var _10 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null), fileToSend = _10[0], setFileToSend = _10[1];
+    var _11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), isRecording = _11[0], setIsRecording = _11[1];
+    var _12 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), permission = _12[0], setPermission = _12[1];
+    var _13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(), stream = _13[0], setStream = _13[1];
     var mediaRecorder = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)();
-    var _13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(), resultAudioBlob = _13[0], setResultAudioBlob = _13[1];
-    var _14 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]), audioChunks = _14[0], setAudioChunks = _14[1];
+    var _14 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(), resultAudioBlob = _14[0], setResultAudioBlob = _14[1];
+    var _15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]), audioChunks = _15[0], setAudioChunks = _15[1];
     // const [showDialogList, setShowDialogList] = useState<boolean>(true);
-    var _15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true), showDialogMessages = _15[0], setShowDialogMessages = _15[1];
-    var _16 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), showDialogInformation = _16[0], setShowDialogInformation = _16[1];
-    var _17 = react__WEBPACK_IMPORTED_MODULE_1___default().useState(false), isAllMembersShow = _17[0], setIsAllMembersShow = _17[1];
+    var _16 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true), showDialogMessages = _16[0], setShowDialogMessages = _16[1];
+    var _17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false), showDialogInformation = _17[0], setShowDialogInformation = _17[1];
+    var _18 = react__WEBPACK_IMPORTED_MODULE_1___default().useState(false), isAllMembersShow = _18[0], setIsAllMembersShow = _18[1];
     // functions
     var isAuthProcessed = function () {
-        console.log('call isAuthProcessed');
         var authState = {
             needInit: currentContext.storage.REMOTE_DATA_SOURCE.needInit,
             authProcessed: currentContext.storage.REMOTE_DATA_SOURCE.authProcessed,
@@ -23767,7 +23766,6 @@ var QuickBloxUIKitMessageLayout = function (_a) {
         return sections;
     }
     var handleHeightChange = function (newHeight) {
-        console.log('The new height is:', newHeight);
         setClientHeight(newHeight);
     };
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
@@ -23781,7 +23779,6 @@ var QuickBloxUIKitMessageLayout = function (_a) {
             dialogsViewModel.release();
         };
     }, []);
-    // TODO don't need to get all dialogs, just need to get the campaign dialog
     // useEffect(() => {
     //   if (isAuthProcessed()) {
     //     const pagination: Pagination = new Pagination();
@@ -23789,13 +23786,15 @@ var QuickBloxUIKitMessageLayout = function (_a) {
     //   }
     // }, [currentContext.InitParams]);
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-        // Automatically select the first dialog if available
-        if (dialogsViewModel.dialogs.length && !selectedDialog) {
-            // TODO: get dialog by id, not just the first one
-            console.debug({ dialog: dialogsViewModel.dialogs[0] });
-            setSelectedDialog(dialogsViewModel.dialogs[0]);
+        if (dialogId && dialogsViewModel.dialogs.length && !selectedDialog) {
+            var matchingDialog = dialogsViewModel.dialogs.find(function (dialog) { return dialog.id === dialogId; });
+            if (matchingDialog) {
+                setSelectedDialog(matchingDialog);
+            }
+            console.debug({ "selected dialog by ID": matchingDialog });
+            setSelectedDialog(matchingDialog);
         }
-    }, [dialogsViewModel.dialogs]);
+    }, [dialogsViewModel.dialogs, dialogId]);
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
         if (isMobile) {
             if (!selectedDialog) {
